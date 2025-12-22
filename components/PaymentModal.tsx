@@ -38,8 +38,12 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
             const result = await submitOrder(null, formData);
             if (result.error) {
                 setError(result.error);
+            } else if (result.payment_url) {
+                // Successful, redirect to Xendit
+                window.location.href = result.payment_url;
             }
         } catch (err) {
+            console.error(err);
             setError("Terjadi kesalahan yang tidak diketahui.");
         } finally {
             setIsPending(false);

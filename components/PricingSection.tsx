@@ -1,16 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import PaymentModal from "./PaymentModal";
+import Link from "next/link";
 
 export default function PricingSection() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState<{ name: string; id: string }>({ name: "", id: "" });
-
-    const openModal = (name: string, id: string) => {
-        setSelectedProduct({ name, id });
-        setIsModalOpen(true);
-    };
 
     return (
         <section className="bg-slate-50 py-20 px-6 md:px-12 border-t border-slate-200">
@@ -37,12 +29,12 @@ export default function PricingSection() {
                                 Materi PDF
                             </li>
                         </ul>
-                        <button
-                            onClick={() => openModal("Personal Plan", "personal")}
-                            className="w-full block bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 rounded-lg transition-colors"
+                        <Link
+                            href="/checkout?plan=personal"
+                            className="w-full block bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 rounded-lg transition-colors text-center"
                         >
                             Daftar Personal
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Group Plan */}
@@ -68,12 +60,12 @@ export default function PricingSection() {
                                 Networking group
                             </li>
                         </ul>
-                        <button
-                            onClick={() => openModal("Group Plan", "group")}
-                            className="w-full block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg transition-colors shadow-md"
+                        <Link
+                            href="/checkout?plan=group"
+                            className="w-full block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg transition-colors shadow-md text-center"
                         >
                             Daftar Group
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile view of Group Plan */}
@@ -84,22 +76,17 @@ export default function PricingSection() {
                         <h3 className="text-xl font-bold text-slate-900 mb-2">GROUP</h3>
                         <div className="text-3xl font-bold text-slate-900 mb-1">Rp400.000<span className="text-sm font-normal text-slate-500">,-</span></div>
                         <p className="text-xs text-slate-500 mb-6">Per orang (Min. 3 orang)</p>
-                        <button
-                            onClick={() => openModal("Group Plan", "group")}
-                            className="w-full block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg transition-colors shadow-md"
+                        <Link
+                            href="/checkout?plan=group"
+                            className="w-full block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg transition-colors shadow-md text-center"
                         >
                             Daftar Group
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>
 
-            <PaymentModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                productName={selectedProduct.name}
-                productId={selectedProduct.id}
-            />
+
         </section>
     );
 }

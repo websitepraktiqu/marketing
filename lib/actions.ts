@@ -2,9 +2,10 @@
 
 import { redirect } from "next/navigation";
 
-interface CheckoutState {
+export interface CheckoutState {
     error?: string;
     success?: boolean;
+    payment_url?: string;
 }
 
 export async function submitOrder(prevState: any, formData: FormData): Promise<CheckoutState> {
@@ -56,23 +57,25 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
             throw new Error(result.message || "Failed to create order");
         }
 
+        // We cannot use window.location in Server Action, using redirect()
+        // Note: redirect throws an error internally in Next.js, so it must be outside try/catch if we want to catch other errors, 
+        // or we handle the specific redirect error type.
+        // Easiest is to return the URL and let client redirect, OR just redirect here.
+        // However, redirect() terminates execution.
         if (result.payment_url) {
-            // We cannot use window.location in Server Action, using redirect()
-            // Note: redirect throws an error internally in Next.js, so it must be outside try/catch if we want to catch other errors, 
-            // or we handle the specific redirect error type.
-            // Easiest is to return the URL and let client redirect, OR just redirect here.
-            // However, redirect() terminates execution.
-            redirect(result.payment_url);
+            // Return URL to client for redirection (avoids NEXT_REDIRECT error in try-catch blocks)
+            return { success: true, payment_url: result.payment_url };
         } else {
-            throw new Error("No payment URL received");
+            return { error: "No payment URL received" };
         }
 
     } catch (error: any) {
-        // NEXT_REDIRECT is the specific error thrown by redirect()
-        if (error.message === "NEXT_REDIRECT") {
-            throw error;
-        }
         console.error("Order Submit Error:", error);
+        // The instruction provided a specific error message for the catch block.
+        // Assuming this is for general API connection errors.
+        if (error.message === "Failed to fetch") { // Example: network error
+            return { error: "Gagal menghubungkan ke server." };
+        }
         return { error: error.message || "Something went wrong" };
     }
 }
