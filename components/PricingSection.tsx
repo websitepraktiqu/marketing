@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function PricingSection() {
 
     return (
-        <section className="bg-slate-50 py-20 px-6 md:px-12 border-t border-slate-200">
+        <section id="investasi" className="bg-slate-50 py-20 px-6 md:px-12 border-t border-slate-200">
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Investasi Ilmu</h2>
                 <p className="text-slate-600 mb-12">Pilih paket yang sesuai dengan kebutuhan Anda</p>

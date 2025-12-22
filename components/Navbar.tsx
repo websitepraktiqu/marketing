@@ -18,8 +18,7 @@ export default function Navbar() {
 
       <div className="flex gap-4">
         <Link
-          href="https://bit.ly/InterdisiplinPraktiqu"
-          target="_blank"
+          href="#investasi"
           className="bg-white hover:bg-slate-100 text-[#06b6d4] font-bold py-2 px-6 rounded transition-colors text-sm shadow-md"
         >
           Daftar Sekarang

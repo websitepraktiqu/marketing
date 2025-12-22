@@ -18,8 +18,7 @@ export default function CTASection() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
-                        href="https://bit.ly/InterdisiplinPraktiqu"
-                        target="_blank"
+                        href="#investasi"
                         className="bg-white text-[#0ea5e9] font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:bg-slate-100 transition-all transform hover:-translate-y-1 text-lg"
                     >
                         Daftar Sekarang
