@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useEffect, useState } from "react";
+import { submitOrder } from "../lib/actions";
 
 interface PaymentModalProps {
     isOpen: boolean;
@@ -13,51 +14,15 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState("");
+
 
     if (!isOpen) return null;
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsLoading(true);
-        setError("");
+    // useActionState matches standard Next.js 14+ / React Canary actions
+    // If on older Next.js, use useFormState from react-dom
+    const [state, formAction, isPending] = useActionState(submitOrder, {});
 
-        try {
-            const apiUrl = process.env.NEXT_PUBLIC_WP_API_URL || "https://praktiqu.com"; // Fallback/Placeholder
-
-            const response = await fetch(`${apiUrl}/wp-json/praktiqu/v1/create-invoice`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    phone,
-                    product_id: productId,
-                }),
-            });
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(data.message || "Something went wrong");
-            }
-
-            if (data.invoice_url) {
-                window.location.href = data.invoice_url;
-            } else {
-                throw new Error("No invoice URL returned");
-            }
-
-        } catch (err: any) {
-            console.error("Payment Error:", err);
-            setError(err.message || "Gagal memproses pembayaran. Silakan coba lagi.");
-        } finally {
-            setIsLoading(false);
-        }
-    };
+    // Removed manual handleSubmit, using formAction directly on <form>
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
@@ -78,20 +43,26 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                         <p className="text-slate-600 text-sm mt-1">Paket: <span className="font-semibold text-[#0ea5e9]">{productName}</span></p>
                     </div>
 
-                    {error && (
+
+
+                    {state?.error && (
                         <div className="mb-6 p-3 bg-red-50 border border-red-100 text-red-600 text-sm rounded-lg flex items-start gap-2">
                             <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            {error}
+                            {state.error}
                         </div>
                     )}
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form action={formAction} className="space-y-4">
+                        <input type="hidden" name="product_id" value={productId} />
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
                             <input
                                 type="text"
                                 id="name"
                                 value={name}
+                                name="name"
+
+                                // removed onChange, letting native form handle capture
                                 onChange={(e) => setName(e.target.value)}
                                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
                                 placeholder="Masukkan nama lengkap"
@@ -105,6 +76,8 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                 type="email"
                                 id="email"
                                 value={email}
+                                name="email"
+
                                 onChange={(e) => setEmail(e.target.value)}
                                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
                                 placeholder="nama@email.com"
@@ -118,6 +91,8 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                 type="tel"
                                 id="phone"
                                 value={phone}
+                                name="phone"
+
                                 onChange={(e) => setPhone(e.target.value)}
                                 className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
                                 placeholder="08xxxxxxxxxx" // Fonnte often handles 08 automatically, but backend should sanitize
@@ -128,10 +103,10 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
 
                         <button
                             type="submit"
-                            disabled={isLoading}
+                            disabled={isPending}
                             className="w-full bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-xl transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
                         >
-                            {isLoading ? (
+                            {isPending ? (
                                 <>
                                     <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
