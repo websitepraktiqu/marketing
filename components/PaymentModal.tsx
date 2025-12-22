@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { submitOrder } from "../lib/actions";
 
 interface PaymentModalProps {
@@ -18,22 +18,27 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
 
     if (!isOpen) return null;
 
-    const [isPending, startTransition] = useTransition();
+    const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState("");
 
     // Manual submission handler to avoid useActionState (React #310 issues with some versions)
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setError("");
+        setIsPending(true);
 
         const formData = new FormData(event.currentTarget);
 
-        startTransition(async () => {
+        try {
             const result = await submitOrder(null, formData);
             if (result.error) {
                 setError(result.error);
             }
-        });
+        } catch (err) {
+            setError("Terjadi kesalahan yang tidak diketahui.");
+        } finally {
+            setIsPending(false);
+        }
     };
 
     // Removed manual handleSubmit, using formAction directly on <form>
