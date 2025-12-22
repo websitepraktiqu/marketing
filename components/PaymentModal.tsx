@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useState, useTransition } from "react";
 import { submitOrder } from "../lib/actions";
 
 interface PaymentModalProps {
@@ -18,9 +18,23 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
 
     if (!isOpen) return null;
 
-    // useActionState matches standard Next.js 14+ / React Canary actions
-    // If on older Next.js, use useFormState from react-dom
-    const [state, formAction, isPending] = useActionState(submitOrder, {});
+    const [isPending, startTransition] = useTransition();
+    const [error, setError] = useState("");
+
+    // Manual submission handler to avoid useActionState (React #310 issues with some versions)
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError("");
+
+        const formData = new FormData(event.currentTarget);
+
+        startTransition(async () => {
+            const result = await submitOrder(null, formData);
+            if (result.error) {
+                setError(result.error);
+            }
+        });
+    };
 
     // Removed manual handleSubmit, using formAction directly on <form>
 
@@ -45,14 +59,14 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
 
 
 
-                    {state?.error && (
+                    {error && (
                         <div className="mb-6 p-3 bg-red-50 border border-red-100 text-red-600 text-sm rounded-lg flex items-start gap-2">
                             <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            {state.error}
+                            {error}
                         </div>
                     )}
 
-                    <form action={formAction} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                         <input type="hidden" name="product_id" value={productId} />
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
