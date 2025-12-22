@@ -15,6 +15,11 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
 
+    // Additional participants state for controlled inputs (Optional but good for UX if we want to add validation later)
+    // We will rely on FormData for submission, but let's clear inputs if needed or just use uncontrolled for simplicity on the extra ones to save lines?
+    // Let's stick to uncontrolled for extra participants to keep file size manageable, or use a simple loop.
+    // Actually, user wants "form wajib diisi", so "required" attribute is enough.
+
 
     const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState("");
@@ -73,52 +78,112 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <input type="hidden" name="product_id" value={productId} />
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                            <input
-                                type="text"
-                                id="name"
-                                value={name}
-                                name="name"
+                        {productId === 'group' ? (
+                            <div className="space-y-6">
+                                {/* Participant 1 */}
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                                    <h4 className="font-semibold text-slate-700 mb-3 border-b border-slate-200 pb-2">Peserta 1 (Ketua)</h4>
+                                    <div className="space-y-3">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                                            <input name="name" type="text" required className="w-full px-3 py-2 border rounded-lg" placeholder="Nama Peserta 1" defaultValue={name} onChange={(e) => setName(e.target.value)} />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                            <input name="email" type="email" required className="w-full px-3 py-2 border rounded-lg" placeholder="email@contoh.com" defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
+                                            <input name="phone" type="tel" required className="w-full px-3 py-2 border rounded-lg" placeholder="08xxxxxxxx" defaultValue={phone} onChange={(e) => setPhone(e.target.value)} />
+                                        </div>
+                                    </div>
+                                </div>
 
-                                // removed onChange, letting native form handle capture
-                                onChange={(e) => setName(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
-                                placeholder="Masukkan nama lengkap"
-                                required
-                            />
-                        </div>
+                                {/* Participant 2 */}
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                                    <h4 className="font-semibold text-slate-700 mb-3 border-b border-slate-200 pb-2">Peserta 2</h4>
+                                    <div className="space-y-3">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                                            <input name="name_2" type="text" required className="w-full px-3 py-2 border rounded-lg" placeholder="Nama Peserta 2" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                            <input name="email_2" type="email" required className="w-full px-3 py-2 border rounded-lg" placeholder="email@contoh.com" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
+                                            <input name="phone_2" type="tel" required className="w-full px-3 py-2 border rounded-lg" placeholder="08xxxxxxxx" />
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={email}
-                                name="email"
+                                {/* Participant 3 */}
+                                <div className="p-4 bg-slate-50 rounded-lg border border-slate-200">
+                                    <h4 className="font-semibold text-slate-700 mb-3 border-b border-slate-200 pb-2">Peserta 3</h4>
+                                    <div className="space-y-3">
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                                            <input name="name_3" type="text" required className="w-full px-3 py-2 border rounded-lg" placeholder="Nama Peserta 3" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                            <input name="email_3" type="email" required className="w-full px-3 py-2 border rounded-lg" placeholder="email@contoh.com" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
+                                            <input name="phone_3" type="tel" required className="w-full px-3 py-2 border rounded-lg" placeholder="08xxxxxxxx" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            // Personal Plan View (Original)
+                            <div className="space-y-4">
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        value={name}
+                                        name="name"
+                                        onChange={(e) => setName(e.target.value)}
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                        placeholder="Masukkan nama lengkap"
+                                        required
+                                    />
+                                </div>
 
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
-                                placeholder="nama@email.com"
-                                required
-                            />
-                        </div>
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        value={email}
+                                        name="email"
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                        placeholder="nama@email.com"
+                                        required
+                                    />
+                                </div>
 
-                        <div>
-                            <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Nomor WhatsApp</label>
-                            <input
-                                type="tel"
-                                id="phone"
-                                value={phone}
-                                name="phone"
-
-                                onChange={(e) => setPhone(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
-                                placeholder="08xxxxxxxxxx" // Fonnte often handles 08 automatically, but backend should sanitize
-                                required
-                            />
-                            <p className="text-xs text-slate-500 mt-1">*Pastikan nomor terdaftar di WhatsApp untuk notifikasi.</p>
-                        </div>
+                                <div>
+                                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Nomor WhatsApp</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        value={phone}
+                                        name="phone"
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                        placeholder="08xxxxxxxxxx"
+                                        required
+                                    />
+                                    <p className="text-xs text-slate-500 mt-1">*Pastikan nomor terdaftar di WhatsApp untuk notifikasi.</p>
+                                </div>
+                            </div>
+                        )}
 
                         <button
                             type="submit"

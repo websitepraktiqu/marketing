@@ -13,6 +13,15 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
     const phone = formData.get("phone") as string;
     const productId = formData.get("product_id") as string;
 
+    // Extra participants
+    const name_2 = formData.get("name_2") as string;
+    const email_2 = formData.get("email_2") as string;
+    const phone_2 = formData.get("phone_2") as string;
+
+    const name_3 = formData.get("name_3") as string;
+    const email_3 = formData.get("email_3") as string;
+    const phone_3 = formData.get("phone_3") as string;
+
     const apiUrl = process.env.NEXT_PUBLIC_WP_API_URL || "https://event.praktiqu.com";
     // SECURITY: Hardcoded usage to enable "git push" deployment without Vercel dashboard config.
     // Ideally, this should be in Environment Variables.
@@ -35,6 +44,9 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
                 email,
                 phone,
                 product_id: productId,
+                // Pass extras
+                name_2, email_2, phone_2,
+                name_3, email_3, phone_3
             }),
         });
 
