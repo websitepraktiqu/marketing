@@ -16,10 +16,10 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
     const [phone, setPhone] = useState("");
 
 
-    if (!isOpen) return null;
-
     const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState("");
+
+    if (!isOpen) return null;
 
     // Manual submission handler to avoid useActionState (React #310 issues with some versions)
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
