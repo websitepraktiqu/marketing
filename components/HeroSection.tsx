@@ -1,6 +1,11 @@
-import Link from 'next/link';
+"use client";
+
+import { useState } from 'react';
+import PaymentModal from './PaymentModal';
 
 export default function HeroSection() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-16 pb-24 px-6 md:px-12">
             {/* Abstract Background Shapes */}
@@ -88,16 +93,15 @@ export default function HeroSection() {
                                 </p>
                             </div>
 
-                            <Link
-                                href="https://bit.ly/InterdisiplinPraktiqu"
-                                target="_blank"
+                            <button
+                                onClick={() => setIsModalOpen(true)}
                                 className="group relative block w-full overflow-hidden rounded-xl bg-[#0ea5e9] p-4 text-center font-bold text-white shadow-lg transition-all hover:bg-[#0284c7] hover:shadow-cyan-200"
                             >
                                 <span className="relative z-10 flex items-center justify-center gap-2">
                                     Daftar Sekarang
                                     <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </span>
-                            </Link>
+                            </button>
 
                             <div className="mt-6 flex justify-center gap-4 text-center">
                                 <div className="bg-slate-50 px-3 py-2 rounded">
@@ -119,6 +123,13 @@ export default function HeroSection() {
                     </div>
                 </div>
             </div>
+
+            <PaymentModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                productName="Personal Plan"
+                productId="personal"
+            />
         </section>
     );
 }
