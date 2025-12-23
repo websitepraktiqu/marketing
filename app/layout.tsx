@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Praktiqu - Pendekatan Interdisiplin Masalah Tumbuh Kembang Anak",
   description: "Webinar tentang masalah tumbuh kembang dan deviasi perkembangan anak.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
