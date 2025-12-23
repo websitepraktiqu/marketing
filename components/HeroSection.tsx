@@ -15,13 +15,13 @@ export default function HeroSection() {
                 <div className="space-y-8 text-center lg:text-left">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100/50 border border-cyan-200 text-cyan-700 text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
                         <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
-                        Batch 02 Open
+                        Sesi 3 Open
                     </div>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15]">
-                        Pendekatan Interdisiplin <br />
+                        Sistem Sensori, Refleks, <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4]">
-                            Tumbuh Kembang Anak
+                            dan Pola Kerja Psikolog
                         </span>
                     </h1>
 
@@ -63,7 +63,7 @@ export default function HeroSection() {
                                 <span className="inline-block py-1 px-3 rounded text-[10px] font-bold tracking-widest bg-white/20 text-white mb-2 backdrop-blur-sm">
                                     LIMITED SEAT
                                 </span>
-                                <h3 className="text-white font-bold text-lg">Batch 02 Registration</h3>
+                                <h3 className="text-white font-bold text-lg">Sesi 3</h3>
                             </div>
                         </div>
 
@@ -71,11 +71,11 @@ export default function HeroSection() {
                             <div className="flex justify-between items-center mb-6 pb-6 border-b border-slate-100">
                                 <div>
                                     <p className="text-xs text-slate-500 font-bold uppercase mb-1">Date</p>
-                                    <p className="text-slate-900 font-bold">17-18 Des 2025</p>
+                                    <p className="text-slate-900 font-bold">17 Januari 2026</p>
                                 </div>
                                 <div className="text-right">
                                     <p className="text-xs text-slate-500 font-bold uppercase mb-1">Time</p>
-                                    <p className="text-slate-900 font-bold">16.00 WIB</p>
+                                    <p className="text-slate-900 font-bold">09.00 - 16.00 WIB</p>
                                 </div>
                             </div>
 

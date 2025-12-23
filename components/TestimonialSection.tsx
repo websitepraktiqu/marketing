@@ -6,50 +6,37 @@ export default function TestimonialSection() {
                     Apa Kata <span className="text-[#0ea5e9]">Alumni Praktiqu?</span>
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Testimonial 1 */}
                     <div className="bg-slate-50 p-8 rounded-2xl relative">
                         <div className="text-4xl text-[#06b6d4]/20 absolute top-4 left-6 font-serif">"</div>
-                        <p className="text-slate-600 italic mb-6 relative z-10">
-                            "Materinya daging banget! Saya jadi paham kalau tumbuh kembang itu sangat kompleks tapi bisa dipelajari polanya. Sangat membantu karir saya sebagai terapis pemula."
+                        <p className="text-slate-600 italic mb-6 relative z-10 leading-relaxed">
+                            "Sesi ini bikin saya lebih paham cara melihat tumbuh kembang anak secara utuh, bukan sepotong-sepotong. Penjelasan tentang tahapan prenatal sampai DDTK sangat membantu saya saat membaca hasil asesmen dan menentukan rujukan."
                         </p>
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center font-bold text-blue-700">A</div>
-                            <div>
-                                <h4 className="font-bold text-slate-900 text-sm">Andi Pratama</h4>
-                                <p className="text-xs text-slate-500">Terapis Okupasi</p>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Testimonial 2 */}
                     <div className="bg-slate-50 p-8 rounded-2xl relative">
                         <div className="text-4xl text-[#06b6d4]/20 absolute top-4 left-6 font-serif">"</div>
-                        <p className="text-slate-600 italic mb-6 relative z-10">
-                            "Penjelasannya Bu Vonny sangat detail tapi mudah dimengerti. Sesi tanya jawabnya juga sangat memuaskan, semua pertanyaan dijawab tuntas."
+                        <p className="text-slate-600 italic mb-6 relative z-10 leading-relaxed">
+                            "Pembahasan deviasi perkembangan dan contoh kasusnya sangat aplikatif. Saya jadi lebih percaya diri membedakan keterlambatan perkembangan, speech delay, dan indikasi GDD saat diskusi tim interdisiplin."
                         </p>
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-cyan-200 rounded-full flex items-center justify-center font-bold text-cyan-700">S</div>
-                            <div>
-                                <h4 className="font-bold text-slate-900 text-sm">Siti Nurhaliza</h4>
-                                <p className="text-xs text-slate-500">Mahasiswa Psikologi</p>
-                            </div>
-                        </div>
                     </div>
 
                     {/* Testimonial 3 */}
                     <div className="bg-slate-50 p-8 rounded-2xl relative">
                         <div className="text-4xl text-[#06b6d4]/20 absolute top-4 left-6 font-serif">"</div>
-                        <p className="text-slate-600 italic mb-6 relative z-10">
-                            "Join yang paket group bareng teman-teman kantor, worth it banget! Insight-nya bisa langsung kami diskusikan dan terapkan di tempat kerja."
+                        <p className="text-slate-600 italic mb-6 relative z-10 leading-relaxed">
+                            "Yang paling saya rasakan, sudut pandang saya jadi lebih sistematis. Tidak hanya fokus ke perilaku anak, tapi juga memahami dasar sensori, refleks awal, dan kaitannya dengan perkembangan selanjutnya."
                         </p>
-                        <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 bg-rose-200 rounded-full flex items-center justify-center font-bold text-rose-700">R</div>
-                            <div>
-                                <h4 className="font-bold text-slate-900 text-sm">Rina Wulandari</h4>
-                                <p className="text-xs text-slate-500">Guru PAUD</p>
-                            </div>
-                        </div>
+                    </div>
+
+                    {/* Testimonial 4 */}
+                    <div className="bg-slate-50 p-8 rounded-2xl relative">
+                        <div className="text-4xl text-[#06b6d4]/20 absolute top-4 left-6 font-serif">"</div>
+                        <p className="text-slate-600 italic mb-6 relative z-10 leading-relaxed">
+                            "Materinya padat tapi terstruktur. Cocok untuk praktisi yang butuh penguatan konsep dasar tumbuh kembang sekaligus gambaran nyata di lapangan."
+                        </p>
                     </div>
                 </div>
             </div>

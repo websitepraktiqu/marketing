@@ -3,69 +3,39 @@ export default function AgendaSection() {
         <section className="bg-white py-20 px-6 md:px-12">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
-                    Agenda & <span className="text-[#0ea5e9]">Materi</span>
+                    TOPIK
                 </h2>
 
-                <div className="space-y-6">
-                    {/* Day 1 */}
-                    <div className="border border-slate-200 rounded-xl overflow-hidden">
-                        <div className="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
-                            <h3 className="font-bold text-slate-900">Hari Pertama</h3>
-                            <span className="text-xs font-bold text-slate-500 bg-white px-2 py-1 rounded border border-slate-200">17 Des 2025</span>
-                        </div>
-                        <div className="p-6 space-y-4">
-                            <div className="flex gap-4">
-                                <span className="text-[#06b6d4] font-bold w-16 text-sm">16.00</span>
-                                <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">Pembukaan & Pengantar</h4>
-                                    <p className="text-slate-600 text-sm">Pengenalan ruang lingkup tumbuh kembang anak.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <span className="text-[#06b6d4] font-bold w-16 text-sm">16.30</span>
-                                <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">Fase Prenatal & Refleks Awal</h4>
-                                    <p className="text-slate-600 text-sm">Memahami perkembangan janin dan refleks primitif bayi baru lahir.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <span className="text-[#06b6d4] font-bold w-16 text-sm">18.00</span>
-                                <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">Sensori & Motorik Dasar</h4>
-                                    <p className="text-slate-600 text-sm">Dasar-dasar sistem sensorik dan milestone motorik.</p>
-                                </div>
-                            </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold shrink-0">1</div>
+                        <div>
+                            <h3 className="font-bold text-slate-900 text-lg mb-2">Perkenalan Sistem Sensori</h3>
+                            <p className="text-slate-600 text-sm">Dasar-dasar sistem sensorik dalam konteks tumbuh kembang.</p>
                         </div>
                     </div>
 
-                    {/* Day 2 */}
-                    <div className="border border-slate-200 rounded-xl overflow-hidden">
-                        <div className="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
-                            <h3 className="font-bold text-slate-900">Hari Kedua</h3>
-                            <span className="text-xs font-bold text-slate-500 bg-white px-2 py-1 rounded border border-slate-200">18 Des 2025</span>
+                    <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold shrink-0">2</div>
+                        <div>
+                            <h3 className="font-bold text-slate-900 text-lg mb-2">Sistem Sensori dalam Tumbuh Kembang</h3>
+                            <p className="text-slate-600 text-sm">Pembahasan spesifik peran sensori dalam tiap tahapan perkembangan.</p>
                         </div>
-                        <div className="p-6 space-y-4">
-                            <div className="flex gap-4">
-                                <span className="text-[#06b6d4] font-bold w-16 text-sm">16.00</span>
-                                <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">Postnatal & DDTK</h4>
-                                    <p className="text-slate-600 text-sm">Deteksi Dini Tumbuh Kembang (DDTK) dan instrumennya.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <span className="text-[#06b6d4] font-bold w-16 text-sm">17.30</span>
-                                <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">Deviasi Perkembangan</h4>
-                                    <p className="text-slate-600 text-sm">Studi kasus: Global Developmental Delay, Autism Speech Delay, dll.</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <span className="text-[#06b6d4] font-bold w-16 text-sm">19.00</span>
-                                <div>
-                                    <h4 className="font-bold text-slate-900 text-sm">Q&A & Penutup</h4>
-                                    <p className="text-slate-600 text-sm">Sesi tanya jawab interaktif dengan narasumber.</p>
-                                </div>
-                            </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold shrink-0">3</div>
+                        <div>
+                            <h3 className="font-bold text-slate-900 text-lg mb-2">Perkenalan Sistem Refleks</h3>
+                            <p className="text-slate-600 text-sm">Memahami refleks primitif dan integrasinya.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200">
+                        <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center font-bold shrink-0">4</div>
+                        <div>
+                            <h3 className="font-bold text-slate-900 text-lg mb-2">Pola Kerja Psikolog</h3>
+                            <p className="text-slate-600 text-sm">Rujukan, form pemeriksaan, peran PIC Intervensi dan pola kerjasama antar profesional.</p>
                         </div>
                     </div>
                 </div>
