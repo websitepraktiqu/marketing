@@ -1,11 +1,35 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
 
     const [pricingMode, setPricingMode] = useState<'personal' | 'group'>('personal');
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+    useEffect(() => {
+        const targetDate = new Date('2026-01-17T00:00:00').getTime();
+
+        const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+            } else {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                setTimeLeft({ days, hours, minutes, seconds });
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-10 pb-24 px-6 md:px-12">
@@ -128,9 +152,10 @@ export default function HeroSection() {
                                 <div className="mb-4 bg-orange-50 border border-orange-100 rounded-lg p-3 flex items-center justify-between">
                                     <span className="text-xs font-bold text-orange-600 uppercase">Promo Berakhir:</span>
                                     <div className="flex gap-2 text-xs font-mono font-bold text-orange-700">
-                                        <span className="bg-white px-2 py-1 rounded border border-orange-200">02</span> :
-                                        <span className="bg-white px-2 py-1 rounded border border-orange-200">14</span> :
-                                        <span className="bg-white px-2 py-1 rounded border border-orange-200">30</span>
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200 w-8 text-center">{String(timeLeft.days).padStart(2, '0')}</span> :
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200 w-8 text-center">{String(timeLeft.hours).padStart(2, '0')}</span> :
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200 w-8 text-center">{String(timeLeft.minutes).padStart(2, '0')}</span> :
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200 w-8 text-center">{String(timeLeft.seconds).padStart(2, '0')}</span>
                                     </div>
                                 </div>
 
