@@ -1,17 +1,4 @@
-export default function TopicSection() {
-    return (
-        <section className="bg-white py-20 px-6 md:px-12">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
-                    Kenapa harus ikutan di <br />
-                    <span className="text-[#06b6d4]">Mini Course Ini?</span>
-                </h2>
-
-                <Carousel />
-            </div>
-        </section>
-    );
-}
+"use client";
 
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -146,5 +133,20 @@ function Carousel() {
                 </button>
             </div>
         </div>
+    );
+}
+
+export default function TopicSection() {
+    return (
+        <section className="bg-white py-20 px-6 md:px-12">
+            <div className="max-w-7xl mx-auto">
+                <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
+                    Kenapa harus ikutan di <br />
+                    <span className="text-[#06b6d4]">Mini Course Ini?</span>
+                </h2>
+
+                <Carousel />
+            </div>
+        </section>
     );
 }
