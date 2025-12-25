@@ -148,7 +148,7 @@ export default function HeroSection() {
                                     <div className="mt-4 bg-[#4ba0ea] rounded-lg p-2 text-center shadow-inner relative overflow-hidden">
                                         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '8px 8px' }}></div>
                                         <p className="text-white text-xs font-medium relative z-10">
-                                            Diskon khusus 10% untuk pendaftaran sebelum 10 Desember!
+                                            Diskon khusus 10% untuk pendaftaran sebelum 10 Januari!
                                         </p>
                                     </div>
                                 </div>
