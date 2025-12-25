@@ -11,59 +11,99 @@ export default function ExpertSection() {
 
                 <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide">
                     {/* Expert 1 */}
-                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
-                        <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
                             <Image
-                                src="/images/vonny.jpg"
-                                alt="Vonny Susanty"
+                                src="/images/experts/expert-1.jpg"
+                                alt="Expert 1"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover"
                             />
                         </div>
-                        <h3 className="font-bold text-slate-900 text-sm mb-1">Vonny Susanty, AMd.OT., M.Psi.</h3>
-                        <p className="text-[#0ea5e9] text-xs font-semibold">Psikolog & Terapis Okupasional</p>
                     </div>
 
                     {/* Expert 2 */}
-                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
-                        <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
                             <Image
-                                src="/images/hilda.jpg"
-                                alt="Hilda Cokrojoyo"
+                                src="/images/experts/expert-2.jpg"
+                                alt="Expert 2"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover"
                             />
                         </div>
-                        <h3 className="font-bold text-slate-900 text-sm mb-1">Hilda Cokrojoyo, S.Psi., M.S.Ed</h3>
-                        <p className="text-[#0ea5e9] text-xs font-semibold">Special Education Consultant</p>
                     </div>
 
                     {/* Expert 3 */}
-                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
-                        <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
                             <Image
-                                src="/images/rina.jpg"
-                                alt="Rina Saputri"
+                                src="/images/experts/expert-3.jpg"
+                                alt="Expert 3"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover"
                             />
                         </div>
-                        <h3 className="font-bold text-slate-900 text-sm mb-1">Rina Saputri, S.Tr. Kes</h3>
-                        <p className="text-[#0ea5e9] text-xs font-semibold">Terapis Okupasional</p>
                     </div>
 
                     {/* Expert 4 */}
-                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
-                        <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
                             <Image
-                                src="/images/indah.jpg"
-                                alt="Indah Setiowati"
+                                src="/images/experts/expert-4.jpg"
+                                alt="Expert 4"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover"
                             />
                         </div>
-                        <h3 className="font-bold text-slate-900 text-sm mb-1">Indah Setiowati, S.FT</h3>
-                        <p className="text-[#0ea5e9] text-xs font-semibold">Fisioterapis</p>
+                    </div>
+
+                    {/* Expert 5 */}
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
+                            <Image
+                                src="/images/experts/expert-5.jpg"
+                                alt="Expert 5"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Expert 6 */}
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
+                            <Image
+                                src="/images/experts/expert-6.jpg"
+                                alt="Expert 6"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Expert 7 */}
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
+                            <Image
+                                src="/images/experts/expert-7.jpg"
+                                alt="Expert 7"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Expert 8 */}
+                    <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
+                        <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
+                            <Image
+                                src="/images/experts/expert-8.jpg"
+                                alt="Expert 8"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
