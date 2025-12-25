@@ -7,14 +7,36 @@ import { submitOrder } from "../../lib/actions";
 
 function CheckoutForm() {
     const searchParams = useSearchParams();
-    const plan = searchParams.get("plan") || "personal"; // default to personal
-    const productId = plan === "group" ? "group" : "personal";
-    const productName = plan === "group" ? "Group Plan (3 Orang)" : "Personal Plan (1 Orang)";
+    const plan = searchParams.get("plan") || "personal";
 
-    // Form States
+    let productId = plan;
+    let productName = "Personal Plan (1 Orang)";
+    let priceDisplay = "Rp 450.000 / orang";
+
+    if (plan === "group") {
+        productId = "group";
+        productName = "Group Plan (3 Orang)";
+        priceDisplay = "Rp 1.200.000 (Hemat Rp 150rb)";
+    } else if (plan === "bundle-personal") {
+        productId = "bundle-personal";
+        productName = "Paket All Session - Personal";
+        priceDisplay = "Rp 1.699.000 / orang";
+    } else if (plan === "bundle-group") {
+        productId = "bundle-group";
+        productName = "Paket All Session - Group";
+        priceDisplay = "Rp 1.599.000 (Hemat Banyak)";
+    } else {
+        // default fallback
+        productId = "personal";
+        productName = "Personal Plan (1 Orang)";
+        priceDisplay = "Rp 450.000 / orang";
+    }
+
+    const isGroupProduct = productId === 'group' || productId === 'bundle-group';
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [profesi, setProfesi] = useState("");
 
     const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState("");
@@ -47,7 +69,7 @@ function CheckoutForm() {
                 <h1 className="text-2xl font-bold text-slate-900">Form Pendaftaran</h1>
                 <p className="text-slate-600 mt-2">Anda memilih: <span className="font-semibold text-[#0ea5e9]">{productName}</span></p>
                 <div className="mt-4 inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm">
-                    {plan === "group" ? "Rp 1.200.000 (Hemat Rp 150rb)" : "Rp 450.000 / orang"}
+                    {priceDisplay}
                 </div>
             </div>
 
@@ -61,7 +83,7 @@ function CheckoutForm() {
             <form onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="product_id" value={productId} />
 
-                {productId === 'group' ? (
+                {isGroupProduct ? (
                     <div className="space-y-8">
                         {/* Participant 1 */}
                         <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
@@ -81,6 +103,10 @@ function CheckoutForm() {
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
                                     <input name="phone" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="08xxxxxxxx" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                    <input name="profesi" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Guru TK / Psikolog / Orang Tua" value={profesi} onChange={(e) => setProfesi(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -104,6 +130,10 @@ function CheckoutForm() {
                                     <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
                                     <input name="phone_2" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="08xxxxxxxx" />
                                 </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                    <input name="profesi_2" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Guru TK / Psikolog / Orang Tua" />
+                                </div>
                             </div>
                         </div>
 
@@ -125,6 +155,10 @@ function CheckoutForm() {
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
                                     <input name="phone_3" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="08xxxxxxxx" />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                    <input name="profesi_3" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Guru TK / Psikolog / Orang Tua" />
                                 </div>
                             </div>
                         </div>
@@ -173,6 +207,20 @@ function CheckoutForm() {
                                 required
                             />
                             <p className="text-xs text-slate-500 mt-1">*Pastikan nomor terdaftar di WhatsApp untuk notifikasi.</p>
+                        </div>
+
+                        <div>
+                            <label htmlFor="profesi" className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                            <input
+                                type="text"
+                                id="profesi"
+                                value={profesi}
+                                name="profesi"
+                                onChange={(e) => setProfesi(e.target.value)}
+                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                placeholder="Contoh: Guru TK / Psikolog / Orang Tua"
+                                required
+                            />
                         </div>
                     </div>
                 )}

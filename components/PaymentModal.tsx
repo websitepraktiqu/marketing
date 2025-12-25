@@ -14,6 +14,7 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [profesi, setProfesi] = useState("");
 
     // Additional participants state for controlled inputs (Optional but good for UX if we want to add validation later)
     // We will rely on FormData for submission, but let's clear inputs if needed or just use uncontrolled for simplicity on the extra ones to save lines?
@@ -100,6 +101,10 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                             <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
                                             <input name="phone" type="tel" required className="w-full px-3 py-2 border rounded-lg" placeholder="08xxxxxxxx" defaultValue={phone} onChange={(e) => setPhone(e.target.value)} />
                                         </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                            <input name="profesi" type="text" required className="w-full px-3 py-2 border rounded-lg" placeholder="Profesi" defaultValue={profesi} onChange={(e) => setProfesi(e.target.value)} />
+                                        </div>
                                     </div>
                                 </div>
 
@@ -119,6 +124,10 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                             <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
                                             <input name="phone_2" type="tel" required className="w-full px-3 py-2 border rounded-lg" placeholder="08xxxxxxxx" />
                                         </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                            <input name="profesi_2" type="text" required className="w-full px-3 py-2 border rounded-lg" placeholder="Profesi" />
+                                        </div>
                                     </div>
                                 </div>
 
@@ -137,6 +146,10 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
                                             <input name="phone_3" type="tel" required className="w-full px-3 py-2 border rounded-lg" placeholder="08xxxxxxxx" />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                            <input name="profesi_3" type="text" required className="w-full px-3 py-2 border rounded-lg" placeholder="Profesi" />
                                         </div>
                                     </div>
                                 </div>
@@ -185,6 +198,20 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                         required
                                     />
                                     <p className="text-xs text-slate-500 mt-1">*Pastikan nomor terdaftar di WhatsApp untuk notifikasi.</p>
+                                </div>
+
+                                <div>
+                                    <label htmlFor="profesi" className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
+                                    <input
+                                        type="text"
+                                        id="profesi"
+                                        value={profesi}
+                                        name="profesi"
+                                        onChange={(e) => setProfesi(e.target.value)}
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                        placeholder="Contoh: Guru / Mahasiswa"
+                                        required
+                                    />
                                 </div>
                             </div>
                         )}

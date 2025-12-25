@@ -47,7 +47,12 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
                 product_id: productId,
                 // Pass extras
                 name_2, email_2, phone_2,
-                name_3, email_3, phone_3
+                name_3, email_3, phone_3,
+
+                // Pass professions
+                profesi: formData.get("profesi") as string,
+                profesi_2: formData.get("profesi_2") as string,
+                profesi_3: formData.get("profesi_3") as string,
             }),
         });
 
