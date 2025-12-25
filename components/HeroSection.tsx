@@ -143,10 +143,14 @@ export default function HeroSection() {
                                         </span>
                                         <span className="text-sm text-slate-400 line-through decoration-red-400">Rp600rb</span>
                                     </div>
-                                    <p className="text-xs text-green-600 mt-2 flex items-center gap-1">
-                                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                                        {pricingMode === 'personal' ? 'Hemat Rp50rb untuk grup' : 'Lebih hemat dengan daftar grup'}
-                                    </p>
+
+                                    {/* Discount Banner (Replaces Green Text) */}
+                                    <div className="mt-4 bg-[#4ba0ea] rounded-lg p-2 text-center shadow-inner relative overflow-hidden">
+                                        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '8px 8px' }}></div>
+                                        <p className="text-white text-xs font-medium relative z-10">
+                                            Diskon khusus 10% untuk pendaftaran sebelum 10 Desember!
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <Link
