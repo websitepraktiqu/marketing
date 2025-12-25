@@ -12,7 +12,7 @@ export default function PricingSection() {
             </div>
 
             {/* Bundle Plan Section */}
-            <div className="max-w-3xl mx-auto mb-16 bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-[#0ea5e9] relative">
+            <div className="max-w-4xl mx-auto mb-16 bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-[#0ea5e9] relative">
                 <div className="absolute top-0 right-0 bg-[#0ea5e9] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider">
                     Recommended
                 </div>
