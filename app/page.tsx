@@ -16,14 +16,14 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <TopicSection /> {/* Keuntungan/Topics */}
-        <AgendaSection />
-        <ExpertSection />
+        <AgendaSection /> {/* Kisi Materi per Sesi (Carousel) */}
+        <TopicSection /> {/* Benefit Konten Keseluruhan (Kenapa harus ikutan) */}
+        <ExpertSection /> {/* Profil Pemateri (Carousel) */}
         <CertificateSection />
-        <PricingSection />
-        <TestimonialSection />
-        <FAQSection />
-        <CTASection />
+        <TestimonialSection /> {/* Testimoni */}
+        <PricingSection /> {/* CTA Pembelian Sesi & Bundling */}
+        <FAQSection /> {/* FAQ */}
+        <CTASection /> {/* Final CTA */}
       </main>
       <Footer />
     </div>

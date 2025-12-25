@@ -2,14 +2,16 @@ import Image from 'next/image';
 
 export default function ExpertSection() {
     return (
-        <section id="expert" className="bg-[#06b6d4] py-20 px-6 md:px-12">
-            <div className="max-w-7xl mx-auto text-center">
-                <h2 className="text-3xl font-bold text-white mb-2">Belajar Langsung dari Expert:</h2>
-                <p className="text-white/90 mb-12">Dapatkan insight mendalam dari praktisi berpengalaman.</p>
+        <section id="expert" className="bg-[#06b6d4] py-20 px-6 md:px-12 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold text-white mb-2">Belajar Langsung dari Expert:</h2>
+                    <p className="text-white/90">Dapatkan insight mendalam dari praktisi berpengalaman.</p>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide">
                     {/* Expert 1 */}
-                    <div className="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
                         <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
                             <Image
                                 src="/images/vonny.jpg"
@@ -23,7 +25,7 @@ export default function ExpertSection() {
                     </div>
 
                     {/* Expert 2 */}
-                    <div className="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
                         <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
                             <Image
                                 src="/images/hilda.jpg"
@@ -37,7 +39,7 @@ export default function ExpertSection() {
                     </div>
 
                     {/* Expert 3 */}
-                    <div className="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
                         <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
                             <Image
                                 src="/images/rina.jpg"
@@ -51,7 +53,7 @@ export default function ExpertSection() {
                     </div>
 
                     {/* Expert 4 */}
-                    <div className="bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div className="min-w-[280px] bg-white p-6 rounded-xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300 snap-center">
                         <div className="w-full h-64 bg-slate-200 rounded-lg mb-4 overflow-hidden relative group">
                             <Image
                                 src="/images/indah.jpg"
