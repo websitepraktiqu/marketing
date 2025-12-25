@@ -124,6 +124,16 @@ export default function HeroSection() {
                                     </button>
                                 </div>
 
+                                {/* Countdown Timer */}
+                                <div className="mb-4 bg-orange-50 border border-orange-100 rounded-lg p-3 flex items-center justify-between">
+                                    <span className="text-xs font-bold text-orange-600 uppercase">Promo Berakhir:</span>
+                                    <div className="flex gap-2 text-xs font-mono font-bold text-orange-700">
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200">02</span> :
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200">14</span> :
+                                        <span className="bg-white px-2 py-1 rounded border border-orange-200">30</span>
+                                    </div>
+                                </div>
+
                                 <div className="mb-6">
                                     <p className="text-xs text-slate-500 font-bold uppercase mb-2">Special Price</p>
                                     <div className="flex items-baseline gap-3">
@@ -141,13 +151,34 @@ export default function HeroSection() {
 
                                 <Link
                                     href={`/checkout?plan=${pricingMode}`}
-                                    className="group relative block w-full overflow-hidden rounded-xl bg-[#0ea5e9] p-4 text-center font-bold text-white shadow-lg transition-all hover:bg-[#0284c7] hover:shadow-cyan-200"
+                                    className="group relative block w-full overflow-hidden rounded-xl bg-[#0ea5e9] p-4 text-center font-bold text-white shadow-lg transition-all hover:bg-[#0284c7] hover:shadow-cyan-200 mb-6"
                                 >
                                     <span className="relative z-10 flex items-center justify-center gap-2">
                                         Daftar {pricingMode === 'personal' ? 'Sekarang' : 'Grup'}
                                         <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </span>
                                 </Link>
+
+                                {/* Social Proof */}
+                                <div className="flex items-center justify-center gap-3">
+                                    <div className="flex -space-x-2">
+                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                                            <svg className="w-full h-full text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-300 overflow-hidden">
+                                            <svg className="w-full h-full text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+                                            <svg className="w-full h-full text-slate-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full border-2 border-white bg-cyan-100 flex items-center justify-center text-[10px] font-bold text-cyan-600">
+                                            500+
+                                        </div>
+                                    </div>
+                                    <p className="text-xs text-slate-500 font-medium">
+                                        Alumni telah bergabung
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
