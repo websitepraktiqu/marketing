@@ -6,6 +6,24 @@
   }
 }
 
+/* Custom Scrollbar */
+.scrollbar-custom::-webkit-scrollbar {
+  height: 12px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
 body {
   background-color: #ffffff;
   color: #0f172a;

@@ -9,7 +9,7 @@ export default function ExpertSection() {
                     <p className="text-white/90">Dapatkan insight mendalam dari praktisi berpengalaman.</p>
                 </div>
 
-                <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide">
+                <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-custom">
                     {/* Expert 1 */}
                     <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
                         <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
