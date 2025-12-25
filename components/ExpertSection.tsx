@@ -32,7 +32,7 @@ export default function ExpertSection() {
                 <div
                     ref={scrollRef}
                     onScroll={handleScroll}
-                    className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide"
+                    className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                 >
                     {/* Expert 1 */}
                     <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
