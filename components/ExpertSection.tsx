@@ -1,6 +1,26 @@
+"use client";
+
 import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react';
 
 export default function ExpertSection() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [progress, setProgress] = useState(0);
+
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+            const scrollPercentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+            setProgress(scrollPercentage);
+        }
+    };
+
+    useEffect(() => {
+        handleScroll(); // Initial check
+        window.addEventListener('resize', handleScroll);
+        return () => window.removeEventListener('resize', handleScroll);
+    }, []);
+
     return (
         <section id="expert" className="bg-[#06b6d4] py-20 px-6 md:px-12 overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -9,7 +29,11 @@ export default function ExpertSection() {
                     <p className="text-white/90">Dapatkan insight mendalam dari praktisi berpengalaman.</p>
                 </div>
 
-                <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-custom">
+                <div
+                    ref={scrollRef}
+                    onScroll={handleScroll}
+                    className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide"
+                >
                     {/* Expert 1 */}
                     <div className="min-w-[280px] md:min-w-[320px] bg-transparent transform hover:-translate-y-2 transition-transform duration-300 snap-center">
                         <div className="w-full relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg group">
@@ -105,6 +129,14 @@ export default function ExpertSection() {
                             />
                         </div>
                     </div>
+                </div>
+
+                {/* Progress Bar */}
+                <div className="w-full max-w-md mx-auto h-2 bg-white/30 rounded-full mt-4 overflow-hidden">
+                    <div
+                        className="h-full bg-white rounded-full transition-all duration-150 ease-out"
+                        style={{ width: `${Math.max(5, progress)}%` }}
+                    />
                 </div>
             </div>
         </section>
