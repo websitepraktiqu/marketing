@@ -131,12 +131,37 @@ export default function ExpertSection() {
                     </div>
                 </div>
 
-                {/* Progress Bar */}
-                <div className="w-full max-w-md mx-auto h-2 bg-white/30 rounded-full mt-4 overflow-hidden">
-                    <div
-                        className="h-full bg-white rounded-full transition-all duration-150 ease-out"
-                        style={{ width: `${Math.max(5, progress)}%` }}
-                    />
+                {/* Progress Bar and Navigation */}
+                <div className="flex items-center justify-center gap-4 mt-8">
+                    {/* Previous Button */}
+                    <button
+                        onClick={() => scrollRef.current?.scrollBy({ left: -320, behavior: 'smooth' })}
+                        className="w-10 h-10 rounded-full bg-slate-900/20 hover:bg-slate-900 text-white flex items-center justify-center transition-colors backdrop-blur-sm"
+                        aria-label="Previous slide"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+
+                    {/* Progress Bar */}
+                    <div className="w-full max-w-xs h-1 bg-white/30 rounded-full overflow-hidden">
+                        <div
+                            className="h-full bg-white rounded-full transition-all duration-150 ease-out"
+                            style={{ width: `${Math.max(5, progress)}%` }}
+                        />
+                    </div>
+
+                    {/* Next Button */}
+                    <button
+                        onClick={() => scrollRef.current?.scrollBy({ left: 320, behavior: 'smooth' })}
+                        className="w-10 h-10 rounded-full bg-slate-900/20 hover:bg-slate-900 text-white flex items-center justify-center transition-colors backdrop-blur-sm"
+                        aria-label="Next slide"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
