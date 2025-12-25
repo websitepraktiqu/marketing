@@ -1,3 +1,9 @@
+"use client";
+
+import React, { useEffect, useState, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+
 const sessions = [
     {
         id: 1,
@@ -42,6 +48,26 @@ const sessions = [
 ];
 
 export default function AgendaSection() {
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'start', containScroll: 'trimSnaps' }, [Autoplay({ delay: 5000 })]);
+    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+
+    const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setPrevBtnEnabled(emblaApi.canScrollPrev());
+        setNextBtnEnabled(emblaApi.canScrollNext());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        onSelect();
+        emblaApi.on('select', onSelect);
+        emblaApi.on('reInit', onSelect);
+    }, [emblaApi, onSelect]);
+
     return (
         <section className="bg-slate-900 py-20 px-6 md:px-12 overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -53,29 +79,51 @@ export default function AgendaSection() {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-hide">
-                    {sessions.map((session) => (
-                        <div
-                            key={session.id}
-                            className="min-w-[300px] md:min-w-[350px] bg-slate-800 rounded-2xl p-6 border border-slate-700 snap-center hover:border-cyan-500/50 transition-colors"
-                        >
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
-                                    {session.id}
-                                </div>
-                                <h3 className="text-lg font-bold text-white leading-tight">{session.title}</h3>
-                            </div>
+                <div className="relative">
+                    <div className="overflow-hidden" ref={emblaRef}>
+                        <div className="flex gap-6">
+                            {sessions.map((session) => (
+                                <div
+                                    key={session.id}
+                                    className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_30%] min-w-0 bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-cyan-500/50 transition-colors"
+                                >
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="w-10 h-10 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold">
+                                            {session.id}
+                                        </div>
+                                        <h3 className="text-lg font-bold text-white leading-tight">{session.title}</h3>
+                                    </div>
 
-                            <ul className="space-y-3">
-                                {session.topics.map((topic, idx) => (
-                                    <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                                        <svg className="w-4 h-4 text-cyan-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                        {topic}
-                                    </li>
-                                ))}
-                            </ul>
+                                    <ul className="space-y-3">
+                                        {session.topics.map((topic, idx) => (
+                                            <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                                                <svg className="w-4 h-4 text-cyan-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                {topic}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <div className="flex justify-center gap-4 mt-8">
+                        <button
+                            className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${prevBtnEnabled ? 'bg-slate-800 text-white hover:bg-slate-700' : 'bg-slate-900/50 text-slate-600 cursor-not-allowed'}`}
+                            onClick={scrollPrev}
+                            disabled={!prevBtnEnabled}
+                        >
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button
+                            className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${nextBtnEnabled ? 'bg-slate-800 text-white hover:bg-slate-700' : 'bg-slate-900/50 text-slate-600 cursor-not-allowed'}`}
+                            onClick={scrollNext}
+                            disabled={!nextBtnEnabled}
+                        >
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
