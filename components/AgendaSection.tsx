@@ -7,29 +7,34 @@ import Image from 'next/image';
 
 const sessions = [
     {
+        id: 5,
+        image: "/images/agenda/agenda-5.png",
+        alt: "Talkshow Special Price",
+        isFinished: true
+    },
+    {
         id: 1,
         image: "/images/agenda/agenda-1.png",
-        alt: "Session 1 Agenda"
+        alt: "Session 1 Agenda",
+        isFinished: true
     },
     {
         id: 2,
         image: "/images/agenda/agenda-2.png",
-        alt: "Session 2 Agenda"
+        alt: "Session 2 Agenda",
+        isFinished: true
     },
     {
         id: 3,
         image: "/images/agenda/agenda-3.png",
-        alt: "Session 3 Agenda"
+        alt: "Session 3 Agenda",
+        isFinished: false
     },
     {
         id: 4,
         image: "/images/agenda/agenda-4.png",
-        alt: "Case Study Session"
-    },
-    {
-        id: 5,
-        image: "/images/agenda/agenda-5.png",
-        alt: "Talkshow Special Price"
+        alt: "Case Study Session",
+        isFinished: false
     }
 ];
 
@@ -65,22 +70,29 @@ export default function AgendaSection() {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative max-w-5xl mx-auto">
-                    <div className="overflow-visible" ref={emblaRef}>
+                <div className="relative max-w-7xl mx-auto px-4 md:px-0">
+                    <div className="overflow-hidden py-10 -my-10" ref={emblaRef}>
                         <div className="flex -ml-4">
                             {sessions.map((session) => (
                                 <div
                                     key={session.id}
-                                    className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_35%] pl-4 min-w-0"
+                                    className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_33.33%] pl-4 min-w-0"
                                 >
                                     <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-700/50 group">
                                         <Image
                                             src={session.image}
                                             alt={session.alt}
                                             fill
-                                            className="object-cover hover:scale-105 transition-transform duration-500"
+                                            className={`object-cover transition-transform duration-500 ${session.isFinished ? 'blur-[2px]' : 'hover:scale-105'}`}
                                             sizes="(max-width: 768px) 85vw, (max-width: 1024px) 45vw, 35vw"
                                         />
+                                        {session.isFinished && (
+                                            <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center backdrop-blur-[1px]">
+                                                <div className="bg-red-500/90 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg border border-red-400 transform -rotate-12 uppercase tracking-wider">
+                                                    Acara Sudah Selesai
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))}
