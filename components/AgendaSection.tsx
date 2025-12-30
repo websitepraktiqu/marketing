@@ -24,7 +24,12 @@ const sessions = [
     {
         id: 4,
         image: "/images/agenda/agenda-4.png",
-        alt: "Session 4 Agenda"
+        alt: "Case Study Session"
+    },
+    {
+        id: 5,
+        image: "/images/agenda/agenda-5.png",
+        alt: "Talkshow Special Price"
     }
 ];
 
