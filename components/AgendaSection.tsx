@@ -88,8 +88,8 @@ export default function AgendaSection() {
                                         />
                                         {session.isFinished && (
                                             <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center backdrop-blur-[1px]">
-                                                <div className="bg-red-500/90 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg border border-red-400 transform -rotate-12 uppercase tracking-wider">
-                                                    Acara Sudah Selesai
+                                                <div className="bg-green-500/90 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg border border-green-400 transform -rotate-12 uppercase tracking-wider">
+                                                    Tersedia Rekaman
                                                 </div>
                                             </div>
                                         )}
