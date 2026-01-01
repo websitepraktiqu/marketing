@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
+import React, { useState } from 'react';
 
 const roadmapData = [
     {
@@ -31,125 +30,131 @@ const roadmapData = [
     {
         id: "05",
         date: "21 Februari 2026",
-        type: "",
+        type: "Diskusi Kasus",
         title: "Diskusi Kasus",
     }
 ];
 
 export default function RoadmapSection() {
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-        align: 'start',
-        containScroll: 'trimSnaps',
-        dragFree: true
-    });
-    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
 
-    const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-    const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+    const goToPrev = () => {
+        setActiveIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    };
 
-    const onSelect = useCallback(() => {
-        if (!emblaApi) return;
-        setPrevBtnEnabled(emblaApi.canScrollPrev());
-        setNextBtnEnabled(emblaApi.canScrollNext());
-    }, [emblaApi]);
+    const goToNext = () => {
+        setActiveIndex((prev) => (prev < roadmapData.length - 1 ? prev + 1 : prev));
+    };
 
-    useEffect(() => {
-        if (!emblaApi) return;
-        onSelect();
-        emblaApi.on('select', onSelect);
-        emblaApi.on('reInit', onSelect);
-    }, [emblaApi, onSelect]);
+    const activeItem = roadmapData[activeIndex];
 
     return (
-        <section className="bg-sky-50 py-24 px-4 overflow-hidden relative font-sans">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-12 flex flex-col md:flex-row justify-between items-end px-4 md:px-0">
-                    <div className="w-full md:w-auto text-center md:text-left mb-6 md:mb-0">
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-sky-900 uppercase tracking-tight mb-2">
-                            Roadmap.
-                        </h2>
-                        <p className="text-sky-500 font-medium">Perjalanan pembelajaran Anda bersama kami</p>
-                    </div>
-
-                    {/* Navigation Buttons (Visible on all screens now) */}
-                    <div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
-                        <button
-                            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all border border-sky-100 ${!prevBtnEnabled ? 'opacity-40 cursor-not-allowed bg-sky-50 text-sky-300' : 'bg-white text-sky-500 hover:bg-sky-500 hover:text-white shadow-sm'}`}
-                            onClick={scrollPrev}
-                            disabled={!prevBtnEnabled}
-                            aria-label="Previous slide"
-                        >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
-                        </button>
-                        <button
-                            className={`w-12 h-12 rounded-full flex items-center justify-center transition-all border border-sky-100 ${!nextBtnEnabled ? 'opacity-40 cursor-not-allowed bg-sky-50 text-sky-300' : 'bg-white text-sky-500 hover:bg-sky-500 hover:text-white shadow-sm'}`}
-                            onClick={scrollNext}
-                            disabled={!nextBtnEnabled}
-                            aria-label="Next slide"
-                        >
-                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
-                        </button>
-                    </div>
+        <section className="bg-sky-50 py-20 px-4 overflow-hidden relative font-sans">
+            <div className="max-w-5xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-sky-900 uppercase tracking-tight mb-2">
+                        Roadmap.
+                    </h2>
+                    <p className="text-sky-500 font-medium">Perjalanan pembelajaran Anda bersama kami</p>
                 </div>
 
-                {/* Carousel Container */}
-                <div className="relative" ref={emblaRef}>
+                {/* Timeline Progress Bar */}
+                <div className="relative flex items-center justify-between mb-12 px-4 md:px-8">
+                    {/* Progress Line Background */}
+                    <div className="absolute left-0 right-0 top-1/2 h-1 bg-sky-200 -translate-y-1/2 z-0 rounded-full"></div>
 
-                    {/* Decor line running through dots (Desktop Only) */}
-                    <div className="absolute top-[35px] md:top-[60px] left-0 right-0 h-[2px] bg-sky-200 pointer-events-none hidden md:block z-0"></div>
+                    {/* Active Progress Line */}
+                    <div
+                        className="absolute left-0 top-1/2 h-1 bg-sky-500 -translate-y-1/2 z-0 rounded-full transition-all duration-500"
+                        style={{ width: `${(activeIndex / (roadmapData.length - 1)) * 100}%` }}
+                    ></div>
 
-                    {/* Embla Container */}
-                    <div className="flex touch-pan-y -ml-4 md:-ml-8 pb-12 pt-16 md:pt-24 cursor-grab active:cursor-grabbing">
-                        {roadmapData.map((item) => (
-                            <div
-                                key={item.id}
-                                className="flex-[0_0_85%] md:flex-[0_0_30%] pl-4 md:pl-8 min-w-0 relative group select-none"
-                            >
-                                <div className="relative">
-                                    {/* Connection Dot (Desktop) */}
-                                    <div className="hidden md:flex absolute -top-[52px] left-1/2 -translate-x-1/2 w-8 h-8 bg-sky-600 rounded-full border-[3px] border-white ring-4 ring-sky-50 shadow-sm z-10 items-center justify-center">
-                                        <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
-                                    </div>
+                    {/* Timeline Dots */}
+                    {roadmapData.map((item, index) => (
+                        <button
+                            key={item.id}
+                            onClick={() => setActiveIndex(index)}
+                            className={`relative z-10 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm md:text-base transition-all duration-300 border-4 
+                                ${index <= activeIndex
+                                    ? 'bg-sky-500 text-white border-white shadow-lg scale-100'
+                                    : 'bg-white text-sky-400 border-sky-200 hover:border-sky-400'
+                                }
+                                ${index === activeIndex ? 'ring-4 ring-sky-300 scale-110' : ''}
+                            `}
+                            aria-label={`Go to step ${item.id}`}
+                        >
+                            {item.id}
+                        </button>
+                    ))}
+                </div>
 
-                                    {/* Connection Dot (Mobile) - On top of card */}
-                                    <div className="md:hidden absolute -top-4 left-6 w-8 h-8 bg-sky-600 rounded-full border-[3px] border-white shadow-md z-10 flex items-center justify-center">
-                                        <span className="text-white text-[10px] font-bold">{item.id}</span>
-                                    </div>
+                {/* Active Item Content Card */}
+                <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden transition-all duration-500 border border-sky-100">
+                    {/* Top Accent */}
+                    <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-sky-400 to-cyan-300"></div>
 
-                                    {/* Card */}
-                                    <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 h-full relative overflow-hidden group-hover:-translate-y-1">
-                                        {/* Top accent gradient */}
-                                        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-sky-300 to-cyan-200"></div>
-
-                                        <div className="flex justify-between items-start mb-6">
-                                            <span className="text-5xl font-black text-sky-50/80 group-hover:text-sky-100 transition-colors duration-300 select-none">
-                                                {item.id}
-                                            </span>
-                                            {item.type && (
-                                                <span className="inline-block px-3 py-1 bg-sky-50 text-sky-600 text-[10px] md:text-xs font-bold uppercase tracking-wider rounded-full border border-sky-100 mt-2">
-                                                    {item.type}
-                                                </span>
-                                            )}
-                                        </div>
-
-                                        <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-6 leading-tight min-h-[3.5rem]">
-                                            {item.title}
-                                        </h3>
-
-                                        <div className="flex items-center gap-2 text-slate-400 text-sm font-medium border-t border-slate-50 pt-4 mt-auto">
-                                            <svg className="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                            </svg>
-                                            {item.date}
-                                        </div>
-                                    </div>
-                                </div>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                        <div className="flex-1">
+                            {activeItem.type && (
+                                <span className="inline-block px-4 py-1.5 bg-sky-100 text-sky-600 text-xs font-bold uppercase tracking-wider rounded-full mb-4">
+                                    {activeItem.type}
+                                </span>
+                            )}
+                            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 leading-tight">
+                                {activeItem.title}
+                            </h3>
+                            <div className="flex items-center gap-2 text-slate-500 text-base font-medium">
+                                <svg className="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                {activeItem.date}
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Big Step Number */}
+                        <div className="text-8xl md:text-9xl font-black text-sky-100 select-none hidden md:block">
+                            {activeItem.id}
+                        </div>
                     </div>
                 </div>
 
+                {/* Navigation Arrows */}
+                <div className="flex justify-center items-center gap-6 mt-10">
+                    <button
+                        onClick={goToPrev}
+                        disabled={activeIndex === 0}
+                        className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 border-2 
+                            ${activeIndex === 0
+                                ? 'bg-sky-50 text-sky-300 border-sky-100 cursor-not-allowed'
+                                : 'bg-white text-sky-600 border-sky-200 hover:bg-sky-500 hover:text-white hover:border-sky-500 shadow-md'
+                            }`}
+                        aria-label="Previous step"
+                    >
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <span className="text-sky-600 font-bold text-lg">
+                        {activeIndex + 1} / {roadmapData.length}
+                    </span>
+
+                    <button
+                        onClick={goToNext}
+                        disabled={activeIndex === roadmapData.length - 1}
+                        className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 border-2 
+                            ${activeIndex === roadmapData.length - 1
+                                ? 'bg-sky-50 text-sky-300 border-sky-100 cursor-not-allowed'
+                                : 'bg-white text-sky-600 border-sky-200 hover:bg-sky-500 hover:text-white hover:border-sky-500 shadow-md'
+                            }`}
+                        aria-label="Next step"
+                    >
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </section>
     );
