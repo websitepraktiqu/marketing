@@ -94,7 +94,7 @@ export default function RoadmapSection() {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative" ref={emblaRef}>
+                <div className="relative overflow-hidden" ref={emblaRef}>
 
                     {/* Decor line running through dots (Desktop Only) - Positioned relative to card top */}
                     {/* We need this line to align with the dots. If dots are -mt-5 from card top, and we want line there. */}
