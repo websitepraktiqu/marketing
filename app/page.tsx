@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TopicSection from "@/components/TopicSection";
+import RoadmapSection from "@/components/RoadmapSection";
 import AgendaSection from "@/components/AgendaSection";
 import ExpertSection from "@/components/ExpertSection";
 import CertificateSection from "@/components/CertificateSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <RoadmapSection />
         <AgendaSection /> {/* Kisi Materi per Sesi (Carousel) */}
         <TopicSection /> {/* Benefit Konten Keseluruhan (Kenapa harus ikutan) */}
         <ExpertSection /> {/* Profil Pemateri (Carousel) */}
