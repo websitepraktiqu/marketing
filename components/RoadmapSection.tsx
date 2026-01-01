@@ -40,7 +40,7 @@ export default function RoadmapSection() {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         align: 'start',
         containScroll: 'trimSnaps',
-        dragFree: true // Smooth scrolling
+        dragFree: true
     });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -64,16 +64,16 @@ export default function RoadmapSection() {
     return (
         <section className="bg-sky-50 py-24 px-4 overflow-hidden relative font-sans">
             <div className="max-w-7xl mx-auto">
-                <div className="mb-16 flex flex-col md:flex-row justify-between items-end px-4 md:px-0">
-                    <div>
+                <div className="mb-12 flex flex-col md:flex-row justify-between items-end px-4 md:px-0">
+                    <div className="w-full md:w-auto text-center md:text-left mb-6 md:mb-0">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-sky-900 uppercase tracking-tight mb-2">
                             Roadmap.
                         </h2>
                         <p className="text-sky-500 font-medium">Perjalanan pembelajaran Anda bersama kami</p>
                     </div>
 
-                    {/* Navigation Buttons (Desktop) */}
-                    <div className="hidden md:flex gap-3">
+                    {/* Navigation Buttons (Visible on all screens now) */}
+                    <div className="flex gap-3 justify-center md:justify-end w-full md:w-auto">
                         <button
                             className={`w-12 h-12 rounded-full flex items-center justify-center transition-all border border-sky-100 ${!prevBtnEnabled ? 'opacity-40 cursor-not-allowed bg-sky-50 text-sky-300' : 'bg-white text-sky-500 hover:bg-sky-500 hover:text-white shadow-sm'}`}
                             onClick={scrollPrev}
@@ -94,18 +94,17 @@ export default function RoadmapSection() {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative overflow-hidden" ref={emblaRef}>
+                <div className="relative" ref={emblaRef}>
 
-                    {/* Decor line running through dots (Desktop Only) - Positioned relative to card top */}
-                    {/* We need this line to align with the dots. If dots are -mt-5 from card top, and we want line there. */}
+                    {/* Decor line running through dots (Desktop Only) */}
                     <div className="absolute top-[35px] md:top-[60px] left-0 right-0 h-[2px] bg-sky-200 pointer-events-none hidden md:block z-0"></div>
 
-                    {/* Embla Container - using -ml approach for spacing */}
-                    <div className="flex touch-pan-y -ml-2 md:-ml-8 pb-12 pt-16 md:pt-24 cursor-grab active:cursor-grabbing">
+                    {/* Embla Container */}
+                    <div className="flex touch-pan-y -ml-4 md:-ml-8 pb-12 pt-16 md:pt-24 cursor-grab active:cursor-grabbing">
                         {roadmapData.map((item) => (
                             <div
                                 key={item.id}
-                                className="flex-[0_0_85%] md:flex-[0_0_30%] pl-4 md:pl-8 min-w-0 relative group"
+                                className="flex-[0_0_85%] md:flex-[0_0_30%] pl-4 md:pl-8 min-w-0 relative group select-none"
                             >
                                 <div className="relative">
                                     {/* Connection Dot (Desktop) */}
@@ -149,13 +148,6 @@ export default function RoadmapSection() {
                             </div>
                         ))}
                     </div>
-                </div>
-
-                {/* Mobile Navigation Indicators */}
-                <div className="md:hidden flex justify-center gap-2 mt-2">
-                    {roadmapData.map((_, idx) => (
-                        <div key={idx} className={`h-1.5 rounded-full transition-all duration-300 ${idx === 0 ? 'w-8 bg-sky-500' : 'w-2 bg-sky-200'}`}></div>
-                    ))}
                 </div>
 
             </div>
