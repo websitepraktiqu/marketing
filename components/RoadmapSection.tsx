@@ -5,31 +5,31 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const roadmapData = [
     {
-        id: "00",
+        id: "01",
         date: "16 November 2025",
         type: "Talkshow",
         title: "Peran Psikolog dalam Masalah Tumbuh Kembang",
     },
     {
-        id: "01",
+        id: "02",
         date: "29 November 2025",
         type: "Sesi Webinar",
         title: "Tim Penanganan Interdisiplin",
     },
     {
-        id: "02",
+        id: "03",
         date: "17-18 Desember 2025",
         type: "Sesi Webinar",
         title: "Tumbuh Kembang dan Deviasi Perkembangan",
     },
     {
-        id: "03",
+        id: "04",
         date: "17 Januari 2026",
         type: "Sesi Webinar",
         title: "Sistem Sensori, Refleks, dan Pola Kerja Psikolog",
     },
     {
-        id: "04",
+        id: "05",
         date: "21 Februari 2026",
         type: "",
         title: "Diskusi Kasus",
@@ -67,7 +67,7 @@ export default function RoadmapSection() {
                 <div className="mb-16 flex flex-col md:flex-row justify-between items-end px-4 md:px-0">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-extrabold text-sky-900 uppercase tracking-tight mb-2">
-                            ROAD MAP.
+                            Roadmap.
                         </h2>
                         <p className="text-sky-500 font-medium">Perjalanan pembelajaran Anda bersama kami</p>
                     </div>
