@@ -6,7 +6,7 @@ interface RoadmapDetailModalProps {
     isOpen: boolean;
     onClose: () => void;
     data: {
-        id: string;
+        id: string | number;
         date: string;
         type: string;
         title: string;
