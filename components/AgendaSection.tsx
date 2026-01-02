@@ -148,14 +148,14 @@ export default function AgendaSection() {
                                         />
                                         {session.isFinished && (
                                             <div className="absolute inset-0 bg-slate-900/60 flex flex-col items-center justify-center gap-4 backdrop-blur-[1px]">
-                                                <div className="bg-green-500/90 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg border border-green-400 transform -rotate-12 uppercase tracking-wider">
+                                                <div className="bg-green-500/90 text-white px-6 py-2 rounded-full font-bold text-lg shadow-lg border border-green-400 uppercase tracking-wider">
                                                     Tersedia Rekaman
                                                 </div>
                                                 <button
                                                     onClick={() => handleOpenModal(session)}
                                                     className="bg-white/90 backdrop-blur-sm hover:bg-cyan-500 hover:text-white text-cyan-600 text-sm font-bold py-2.5 px-5 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-1"
                                                 >
-                                                    Lihat Lainnya
+                                                    Detail Kisi Kisi
                                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                                     </svg>
