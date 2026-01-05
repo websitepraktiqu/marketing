@@ -8,30 +8,55 @@ const roadmapData = [
         date: "16 November 2025",
         type: "Talkshow",
         title: "Peran Psikolog dalam Masalah Tumbuh Kembang",
+        syllabus: [
+            "Peran psikolog & kolaborasi interdisiplin.",
+            "Identifikasi masalah tumbuh kembang.",
+            "Sinergi koordinasi Guru & Orang Tua."
+        ]
     },
     {
         id: "02",
         date: "29 November 2025",
         type: "Sesi Webinar",
         title: "Tim Penanganan Interdisiplin",
+        syllabus: [
+            "Tahapan perkembangan (Prenatal–DDTK).",
+            "Deteksi dini deviasi perkembangan anak.",
+            "Teknik observasi tumbuh kembang."
+        ]
     },
     {
         id: "03",
         date: "17-18 Desember 2025",
         type: "Sesi Webinar",
         title: "Tumbuh Kembang dan Deviasi Perkembangan",
+        syllabus: [
+            "Peran Fisioterapi, Okupasi, dan Wicara.",
+            "Penyusunan Program Edukasi Individual (IEP).",
+            "Metode intervensi berbasis bermain."
+        ]
     },
     {
         id: "04",
         date: "17 Januari 2026",
         type: "Sesi Webinar",
         title: "Sistem Sensori, Refleks, dan Pola Kerja Psikolog",
+        syllabus: [
+            "Integrasi sistem sensori dan refleks pada anak.",
+            "Pola kerja Psikolog sebagai PIC interdisiplin.",
+            "Prosedur asesmen psikologis yang komprehensif."
+        ]
     },
     {
         id: "05",
         date: "21 Februari 2026",
         type: "Diskusi Kasus",
         title: "Diskusi Kasus",
+        syllabus: [
+            "Presentasi kasus lintas profesi.",
+            "Diskusi panel bersama 8 narasumber ahli.",
+            "Penyusunan rekomendasi intervensi terpadu."
+        ]
     }
 ];
 
@@ -104,12 +129,31 @@ export default function RoadmapSection() {
                             <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 leading-tight">
                                 {activeItem.title}
                             </h3>
-                            <div className="flex items-center gap-2 text-slate-500 text-base font-medium">
+                            <div className="flex items-center gap-2 text-slate-500 text-base font-medium mb-6">
                                 <svg className="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg>
                                 {activeItem.date}
                             </div>
+
+                            {/* Kisi-kisi Materi */}
+                            {activeItem.syllabus && activeItem.syllabus.length > 0 && (
+                                <div className="mt-4">
+                                    <h4 className="text-sm font-bold text-sky-600 uppercase tracking-wider mb-3">
+                                        Kisi-kisi Materi:
+                                    </h4>
+                                    <ul className="space-y-2">
+                                        {activeItem.syllabus.map((point, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-slate-600">
+                                                <svg className="w-5 h-5 text-sky-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <span className="text-base">{point}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
 
                         {/* Big Step Number */}
