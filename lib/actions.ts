@@ -163,10 +163,59 @@ export async function getTransactions(token: string) {
         }
 
         const data = await response.json();
-        return { data };
+
+        // Filter: Hanya tampilkan transaksi yang relevan dengan Landing Page ini
+        const validProductIds = ["personal", "group", "bundle-personal", "bundle-group"];
+
+        const filteredData = Array.isArray(data)
+            ? data.filter((trx: any) => validProductIds.includes(trx.product_id))
+            : [];
+
+        return { data: filteredData };
 
     } catch (error: any) {
         console.error("Get Transactions Error:", error);
         return { error: "Gagal mengambil data transaksi." };
+    }
+}
+
+export async function changePassword(currentState: any, formData: FormData) {
+    const newPassword = formData.get("new_password") as string;
+    const confirmPassword = formData.get("confirm_password") as string;
+
+    if (newPassword !== confirmPassword) {
+        return { error: "Konfirmasi password tidak cocok." };
+    }
+
+    const cookieStore = await cookies();
+    const token = cookieStore.get("admin_token");
+
+    if (!token) {
+        return { error: "Sesi habis. Silakan login ulang." };
+    }
+
+    const apiUrl = process.env.NEXT_PUBLIC_WP_API_URL || "https://event.praktiqu.com";
+
+    try {
+        const response = await fetch(`${apiUrl}/wp-json/wp/v2/users/me`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token.value}`,
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                password: newPassword,
+            }),
+        });
+
+        if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            return { error: data.message || "Gagal mengubah password." };
+        }
+
+        return { success: true };
+
+    } catch (error: any) {
+        return { error: "Terjadi kesalahan koneksi." };
     }
 }
