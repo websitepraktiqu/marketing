@@ -1,6 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
 export interface CheckoutState {
     error?: string;
@@ -82,5 +83,90 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
             return { error: "Gagal menghubungkan ke server." };
         }
         return { error: error.message || "Something went wrong" };
+    }
+}
+
+// --- ADMIN ACTIONS ---
+
+export async function adminLogin(formData: FormData) {
+    const username = formData.get("username") as string;
+    const password = formData.get("password") as string;
+
+    const cookieStore = await cookies();
+
+    const apiUrl = process.env.NEXT_PUBLIC_WP_API_URL || "https://event.praktiqu.com";
+
+    try {
+        const response = await fetch(`${apiUrl}/wp-json/jwt-auth/v1/token`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                password,
+            }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.token) {
+            console.error("Login Failed:", data);
+            return { error: data.message || "Login gagal. Periksa username & password." };
+        }
+
+        // Set Cookie
+        cookieStore.set("admin_token", data.token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            maxAge: 60 * 60 * 24 * 7, // 7 Days
+            path: "/",
+        });
+
+        return { success: true };
+
+    } catch (error: any) {
+        console.error("Admin Login Error:", error);
+        return { error: "Terjadi kesalahan koneksi ke server." };
+    }
+}
+
+export async function adminLogout() {
+    const cookieStore = await cookies();
+    cookieStore.delete("admin_token");
+    redirect("/admin/login");
+}
+
+export async function getTransactions(token: string) {
+    const apiUrl = process.env.NEXT_PUBLIC_WP_API_URL || "https://event.praktiqu.com";
+
+    try {
+        const response = await fetch(`${apiUrl}/wp-json/praktiqu/v1/transactions`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            cache: "no-store",
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+
+            if (response.status === 404) {
+                return { error: "Endpoint API Transaksi belum ditemukan di WordPress." };
+            }
+            if (response.status === 403 || response.status === 401) {
+                return { error: "Sesi kadaluarsa, silakan login ulang." };
+            }
+            return { error: errorData.message || `Error: ${response.statusText}` };
+        }
+
+        const data = await response.json();
+        return { data };
+
+    } catch (error: any) {
+        console.error("Get Transactions Error:", error);
+        return { error: "Gagal mengambil data transaksi." };
     }
 }
