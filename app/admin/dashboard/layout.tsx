@@ -37,8 +37,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
                 <nav className="p-4 space-y-1">
                     <Link
-                        href="/admin"
-                        className={`flex items-center px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${isActive('/admin')
+                        href="/admin/dashboard"
+                        className={`flex items-center px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${isActive('/admin/dashboard')
                             ? 'bg-gray-100 text-gray-900'
                             : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                             }`}
