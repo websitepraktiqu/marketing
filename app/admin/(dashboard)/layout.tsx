@@ -32,15 +32,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {/* Sidebar */}
             <aside className={`fixed lg:static inset-y-0 left-0 z-30 w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out lg:transform-none ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="h-16 flex items-center px-6 border-b border-gray-200">
-                    <span className="text-xl font-bold text-gray-900">Admin Panel</span>
+                    <span className="text-xl font-bold text-gray-900">Admin Dashboard</span>
                 </div>
 
                 <nav className="p-4 space-y-1">
                     <Link
                         href="/admin"
                         className={`flex items-center px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${isActive('/admin')
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                             }`}
                     >
                         <LayoutDashboard className="w-5 h-5 mr-3" />
@@ -50,8 +50,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     <Link
                         href="/admin/profile"
                         className={`flex items-center px-4 py-2.5 text-sm font-medium rounded-md transition-colors ${isActive('/admin/profile')
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                             }`}
                     >
                         <User className="w-5 h-5 mr-3" />
