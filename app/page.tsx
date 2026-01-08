@@ -10,10 +10,11 @@ import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-sans bg-white text-slate-900">
+    <div className="min-h-screen font-sans bg-white text-slate-900 relative">
       <Navbar />
       <main>
         <HeroSection />
@@ -28,6 +29,7 @@ export default function Home() {
         <CTASection /> {/* Final CTA */}
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
