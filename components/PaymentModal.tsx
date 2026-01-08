@@ -91,19 +91,19 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                     <div className="space-y-3">
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                                            <input name="name" type="text" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="Nama Peserta 1" defaultValue={name} onChange={(e) => setName(e.target.value)} />
+                                            <input name="name" type="text" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="Nama Peserta 1" defaultValue={name} onChange={(e) => setName(e.target.value)} />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                            <input name="email" type="email" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="email@contoh.com" defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
+                                            <input name="email" type="email" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="email@contoh.com" defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
-                                            <input name="phone" type="tel" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="08xxxxxxxx" defaultValue={phone} onChange={(e) => setPhone(e.target.value)} />
+                                            <input name="phone" type="tel" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="08xxxxxxxx" defaultValue={phone} onChange={(e) => setPhone(e.target.value)} />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
-                                            <input name="profesi" type="text" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="Profesi" defaultValue={profesi} onChange={(e) => setProfesi(e.target.value)} />
+                                            <input name="profesi" type="text" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="Profesi" defaultValue={profesi} onChange={(e) => setProfesi(e.target.value)} />
                                         </div>
                                     </div>
                                 </div>
@@ -114,19 +114,19 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                     <div className="space-y-3">
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                                            <input name="name_2" type="text" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="Nama Peserta 2" />
+                                            <input name="name_2" type="text" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="Nama Peserta 2" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                            <input name="email_2" type="email" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="email@contoh.com" />
+                                            <input name="email_2" type="email" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="email@contoh.com" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
-                                            <input name="phone_2" type="tel" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="08xxxxxxxx" />
+                                            <input name="phone_2" type="tel" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="08xxxxxxxx" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
-                                            <input name="profesi_2" type="text" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="Profesi" />
+                                            <input name="profesi_2" type="text" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="Profesi" />
                                         </div>
                                     </div>
                                 </div>
@@ -137,19 +137,19 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                     <div className="space-y-3">
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                                            <input name="name_3" type="text" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="Nama Peserta 3" />
+                                            <input name="name_3" type="text" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="Nama Peserta 3" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                            <input name="email_3" type="email" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="email@contoh.com" />
+                                            <input name="email_3" type="email" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="email@contoh.com" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
-                                            <input name="phone_3" type="tel" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="08xxxxxxxx" />
+                                            <input name="phone_3" type="tel" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="08xxxxxxxx" />
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
-                                            <input name="profesi_3" type="text" required className="w-full px-3 py-2 border rounded-lg text-slate-900 bg-white placeholder:text-slate-400" placeholder="Profesi" />
+                                            <input name="profesi_3" type="text" required className="w-full px-3 py-2 border rounded-lg text-black bg-white placeholder:text-slate-400" placeholder="Profesi" />
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +165,7 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                         value={name}
                                         name="name"
                                         onChange={(e) => setName(e.target.value)}
-                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-slate-900 bg-white placeholder:text-slate-400"
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-black bg-white placeholder:text-slate-400"
                                         placeholder="Masukkan nama lengkap"
                                         required
                                     />
@@ -179,7 +179,7 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                         value={email}
                                         name="email"
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-slate-900 bg-white placeholder:text-slate-400"
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-black bg-white placeholder:text-slate-400"
                                         placeholder="nama@email.com"
                                         required
                                     />
@@ -193,7 +193,7 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                         value={phone}
                                         name="phone"
                                         onChange={(e) => setPhone(e.target.value)}
-                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-slate-900 bg-white placeholder:text-slate-400"
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-black bg-white placeholder:text-slate-400"
                                         placeholder="08xxxxxxxxxx"
                                         required
                                     />
@@ -208,7 +208,7 @@ export default function PaymentModal({ isOpen, onClose, productName, productId }
                                         value={profesi}
                                         name="profesi"
                                         onChange={(e) => setProfesi(e.target.value)}
-                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-slate-900 bg-white placeholder:text-slate-400"
+                                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all text-black bg-white placeholder:text-slate-400"
                                         placeholder="Contoh: Guru / Mahasiswa"
                                         required
                                     />
