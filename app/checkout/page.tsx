@@ -94,19 +94,19 @@ function CheckoutForm() {
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                                    <input name="name" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Nama Lengkap" value={name} onChange={(e) => setName(e.target.value)} />
+                                    <input name="name" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="Nama Lengkap" value={name} onChange={(e) => setName(e.target.value)} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                    <input name="email" type="email" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="email@contoh.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <input name="email" type="email" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="email@contoh.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
-                                    <input name="phone" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="08xxxxxxxx" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                    <input name="phone" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="08xxxxxxxx" value={phone} onChange={(e) => setPhone(e.target.value)} />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
-                                    <input name="profesi" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Guru TK / Psikolog / Orang Tua" value={profesi} onChange={(e) => setProfesi(e.target.value)} />
+                                    <input name="profesi" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="Contoh: Guru TK / Psikolog / Orang Tua" value={profesi} onChange={(e) => setProfesi(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -120,19 +120,19 @@ function CheckoutForm() {
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                                    <input name="name_2" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Nama Lengkap" />
+                                    <input name="name_2" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="Nama Lengkap" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                    <input name="email_2" type="email" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="email@contoh.com" />
+                                    <input name="email_2" type="email" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="email@contoh.com" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
-                                    <input name="phone_2" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="08xxxxxxxx" />
+                                    <input name="phone_2" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="08xxxxxxxx" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
-                                    <input name="profesi_2" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Guru TK / Psikolog / Orang Tua" />
+                                    <input name="profesi_2" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="Contoh: Guru TK / Psikolog / Orang Tua" />
                                 </div>
                             </div>
                         </div>
@@ -146,19 +146,19 @@ function CheckoutForm() {
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                                    <input name="name_3" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Nama Lengkap" />
+                                    <input name="name_3" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="Nama Lengkap" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                    <input name="email_3" type="email" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="email@contoh.com" />
+                                    <input name="email_3" type="email" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="email@contoh.com" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">WhatsApp</label>
-                                    <input name="phone_3" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="08xxxxxxxx" />
+                                    <input name="phone_3" type="tel" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="08xxxxxxxx" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-slate-700 mb-1">Profesi / Pekerjaan</label>
-                                    <input name="profesi_3" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" placeholder="Contoh: Guru TK / Psikolog / Orang Tua" />
+                                    <input name="profesi_3" type="text" required className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none !text-black !bg-white placeholder:text-slate-400" style={{ color: 'black', backgroundColor: 'white' }} placeholder="Contoh: Guru TK / Psikolog / Orang Tua" />
                                 </div>
                             </div>
                         </div>
@@ -174,7 +174,8 @@ function CheckoutForm() {
                                 value={name}
                                 name="name"
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all !text-black !bg-white placeholder:text-slate-400"
+                                style={{ color: 'black', backgroundColor: 'white' }}
                                 placeholder="Masukkan nama lengkap"
                                 required
                             />
@@ -188,7 +189,8 @@ function CheckoutForm() {
                                 value={email}
                                 name="email"
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all !text-black !bg-white placeholder:text-slate-400"
+                                style={{ color: 'black', backgroundColor: 'white' }}
                                 placeholder="nama@email.com"
                                 required
                             />
@@ -202,7 +204,8 @@ function CheckoutForm() {
                                 value={phone}
                                 name="phone"
                                 onChange={(e) => setPhone(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all !text-black !bg-white placeholder:text-slate-400"
+                                style={{ color: 'black', backgroundColor: 'white' }}
                                 placeholder="08xxxxxxxxxx"
                                 required
                             />
@@ -217,7 +220,8 @@ function CheckoutForm() {
                                 value={profesi}
                                 name="profesi"
                                 onChange={(e) => setProfesi(e.target.value)}
-                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all"
+                                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent outline-none transition-all !text-black !bg-white placeholder:text-slate-400"
+                                style={{ color: 'black', backgroundColor: 'white' }}
                                 placeholder="Contoh: Guru TK / Psikolog / Orang Tua"
                                 required
                             />
