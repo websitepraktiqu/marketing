@@ -87,6 +87,22 @@ const sessions = [
             "Merancang rencana intervensi.",
             "Evaluasi dan follow-up."
         ]
+    },
+    {
+        id: 6,
+        image: "/images/agenda/agenda-6.jpg",
+        alt: "Mentoring Kelompok",
+        isFinished: false,
+        title: "Mentoring Kelompok (6 Sesi)",
+        date: "April - Juni 2026",
+        type: "Mentoring Kelompok",
+        description: "Program lanjutan berupa mentoring kelompok selama 6 sesi (60 menit per sesi). Peserta dapat mempresentasikan kasus yang sedang ditangani dan berdiskusi bersama mentor.",
+        syllabus: [
+            "1 orang Presentan dalam kelompok.",
+            "Presentasi kasus yang sedang ditangani.",
+            "Diskusi penanganan kasus bersama Mentor.",
+            "Penyusunan rencana tindak lanjut."
+        ]
     }
 ];
 

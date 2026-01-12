@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const roadmapData = [
     {
@@ -68,7 +69,8 @@ const roadmapData = [
             "Presentasi kasus yang sedang ditangani.",
             "Diskusi penanganan kasus bersama Mentor.",
             "Penyusunan rencana tindak lanjut."
-        ]
+        ],
+        image: "/images/mentoring-kelompok.jpg"
     }
 ];
 
@@ -164,6 +166,18 @@ export default function RoadmapSection() {
                                             </li>
                                         ))}
                                     </ul>
+                                    {/* Image for Mentoring Kelompok */}
+                                    {activeItem.image && (
+                                        <div className="mt-6">
+                                            <Image
+                                                src={activeItem.image}
+                                                alt={activeItem.title}
+                                                width={600}
+                                                height={800}
+                                                className="rounded-xl shadow-lg w-full max-w-md mx-auto"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                             )}
                         </div>
