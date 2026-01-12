@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 const roadmapData = [
     {
-        id: "01",
+        id: "00",
         date: "16 November 2025",
         type: "Talkshow",
         title: "Peran Psikolog dalam Masalah Tumbuh Kembang",
@@ -15,7 +15,7 @@ const roadmapData = [
         ]
     },
     {
-        id: "02",
+        id: "01",
         date: "29 November 2025",
         type: "Sesi Webinar",
         title: "Tim Penanganan Interdisiplin",
@@ -26,7 +26,7 @@ const roadmapData = [
         ]
     },
     {
-        id: "03",
+        id: "02",
         date: "17-18 Desember 2025",
         type: "Sesi Webinar",
         title: "Tumbuh Kembang dan Deviasi Perkembangan",
@@ -37,7 +37,7 @@ const roadmapData = [
         ]
     },
     {
-        id: "04",
+        id: "03",
         date: "17 Januari 2026",
         type: "Sesi Webinar",
         title: "Sistem Sensori, Refleks, dan Pola Kerja Psikolog",
@@ -48,7 +48,7 @@ const roadmapData = [
         ]
     },
     {
-        id: "05",
+        id: "04",
         date: "21 Februari 2026",
         type: "Diskusi Kasus",
         title: "Diskusi Kasus",
