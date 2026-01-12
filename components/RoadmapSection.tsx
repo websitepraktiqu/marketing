@@ -57,6 +57,18 @@ const roadmapData = [
             "Diskusi panel bersama 8 narasumber ahli.",
             "Penyusunan rekomendasi intervensi terpadu."
         ]
+    },
+    {
+        id: "05",
+        date: "April - Juni 2026",
+        type: "Mentoring Kelompok",
+        title: "Mentoring Kelompok (5 Sesi)",
+        syllabus: [
+            "1 orang Presentan dalam kelompok.",
+            "Presentasi kasus yang sedang ditangani.",
+            "Diskusi penanganan kasus bersama Mentor.",
+            "Penyusunan rencana tindak lanjut."
+        ]
     }
 ];
 
