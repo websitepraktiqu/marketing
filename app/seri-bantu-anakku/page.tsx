@@ -1,0 +1,740 @@
+"use client";
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+
+// Data untuk Roadmap
+const roadmapData = [
+    {
+        step: 1,
+        title: "Sadari & Pahami",
+        image: "/images/seri-bantu-anakku/step1.png",
+        topics: [
+            { id: 1, name: "Awal yang Cerdas: Memahami Tanda-Tanda Masalah Anak Sejak Dini" }
+        ]
+    },
+    {
+        step: 2,
+        title: "Bangun Pondasi Anak",
+        image: "/images/seri-bantu-anakku/step2.png",
+        topics: [
+            { id: 2, name: "Membangun Kemandirian Anak di Rumah dan Sekolah: Dari Manja Menuju Mandiri" },
+            { id: 3, name: "Membangun Kepercayaan Diri Anak: Tips Mengatasi Minder sejak Dini" }
+        ]
+    },
+    {
+        step: 3,
+        title: "Hadapi Emosi Sulit Anak",
+        image: "/images/seri-bantu-anakku/step3.png",
+        topics: [
+            { id: 4, name: "Membantu Anak Menghadapi Rasa Takutnya" },
+            { id: 5, name: "Cemas Beda Dengan Takut? Cara Membimbing Anak Saat Cemas" }
+        ]
+    },
+    {
+        step: 4,
+        title: "Perbaiki Relasi & Komunikasi",
+        image: "/images/seri-bantu-anakku/step4.png",
+        topics: [
+            { id: 6, name: "Mengapa Anak Berbohong? Mengajarkan Kejujuran Sejak Kecil" },
+            { id: 7, name: "Komunikasi Hipnotik dalam Pengasuhan: Memilih Kata yang Memiliki Kekuatan Mempengaruhi" }
+        ]
+    }
+];
+
+
+// Data untuk FAQ
+const faqData = [
+    {
+        question: "Apakah mini series eCourse ini hanya untuk orang tua dengan latar belakang psikologi?",
+        answer: "Tidak. Mini series ini disusun khusus untuk orang tua umum, tanpa perlu latar belakang psikologi atau pendidikan khusus. Bahasa yang digunakan ringan, membumi, dan dekat dengan situasi sehari-hari di rumah maupun sekolah."
+    },
+    {
+        question: "Apakah saya harus mengikuti semua modul secara berurutan?",
+        answer: "Tidak harus. Setiap modul berdiri sendiri dan bisa dipelajari sesuai kebutuhan Anda saat ini. Namun, jika ingin pemahaman yang lebih utuh, modul disusun berurutan sebagai perjalanan pendampingan orang tua."
+    },
+    {
+        question: "Anak saya tidak punya diagnosis tertentu. Apakah eCourse ini tetap relevan?",
+        answer: "Sangat relevan. Mini series ini fokus pada pemahaman dan pendampingan anak dalam keseharian, bukan pada diagnosis. Cocok untuk orang tua yang ingin lebih peka membaca sinyal anak sejak dini, sebelum masalah berkembang lebih jauh."
+    },
+    {
+        question: "Apakah materi di dalam eCourse ini bersifat teori atau praktik?",
+        answer: "Keduanya, dengan penekanan pada praktik. Materi disampaikan dengan dasar psikologi yang kuat, lalu diterjemahkan ke dalam contoh konkret, refleksi, dan strategi sederhana yang bisa langsung diterapkan di rumah."
+    },
+    {
+        question: "Apakah eCourse ini cocok untuk orang tua dengan anak usia berapa?",
+        answer: "Mini series ini paling relevan untuk orang tua dengan anak usia dini hingga sekolah dasar. Namun, prinsip pendampingan dan komunikasi yang dibahas tetap bisa diterapkan pada usia anak yang lebih besar dengan penyesuaian."
+    },
+    {
+        question: "Berapa lama saya bisa mengakses eCourse ini?",
+        answer: "Setelah mendaftar, Anda dapat mengakses materi kapan saja sesuai kebijakan akses yang berlaku. Anda bebas belajar sesuai ritme keluarga, tanpa tekanan waktu."
+    },
+    {
+        question: "Apakah eCourse ini menggantikan terapi atau konsultasi profesional?",
+        answer: "Tidak. Mini series ini bukan pengganti terapi atau asesmen profesional, melainkan sarana edukasi dan pendampingan bagi orang tua agar lebih sadar, tenang, dan tepat dalam merespons anak. Jika diperlukan, Anda tetap dianjurkan mencari bantuan profesional."
+    },
+    {
+        question: "Apakah saya akan mendapatkan sertifikat setelah mengikuti eCourse?",
+        answer: "Ya. Peserta yang menyelesaikan eCourse akan mendapatkan E-Certificate dari PraktiQu sebagai bukti partisipasi dan pembelajaran."
+    },
+    {
+        question: "Bagaimana jika saya hanya ingin mempelajari satu topik tertentu?",
+        answer: "Anda bisa. Mini series ini memungkinkan Anda membeli per modul, tanpa harus mengambil seluruh paket, sehingga bisa fokus pada isu yang paling relevan dengan kondisi anak saat ini."
+    },
+    {
+        question: "Saya sering merasa ragu dan takut salah sebagai orang tua. Apakah eCourse ini cocok untuk saya?",
+        answer: "Justru itu alasan mini series ini dibuat. Materi dirancang untuk membantu orang tua lebih memahami anak tanpa menyalahkan diri sendiri, serta membangun kepercayaan diri dalam mendampingi tumbuh kembang anak."
+    }
+];
+
+// Data untuk Testimoni
+const testimonials = [
+    "Saya jadi lebih paham cara merespons anak saat takut tanpa membuatnya makin cemas.",
+    "Materinya ringan tapi mendalam. Cocok banget untuk orang tua yang sibuk.",
+    "Setelah ikut eCourse ini, saya lebih sabar dan nggak buru-buru menghakimi anak.",
+    "Worksheet-nya membantu banget untuk refleksi diri sebagai orang tua."
+];
+
+// Floating illustration component
+function FloatingIllustration({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+    return (
+        <div
+            className={`animate-float ${className}`}
+            style={{ animationDelay: `${delay}s` }}
+        >
+            {children}
+        </div>
+    );
+}
+
+// Testimonial Carousel Component
+function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    // Auto-slide every 5 seconds
+    useEffect(() => {
+        const timer = setInterval(() => {
+            goToNext();
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [currentIndex]);
+
+    const goToPrev = () => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+        setTimeout(() => setIsAnimating(false), 500);
+    };
+
+    const goToNext = () => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+        setTimeout(() => setIsAnimating(false), 500);
+    };
+
+    const goToSlide = (index: number) => {
+        if (isAnimating || index === currentIndex) return;
+        setIsAnimating(true);
+        setCurrentIndex(index);
+        setTimeout(() => setIsAnimating(false), 500);
+    };
+
+    return (
+        <section className="bg-white py-20 px-6 md:px-12 overflow-hidden relative">
+            <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-cyan-100/30 blur-2xl animate-float" />
+            <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full bg-sky-100/30 blur-2xl animate-float-reverse" />
+
+            <div className="max-w-4xl mx-auto relative z-10">
+                <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
+                    Apa Kata <span className="text-[#0ea5e9]">Peserta?</span>
+                </h2>
+
+                {/* Carousel Container */}
+                <div className="relative">
+                    {/* Main Slide */}
+                    <div className="overflow-hidden rounded-3xl">
+                        <div
+                            className="flex transition-transform duration-500 ease-out"
+                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        >
+                            {testimonials.map((testimonial, idx) => (
+                                <div key={idx} className="w-full flex-shrink-0 px-4">
+                                    <div className="bg-gradient-to-br from-sky-50 to-cyan-50 p-8 md:p-12 rounded-3xl border border-sky-100 shadow-lg relative min-h-[200px] flex flex-col justify-center">
+                                        {/* Quote Mark */}
+                                        <div className="text-8xl text-cyan-200 absolute top-4 left-8 font-serif leading-none">"</div>
+
+                                        {/* Quote icon top right */}
+                                        <div className="absolute top-6 right-8 w-12 h-12 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shadow-md">
+                                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                                            </svg>
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="relative z-10 text-center pt-8">
+                                            <p className="text-xl md:text-2xl text-slate-700 italic leading-relaxed font-medium">
+                                                "{testimonial}"
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Navigation Arrows */}
+                    <button
+                        onClick={goToPrev}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg border border-sky-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-50 hover:scale-110 transition-all z-20"
+                        aria-label="Previous testimonial"
+                    >
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <button
+                        onClick={goToNext}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg border border-sky-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-50 hover:scale-110 transition-all z-20"
+                        aria-label="Next testimonial"
+                    >
+                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Dot Indicators */}
+                <div className="flex justify-center items-center gap-3 mt-8">
+                    {testimonials.map((_, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => goToSlide(idx)}
+                            className={`transition-all duration-300 rounded-full ${idx === currentIndex
+                                ? 'w-8 h-3 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4]'
+                                : 'w-3 h-3 bg-cyan-200 hover:bg-cyan-300'
+                                }`}
+                            aria-label={`Go to testimonial ${idx + 1}`}
+                        />
+                    ))}
+                </div>
+
+                {/* Counter */}
+                <p className="text-center text-slate-400 text-sm mt-4">
+                    {currentIndex + 1} / {testimonials.length}
+                </p>
+            </div>
+        </section>
+    );
+}
+
+export default function SeriBantuAnakku() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
+
+    return (
+        <div className="min-h-screen font-sans bg-white text-slate-900 relative overflow-x-hidden">
+            {/* Custom CSS for animations */}
+            <style jsx global>{`
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(-15px) rotate(3deg); }
+                }
+                @keyframes float-reverse {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    50% { transform: translateY(15px) rotate(-3deg); }
+                }
+                @keyframes bounce-soft {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-8px); }
+                }
+                @keyframes fade-in-up {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes scale-in {
+                    from { opacity: 0; transform: scale(0.9); }
+                    to { opacity: 1; transform: scale(1); }
+                }
+                @keyframes wiggle {
+                    0%, 100% { transform: rotate(-3deg); }
+                    50% { transform: rotate(3deg); }
+                }
+                .animate-float { animation: float 4s ease-in-out infinite; }
+                .animate-float-reverse { animation: float-reverse 4s ease-in-out infinite; }
+                .animate-bounce-soft { animation: bounce-soft 2s ease-in-out infinite; }
+                .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+                .animate-scale-in { animation: scale-in 0.6s ease-out forwards; }
+                .animate-wiggle { animation: wiggle 1s ease-in-out infinite; }
+                .animate-delay-100 { animation-delay: 0.1s; }
+                .animate-delay-200 { animation-delay: 0.2s; }
+                .animate-delay-300 { animation-delay: 0.3s; }
+                .animate-delay-400 { animation-delay: 0.4s; }
+                .animate-delay-500 { animation-delay: 0.5s; }
+            `}</style>
+
+            <Navbar />
+            <main>
+                {/* HERO SECTION */}
+                <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-10 pb-24 px-6 md:px-12">
+                    {/* Abstract Background Shapes */}
+                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-3xl" />
+
+                    {/* Decorative floating shapes instead of emojis */}
+                    <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-cyan-200/30 animate-float hidden lg:block" />
+                    <div className="absolute top-40 right-20 w-12 h-12 rounded-full bg-blue-200/30 animate-float-reverse hidden lg:block" style={{ animationDelay: "1s" }} />
+                    <div className="absolute bottom-40 left-20 w-10 h-10 rounded-full bg-cyan-300/20 animate-float hidden lg:block" style={{ animationDelay: "2s" }} />
+                    <div className="absolute bottom-20 right-10 w-14 h-14 rounded-full bg-sky-200/30 animate-float-reverse hidden lg:block" style={{ animationDelay: "0.5s" }} />
+
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                        {/* Left Content */}
+                        <div className={`space-y-8 text-center lg:text-left order-2 lg:order-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100/50 border border-cyan-200 text-cyan-700 text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+                                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                                Mini Series eCourse untuk Orang Tua
+                            </div>
+
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.2]">
+                                Seri Bantu Anak-ku! <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4]">
+                                    Strategi Orang Tua dalam Menangani Masalah
+                                </span>
+                            </h1>
+
+                            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                                7 eCourse tematik yang bisa dipelajari sesuai kebutuhan orang tua — dari membaca tanda awal masalah, mendampingi rasa takut & cemas, hingga membangun komunikasi yang lebih menenangkan.
+                            </p>
+
+                            {/* Benefits Grid - Using checkmarks instead of emojis */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+                                {[
+                                    "Bisa diakses kapan saja",
+                                    "Praktis & berbasis kasus sehari-hari",
+                                    "7 Worksheet karakteristik anak",
+                                    "7 Tools refleksi diri",
+                                    "5 Tools skrining masalah anak",
+                                    "E-Certificate"
+                                ].map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        className={`flex items-center gap-3 p-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-cyan-200 transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                                        style={{ animationDelay: `${0.1 * idx}s` }}
+                                    >
+                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shrink-0">
+                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-sm font-medium text-slate-700">{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <Link
+                                href="#investasi"
+                                className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-cyan-200 transition-all hover:scale-105"
+                            >
+                                Mulai dari modul yang Saya Butuhkan
+                                <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </Link>
+                        </div>
+
+                        {/* Right Card - Pricing Preview */}
+                        <div className={`relative mx-auto w-full max-w-md order-1 lg:order-2 mb-8 lg:mb-0 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.3s" }}>
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg"></div>
+
+                            <div className="bg-white rounded-2xl shadow-xl overflow-hidden relative z-10 border border-slate-100 hover:shadow-2xl transition-shadow duration-500">
+                                <div className="bg-slate-900 p-4 text-center relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-r from-[#06b6d4] to-[#0ea5e9] opacity-90"></div>
+                                    <div className="relative z-10">
+                                        <span className="inline-flex items-center gap-1 py-1 px-3 rounded text-[10px] font-bold tracking-widest bg-white/20 text-white mb-1 backdrop-blur-sm">
+                                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                            PILIHAN FLEKSIBEL
+                                        </span>
+                                        <h3 className="text-white font-bold text-lg">Investasi Ilmu</h3>
+                                    </div>
+                                </div>
+
+                                <div className="p-6 space-y-4">
+                                    <div className="bg-cyan-50 p-4 rounded-xl border border-cyan-100 hover:bg-cyan-100/50 transition-colors group cursor-pointer">
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                                    </svg>
+                                                </div>
+                                                <span className="font-bold text-slate-700">Bundling 7 eCourse</span>
+                                            </div>
+                                            <span className="text-2xl font-extrabold text-cyan-600">Rp445.000</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 hover:bg-slate-100/50 transition-colors group cursor-pointer">
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex items-center gap-2">
+                                                <div className="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                    <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                                    </svg>
+                                                </div>
+                                                <span className="font-bold text-slate-700">Per Topik (1-7)</span>
+                                            </div>
+                                            <div className="text-right">
+                                                <span className="text-sm text-slate-400 line-through">Rp100.000</span>
+                                                <span className="text-2xl font-extrabold text-slate-900 ml-2">Rp75.000</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <Link
+                                        href="#investasi"
+                                        className="group block w-full text-center bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white font-bold py-3 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-[1.02]"
+                                    >
+                                        Lihat Semua Pilihan
+                                        <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+                                    </Link>
+
+                                    {/* Social Proof */}
+                                    <div className="flex items-center justify-center gap-3 pt-2">
+                                        <div className="flex -space-x-2">
+                                            {["A", "B", "C", "D"].map((initial, idx) => (
+                                                <div key={idx} className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 border-2 border-white flex items-center justify-center text-xs font-bold text-white">
+                                                    {initial}
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <p className="text-xs text-slate-500 font-medium">
+                                            <span className="text-cyan-600 font-bold">100+</span> orang tua sudah bergabung
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ROADMAP SECTION */}
+                <section className="bg-sky-50 py-20 px-6 md:px-12 relative overflow-hidden">
+                    {/* Background decorations */}
+                    <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-cyan-300/20 blur-xl animate-float" />
+                    <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-sky-300/20 blur-xl animate-float-reverse" />
+
+                    <div className="max-w-5xl mx-auto relative z-10">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-sky-900 mb-4">
+                                Roadmap Pendampingan Orang Tua
+                            </h2>
+                            <p className="text-sky-600 max-w-2xl mx-auto">
+                                Perjalanan memahami anak, dari mengenali tanda sampai mengubah cara berkomunikasi
+                            </p>
+                        </div>
+
+                        {/* Steps Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {roadmapData.map((step, idx) => (
+                                <div
+                                    key={step.step}
+                                    className="group bg-white p-6 rounded-2xl border border-sky-100 shadow-sm hover:shadow-xl hover:border-cyan-300 transition-all duration-300 hover:-translate-y-2"
+                                >
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="relative">
+                                            <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
+                                                <Image
+                                                    src={step.image}
+                                                    alt={step.title}
+                                                    width={64}
+                                                    height={64}
+                                                    className="object-cover w-full h-full"
+                                                />
+                                            </div>
+                                            {/* Step badge */}
+                                            <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] text-white font-bold text-sm flex items-center justify-center shadow-md border-2 border-white">
+                                                {step.step}
+                                            </div>
+                                        </div>
+                                        <h3 className="text-xl font-bold text-slate-900">{step.title}</h3>
+                                    </div>
+                                    <ul className="space-y-2 pl-4">
+                                        {step.topics.map((topic) => (
+                                            <li key={topic.id} className="flex items-start gap-2 text-slate-600 text-sm">
+                                                <span className="text-cyan-500 font-bold shrink-0">[Topik {topic.id}]</span>
+                                                <span className="group-hover:text-slate-800 transition-colors">{topic.name}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* WHAT YOU WILL LEARN SECTION */}
+                <section className="bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] py-20 px-6 md:px-12 relative overflow-hidden">
+                    {/* Floating decorative circles */}
+                    <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white/10 blur-xl animate-float" />
+                    <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-white/10 blur-xl animate-float-reverse" />
+
+                    <div className="max-w-5xl mx-auto relative z-10">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                                Apa yang Akan Orang Tua Pelajari?
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[
+                                "Mengenali tanda masalah anak sejak dini tanpa overthinking",
+                                "Memahami perbedaan takut, cemas, dan minder",
+                                "Menentukan respon yang menenangkan, bukan memperburuk emosi anak",
+                                "Membantu anak bertumbuh mandiri sesuai tahap usia",
+                                "Mengubah cara berbicara agar anak lebih kooperatif"
+                            ].map((item, idx) => (
+                                <div
+                                    key={idx}
+                                    className="group bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                >
+                                    <div className="w-10 h-10 mb-4 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-white font-medium">{item}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* WHY THIS SERIES SECTION */}
+                <section className="bg-white py-20 px-6 md:px-12 relative overflow-hidden">
+                    <div className="absolute top-20 right-20 w-40 h-40 rounded-full bg-cyan-100/30 blur-2xl animate-float" />
+
+                    <div className="max-w-5xl mx-auto relative z-10">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+                                Kenapa Mini Series Ini <span className="text-[#0ea5e9]">Dibutuhkan</span> Orang Tua?
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {[
+                                {
+                                    title: "Bukan Sekadar Parenting Tips",
+                                    desc: "Materi disusun untuk membantu orang tua memahami kenapa anak berperilaku tertentu, bukan hanya apa yang harus dilakukan.",
+                                    iconPath: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                },
+                                {
+                                    title: "Berbasis Kehidupan Sehari-hari",
+                                    desc: "Contoh kasus dekat dengan realita orang tua di rumah & sekolah.",
+                                    iconPath: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                                },
+                                {
+                                    title: "Fleksibel & Tidak Menghakimi",
+                                    desc: "Tidak memaksakan satu gaya pengasuhan, tapi membantu orang tua lebih sadar dalam memilih respon.",
+                                    iconPath: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                }
+                            ].map((item, idx) => (
+                                <div
+                                    key={idx}
+                                    className="group text-center p-8 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-sky-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                                >
+                                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                        <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={item.iconPath} />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                                    <p className="text-slate-600">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* EXPERT SECTION */}
+                <section className="bg-gradient-to-br from-slate-800 to-slate-900 py-20 px-6 md:px-12 relative overflow-hidden">
+                    {/* Decorative circles */}
+                    <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-cyan-500/10 blur-2xl" />
+                    <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-blue-500/10 blur-2xl" />
+
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                            Disusun oleh <span className="text-cyan-400">Praktisi Berpengalaman</span>
+                        </h2>
+                        <p className="text-slate-300 mb-12">Materi dikembangkan oleh ahli di bidang psikologi anak dan parenting</p>
+
+                        <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-500">
+                            <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 p-1 animate-float overflow-hidden">
+                                <Image
+                                    src="/images/seri-bantu-anakku/expert.png"
+                                    alt="Teh Yeti - Praktisi Psikologi Anak"
+                                    width={160}
+                                    height={160}
+                                    className="w-full h-full object-cover rounded-full"
+                                />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Teh Yeti</h3>
+                            <p className="text-cyan-400 font-medium mb-4">Praktisi Psikologi Anak & Parenting Coach</p>
+                            <p className="text-slate-300 max-w-xl mx-auto">
+                                Berpengalaman dalam mendampingi orang tua memahami dan merespons perilaku anak dengan pendekatan yang ramah dan berbasis ilmu psikologi.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* TESTIMONIAL SECTION - Carousel */}
+                <TestimonialCarousel testimonials={testimonials} />
+
+                {/* PRICING SECTION */}
+                <section id="investasi" className="bg-gradient-to-br from-sky-50 to-cyan-50 py-20 px-6 md:px-12 border-t border-sky-100 relative overflow-hidden">
+                    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-cyan-200/20 blur-2xl animate-float" />
+                    <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-sky-200/20 blur-2xl animate-float-reverse" />
+
+                    <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
+                        <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                            Investasi Ilmu
+                        </h2>
+                        <p className="text-slate-600">Pilih paket yang sesuai dengan kebutuhan Anda</p>
+                    </div>
+
+                    {/* Bundle Plan */}
+                    <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-[#0ea5e9] relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="absolute top-0 right-0 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                            Best Value
+                        </div>
+                        <div className="p-8 md:p-12 text-center">
+                            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                </svg>
+                            </div>
+                            <h3 className="text-2xl font-bold text-slate-900 mb-4">Bundling 7 eCourse</h3>
+                            <p className="text-slate-600 mb-6">Akses lengkap ke semua modul dengan harga hemat</p>
+                            <div className="text-5xl font-extrabold text-slate-900 mb-6">
+                                Rp445.000
+                            </div>
+                            <Link
+                                href="/checkout?plan=bundling-bantu-anakku"
+                                className="group inline-block bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white font-bold py-4 px-12 rounded-xl shadow-lg hover:shadow-cyan-200 transition-all hover:scale-105"
+                            >
+                                Daftar Bundling Sekarang
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Per Topic */}
+                    <div className="max-w-4xl mx-auto relative z-10">
+                        <h3 className="text-xl font-bold text-center text-slate-900 mb-8">
+                            Atau Pilih Per Topik
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {roadmapData.flatMap(step => step.topics).map((topic, idx) => (
+                                <div
+                                    key={topic.id}
+                                    className="group bg-white p-6 rounded-xl shadow-sm border border-sky-100 flex justify-between items-center hover:shadow-lg hover:border-cyan-300 transition-all duration-300 hover:-translate-y-1"
+                                >
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <span className="text-cyan-600 font-bold text-sm">Topik {topic.id}</span>
+                                            <p className="text-slate-700 font-medium text-sm mt-1 line-clamp-2">{topic.name}</p>
+                                        </div>
+                                    </div>
+                                    <div className="text-right flex-shrink-0 ml-4">
+                                        <div className="text-xs text-slate-400 line-through">Rp100.000</div>
+                                        <div className="text-lg font-bold text-slate-900">Rp75.000</div>
+                                        <Link
+                                            href={`/checkout?plan=topik-${topic.id}`}
+                                            className="inline-block mt-2 text-xs bg-cyan-100 text-cyan-700 font-bold py-1 px-3 rounded-lg hover:bg-cyan-200 transition-colors"
+                                        >
+                                            Pilih →
+                                        </Link>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* FAQ SECTION */}
+                <section className="bg-white py-20 px-6 md:px-12 relative overflow-hidden">
+                    <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-cyan-100/30 blur-2xl animate-float" />
+
+                    <div className="max-w-3xl mx-auto relative z-10">
+                        <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
+                            Pertanyaan yang <span className="text-[#0ea5e9]">Sering Ditanyakan</span>
+                        </h2>
+
+                        <div className="space-y-4">
+                            {faqData.map((faq, idx) => (
+                                <details key={idx} className="group bg-gradient-to-br from-sky-50 to-cyan-50 rounded-xl shadow-sm hover:shadow-md transition-all border border-sky-100">
+                                    <summary className="flex cursor-pointer items-center justify-between p-6 font-medium text-slate-900 list-none">
+                                        <span className="flex items-center gap-2">
+                                            <span className="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 text-sm font-bold">{idx + 1}</span>
+                                            {faq.question}
+                                        </span>
+                                        <span className="transition group-open:rotate-180 text-cyan-500">
+                                            <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <div className="bg-white p-6 text-slate-600 text-sm border-t border-sky-100 rounded-b-xl">
+                                        {faq.answer}
+                                    </div>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA SECTION */}
+                <section className="bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] py-16 px-6 md:px-12 relative overflow-hidden">
+                    <div className="absolute top-5 left-10 w-24 h-24 rounded-full bg-white/10 blur-xl animate-float" />
+                    <div className="absolute bottom-5 right-10 w-28 h-28 rounded-full bg-white/10 blur-xl animate-float-reverse" />
+
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
+                        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-white/20 flex items-center justify-center animate-bounce-soft">
+                            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                            Siap Mendampingi Anak dengan Lebih Tenang?
+                        </h2>
+                        <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+                            Mulai perjalanan memahami anak Anda hari ini. Pilih modul yang paling relevan dengan kebutuhan keluarga Anda.
+                        </p>
+                        <Link
+                            href="#investasi"
+                            className="group inline-flex items-center gap-2 bg-white text-[#0ea5e9] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                        >
+                            Mulai Sekarang
+                            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </Link>
+                    </div>
+                </section>
+            </main>
+            <Footer />
+            <FloatingWhatsApp />
+        </div >
+    );
+}
