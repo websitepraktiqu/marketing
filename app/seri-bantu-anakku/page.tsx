@@ -378,7 +378,10 @@ export default function SeriBantuAnakku() {
                                                 </div>
                                                 <span className="font-bold text-slate-700">Bundling 7 eCourse</span>
                                             </div>
-                                            <span className="text-2xl font-extrabold text-cyan-600">Rp445.000</span>
+                                            <div className="text-right">
+                                                <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
+                                                <span className="text-2xl font-extrabold text-cyan-600">Rp445.000</span>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -624,8 +627,11 @@ export default function SeriBantuAnakku() {
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 mb-4">Bundling 7 eCourse</h3>
                             <p className="text-slate-600 mb-6">Akses lengkap ke semua modul dengan harga hemat</p>
-                            <div className="text-5xl font-extrabold text-slate-900 mb-6">
-                                Rp445.000
+                            <div className="flex items-center justify-center gap-4 mb-6">
+                                <span className="text-2xl text-slate-400 line-through font-bold">Rp700.000</span>
+                                <span className="text-5xl font-extrabold text-slate-900">
+                                    Rp445.000
+                                </span>
                             </div>
                             <Link
                                 href="/checkout?plan=bundling-bantu-anakku"
