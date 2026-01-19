@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 // Data untuk Roadmap
@@ -306,7 +306,7 @@ export default function SeriBantuAnakku() {
 
                             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.2]">
                                 Seri Bantu Anak-ku! <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4]">
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#435b9b] to-[#fe6007]">
                                     Strategi Orang Tua dalam Menangani Masalah
                                 </span>
                             </h1>
@@ -342,7 +342,7 @@ export default function SeriBantuAnakku() {
 
                             <Link
                                 href="#investasi"
-                                className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-cyan-200 transition-all hover:scale-105"
+                                className="group inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-[#e55606] transition-all hover:scale-105"
                             >
                                 Mulai dari modul yang Saya Butuhkan
                                 <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,7 +357,7 @@ export default function SeriBantuAnakku() {
 
                             <div className="bg-white rounded-2xl shadow-xl overflow-hidden relative z-10 border border-slate-100 hover:shadow-2xl transition-shadow duration-500">
                                 <div className="bg-slate-900 p-4 text-center relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-[#06b6d4] to-[#0ea5e9] opacity-90"></div>
+                                    <div className="absolute inset-0 bg-[#435b9b] opacity-90"></div>
                                     <div className="relative z-10">
                                         <span className="inline-flex items-center gap-1 py-1 px-3 rounded text-[10px] font-bold tracking-widest bg-white/20 text-white mb-1 backdrop-blur-sm">
                                             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -380,7 +380,7 @@ export default function SeriBantuAnakku() {
                                             </div>
                                             <div className="text-right">
                                                 <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
-                                                <span className="text-2xl font-extrabold text-cyan-600">Rp445.000</span>
+                                                <span className="text-2xl font-extrabold text-[#fe6007]">Rp445.000</span>
                                             </div>
                                         </div>
                                     </div>
@@ -404,7 +404,7 @@ export default function SeriBantuAnakku() {
 
                                     <Link
                                         href="#investasi"
-                                        className="group block w-full text-center bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white font-bold py-3 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-[1.02]"
+                                        className="group block w-full text-center bg-[#fe6007] text-white font-bold py-3 rounded-xl shadow-md hover:bg-[#e55606] transition-all hover:scale-[1.02]"
                                     >
                                         Lihat Semua Pilihan
                                         <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
@@ -485,7 +485,7 @@ export default function SeriBantuAnakku() {
                 </section>
 
                 {/* WHAT YOU WILL LEARN SECTION */}
-                <section className="bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] py-20 px-6 md:px-12 relative overflow-hidden">
+                <section className="bg-[#435b9b] py-20 px-6 md:px-12 relative overflow-hidden">
                     {/* Floating decorative circles */}
                     <div className="absolute top-10 left-10 w-20 h-20 rounded-full bg-white/10 blur-xl animate-float" />
                     <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-white/10 blur-xl animate-float-reverse" />
@@ -575,24 +575,24 @@ export default function SeriBantuAnakku() {
 
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-                            Disusun oleh <span className="text-cyan-400">Praktisi Berpengalaman</span>
+                            Disusun oleh <span className="text-[#fe6007]">Praktisi Berpengalaman</span>
                         </h2>
                         <p className="text-slate-300 mb-12">Materi dikembangkan oleh ahli di bidang psikologi anak dan parenting</p>
 
                         <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-500">
-                            <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 p-1 animate-float overflow-hidden">
+                            <div className="w-64 h-64 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#435b9b] to-[#fe6007] p-1 animate-float overflow-hidden">
                                 <Image
                                     src="/images/seri-bantu-anakku/expert_new.jpg"
                                     alt="Dra. Yeti Widiati Suryani, Psikolog"
-                                    width={160}
-                                    height={160}
+                                    width={256}
+                                    height={256}
                                     className="w-full h-full object-cover rounded-full"
                                 />
                             </div>
                             <h3 className="text-2xl font-bold text-white mb-2 leading-tight">Dra. Yeti Widiati Suryani, Psikolog</h3>
-                            <p className="text-cyan-400 font-medium mb-4">Praktisi Psikologi Anak & Parenting Coach</p>
+                            <p className="text-[#fe6007] font-medium mb-4">Praktisi Psikologi Anak & Parenting Coach</p>
                             <div className="text-slate-300 max-w-2xl mx-auto space-y-4 text-sm leading-relaxed text-justify">
-                                <p className="italic text-cyan-200">
+                                <p className="italic text-[#fe6007]/80">
                                     "Mengawal tumbuh kembang anak adalah investasi seumur hidup. Mengutamakan pendekatan holistik dan kolaborasi erat antara profesional dan keluarga demi mencetak generasi yang tangguh dan utuh."
                                 </p>
                                 <p>
@@ -622,13 +622,13 @@ export default function SeriBantuAnakku() {
                     </div>
 
                     {/* Bundle Plan */}
-                    <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-[#0ea5e9] relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
-                        <div className="absolute top-0 right-0 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider flex items-center gap-1">
+                    <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                        <div className="absolute top-0 right-0 bg-[#fe6007] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider flex items-center gap-1">
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                             Best Value
                         </div>
                         <div className="p-8 md:p-12 text-center">
-                            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-[#435b9b] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                                 <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                                 </svg>
@@ -643,7 +643,7 @@ export default function SeriBantuAnakku() {
                             </div>
                             <Link
                                 href="/checkout?plan=bundling-bantu-anakku"
-                                className="group inline-block bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] text-white font-bold py-4 px-12 rounded-xl shadow-lg hover:shadow-cyan-200 transition-all hover:scale-105"
+                                className="group inline-block bg-[#fe6007] text-white font-bold py-4 px-12 rounded-xl shadow-lg hover:bg-[#e55606] transition-all hover:scale-105"
                             >
                                 Daftar Bundling Sekarang
                             </Link>
@@ -719,7 +719,7 @@ export default function SeriBantuAnakku() {
                 </section>
 
                 {/* CTA SECTION */}
-                <section className="bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4] py-16 px-6 md:px-12 relative overflow-hidden">
+                <section className="bg-[#435b9b] py-16 px-6 md:px-12 relative overflow-hidden">
                     <div className="absolute top-5 left-10 w-24 h-24 rounded-full bg-white/10 blur-xl animate-float" />
                     <div className="absolute bottom-5 right-10 w-28 h-28 rounded-full bg-white/10 blur-xl animate-float-reverse" />
 
@@ -737,7 +737,7 @@ export default function SeriBantuAnakku() {
                         </p>
                         <Link
                             href="#investasi"
-                            className="group inline-flex items-center gap-2 bg-white text-[#0ea5e9] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                            className="group inline-flex items-center gap-2 bg-white text-[#fe6007] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
                         >
                             Mulai Sekarang
                             <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
