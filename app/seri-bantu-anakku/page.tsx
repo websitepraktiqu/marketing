@@ -165,12 +165,12 @@ function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
                         >
                             {testimonials.map((testimonial, idx) => (
                                 <div key={idx} className="w-full flex-shrink-0 px-4">
-                                    <div className="bg-gradient-to-br from-[#435b9b]/5 to-white p-8 md:p-12 rounded-3xl border border-[#435b9b]/20 shadow-lg relative min-h-[200px] flex flex-col justify-center">
+                                    <div className="bg-white p-8 md:p-12 rounded-3xl border-2 border-[#435b9b] shadow-xl relative min-h-[200px] flex flex-col justify-center hover:shadow-2xl transition-shadow duration-300">
                                         {/* Quote Mark */}
-                                        <div className="text-8xl text-[#435b9b]/20 absolute top-4 left-8 font-serif leading-none">"</div>
+                                        <div className="text-8xl text-[#fe6007]/20 absolute top-4 left-8 font-serif leading-none">"</div>
 
                                         {/* Quote icon top right */}
-                                        <div className="absolute top-6 right-8 w-12 h-12 rounded-full bg-[#435b9b] flex items-center justify-center shadow-md">
+                                        <div className="absolute top-6 right-8 w-12 h-12 rounded-full bg-[#fe6007] flex items-center justify-center shadow-md">
                                             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                             </svg>
@@ -280,12 +280,20 @@ export default function SeriBantuAnakku() {
                 .animate-delay-300 { animation-delay: 0.3s; }
                 .animate-delay-400 { animation-delay: 0.4s; }
                 .animate-delay-500 { animation-delay: 0.5s; }
+                .animate-delay-400 { animation-delay: 0.4s; }
+                .animate-delay-500 { animation-delay: 0.5s; }
+                .bg-grid-pattern {
+                    background-image: linear-gradient(to right, #435b9b1a 1px, transparent 1px),
+                    linear-gradient(to bottom, #435b9b1a 1px, transparent 1px);
+                    background-size: 40px 40px;
+                }
             `}</style>
 
             <Navbar />
             <main>
-                {/* HERO SECTION */}
-                <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-10 pb-24 px-6 md:px-12">
+                {/* HERO SECTION - Strategic Theme: Grid Pattern */}
+                <section className="relative overflow-hidden bg-white pt-10 pb-24 px-6 md:px-12">
+                    <div className="absolute inset-0 bg-grid-pattern opacity-[0.3] pointer-events-none" />
                     {/* Abstract Background Shapes */}
                     <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-[#435b9b]/5 rounded-full blur-3xl" />
                     <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-[#fe6007]/5 rounded-full blur-3xl" />
@@ -296,144 +304,117 @@ export default function SeriBantuAnakku() {
                     <div className="absolute bottom-40 left-20 w-10 h-10 rounded-full bg-[#435b9b]/10 animate-float hidden lg:block" style={{ animationDelay: "2s" }} />
                     <div className="absolute bottom-20 right-10 w-14 h-14 rounded-full bg-[#fe6007]/10 animate-float-reverse hidden lg:block" style={{ animationDelay: "0.5s" }} />
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                        {/* Left Content */}
-                        <div className={`space-y-8 text-center lg:text-left order-2 lg:order-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#435b9b]/10 border border-[#435b9b]/20 text-[#435b9b] text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
+                        {/* Centered Content */}
+                        <div className={`space-y-6 mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#435b9b]/10 border border-[#435b9b]/20 text-[#435b9b] text-sm font-bold uppercase tracking-wider">
                                 <span className="w-2 h-2 rounded-full bg-[#435b9b] animate-pulse"></span>
                                 Mini Series eCourse untuk Orang Tua
                             </div>
 
-                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-[1.2]">
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
                                 Seri Bantu Anak-ku! <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#435b9b] to-[#fe6007]">
-                                    Strategi Orang Tua dalam Menangani Masalah
+                                    Strategi Penanganan Masalah Anak
                                 </span>
                             </h1>
 
-                            <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-                                7 eCourse tematik yang bisa dipelajari sesuai kebutuhan orang tua — dari membaca tanda awal masalah, mendampingi rasa takut & cemas, hingga membangun komunikasi yang lebih menenangkan.
+                            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
+                                7 eCourse tematik yang disusun sebagai strategi step-by-step mendampingi anak. Dari membaca tanda awal, menghadapi emosi, hingga membangun komunikasi yang menenangkan.
                             </p>
 
-                            {/* Benefits Grid - Using checkmarks instead of emojis */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
-                                {[
-                                    "Bisa diakses kapan saja",
-                                    "Praktis & berbasis kasus sehari-hari",
-                                    "7 Worksheet karakteristik anak",
-                                    "7 Tools refleksi diri",
-                                    "5 Tools skrining masalah anak",
-                                    "E-Certificate"
-                                ].map((item, idx) => (
-                                    <div
-                                        key={idx}
-                                        className={`flex items-center gap-3 p-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#435b9b]/30 transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-                                        style={{ animationDelay: `${0.1 * idx}s` }}
-                                    >
-                                        <div className="w-6 h-6 rounded-full bg-[#435b9b] flex items-center justify-center shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <span className="text-sm font-medium text-slate-700">{item}</span>
-                                    </div>
-                                ))}
+                            <div className="flex flex-wrap justify-center gap-4 mt-8">
+                                <Link
+                                    href="#investasi"
+                                    className="group inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-10 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 hover:shadow-[0_15px_30px_rgba(254,96,7,0.4)]"
+                                >
+                                    Lihat Strategi Lengkap
+                                    <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </Link>
+                                <Link
+                                    href="#expert"
+                                    className="group inline-flex items-center gap-2 bg-white text-slate-700 font-bold py-4 px-10 rounded-full border border-slate-200 hover:border-[#435b9b] hover:text-[#435b9b] transition-all"
+                                >
+                                    Kenalan dengan Ahli
+                                </Link>
                             </div>
-
-                            <Link
-                                href="#investasi"
-                                className="group inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-[#e55606] transition-all hover:scale-105"
-                            >
-                                Mulai dari modul yang Saya Butuhkan
-                                <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </Link>
                         </div>
 
-                        {/* Right Card - Pricing Preview */}
-                        <div className={`relative mx-auto w-full max-w-md order-1 lg:order-2 mb-8 lg:mb-0 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.3s" }}>
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg"></div>
-
-                            <div className="bg-white rounded-2xl shadow-xl overflow-hidden relative z-10 border border-slate-100 hover:shadow-2xl transition-shadow duration-500">
-                                <div className="bg-slate-900 p-4 text-center relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-[#435b9b] opacity-90"></div>
-                                    <div className="relative z-10">
-                                        <span className="inline-flex items-center gap-1 py-1 px-3 rounded text-[10px] font-bold tracking-widest bg-white/20 text-white mb-1 backdrop-blur-sm">
-                                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                                            PILIHAN FLEKSIBEL
-                                        </span>
-                                        <h3 className="text-white font-bold text-lg">Investasi Ilmu</h3>
+                        {/* Benefits Strip */}
+                        <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-left border-y border-slate-100 py-8 mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                            {[
+                                "Akses Selamanya",
+                                "Studi Kasus Nyata",
+                                "7 Worksheet",
+                                "7 Tools Refleksi",
+                                "5 Tools Skrining",
+                                "E-Certificate"
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex flex-col items-center text-center gap-2">
+                                    <div className="w-8 h-8 rounded-full bg-[#435b9b]/10 flex items-center justify-center text-[#435b9b]">
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                        </svg>
                                     </div>
+                                    <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">{item}</span>
                                 </div>
+                            ))}
+                        </div>
 
-                                <div className="p-6 space-y-4">
-                                    <div className="bg-[#435b9b]/5 p-4 rounded-xl border border-[#435b9b]/10 hover:bg-[#435b9b]/10 transition-colors group cursor-pointer">
-                                        <div className="flex justify-between items-center">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-lg bg-[#435b9b] flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                                                    </svg>
-                                                </div>
-                                                <span className="font-bold text-slate-700">Bundling 7 eCourse</span>
-                                            </div>
-                                            <div className="text-right">
-                                                <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
-                                                <span className="text-2xl font-extrabold text-[#fe6007]">Rp445.000</span>
-                                            </div>
+                        {/* Centered Pricing Preview Card */}
+                        <div className={`relative mx-auto w-full max-w-lg ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.4s" }}>
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-3xl transform rotate-2 scale-105 opacity-20 blur-xl"></div>
+
+                            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden relative z-10 border-2 border-[#435b9b] ring-4 ring-[#435b9b]/5">
+                                <div className="bg-[#435b9b] p-3 text-center">
+                                    <span className="text-white font-bold tracking-widest text-sm">PILIHAN FAVORIT ORANG TUA</span>
+                                </div>
+                                <div className="p-8">
+                                    <div className="flex justify-between items-end mb-6">
+                                        <div>
+                                            <p className="text-slate-500 font-medium mb-1">Bundling 7 Topik</p>
+                                            <h3 className="text-3xl font-extrabold text-slate-900">Full Access</h3>
+                                        </div>
+                                        <div className="text-right">
+                                            <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
+                                            <span className="text-3xl font-extrabold text-[#fe6007]">Rp445.000</span>
                                         </div>
                                     </div>
-
-                                    <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 hover:bg-slate-100/50 transition-colors group cursor-pointer">
-                                        <div className="flex justify-between items-center">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                                    <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                                    </svg>
-                                                </div>
-                                                <span className="font-bold text-slate-700">Per Topik (1-7)</span>
-                                            </div>
-                                            <div className="text-right">
-                                                <span className="text-sm text-slate-400 line-through">Rp100.000</span>
-                                                <span className="text-2xl font-extrabold text-slate-900 ml-2">Rp75.000</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    <hr className="border-slate-100 mb-6" />
+                                    <ul className="space-y-3 mb-8">
+                                        <li className="flex items-center gap-3 text-slate-700">
+                                            <svg className="w-5 h-5 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                            Akses ke seluruh 7 modul strategi
+                                        </li>
+                                        <li className="flex items-center gap-3 text-slate-700">
+                                            <svg className="w-5 h-5 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                            Bonus Worksheet & Tools Skrining
+                                        </li>
+                                    </ul>
                                     <Link
                                         href="#investasi"
-                                        className="group block w-full text-center bg-[#fe6007] text-white font-bold py-3 rounded-xl shadow-md hover:bg-[#e55606] transition-all hover:scale-[1.02]"
+                                        className="block w-full text-center bg-[#435b9b] text-white font-bold py-4 rounded-xl hover:bg-[#36497c] transition-colors"
                                     >
-                                        Lihat Semua Pilihan
-                                        <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+                                        Ambil Promo Bundling
                                     </Link>
-
-                                    {/* Social Proof */}
-                                    <div className="flex items-center justify-center gap-3 pt-2">
-                                        <div className="flex -space-x-2">
-                                            {["A", "B", "C", "D"].map((initial, idx) => (
-                                                <div key={idx} className="w-8 h-8 rounded-full bg-[#435b9b] border-2 border-white flex items-center justify-center text-xs font-bold text-white">
-                                                    {initial}
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <p className="text-xs text-slate-500 font-medium">
-                                            <span className="text-[#fe6007] font-bold">100+</span> orang tua sudah bergabung
-                                        </p>
-                                    </div>
+                                    <p className="text-center text-xs text-slate-400 mt-4">Atau beli satuan di bawah</p>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
 
-                {/* ROADMAP SECTION */}
+                {/* ROADMAP SECTION - Strategic Theme: Connecting Lines */}
                 <section className="bg-slate-50 py-20 px-6 md:px-12 relative overflow-hidden">
                     {/* Background decorations */}
-                    <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-[#435b9b]/10 blur-xl animate-float" />
-                    <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-[#fe6007]/10 blur-xl animate-float-reverse" />
+                    <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-[#435b9b]/5 blur-xl animate-float" />
+                    <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-[#fe6007]/5 blur-xl animate-float-reverse" />
+
+                    {/* Connecting Line for Desktop */}
+                    <div className="hidden md:block absolute top-[50%] left-0 w-full h-1 border-t-2 border-dashed border-[#435b9b]/20 z-0 transform -translate-y-1/2"></div>
 
                     <div className="max-w-5xl mx-auto relative z-10">
                         <div className="text-center mb-12">
@@ -450,7 +431,7 @@ export default function SeriBantuAnakku() {
                             {roadmapData.map((step, idx) => (
                                 <div
                                     key={step.step}
-                                    className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#fe6007]/30 transition-all duration-300 hover:-translate-y-2"
+                                    className="group bg-white p-6 rounded-2xl border-2 border-slate-100 shadow-sm hover:shadow-xl hover:border-[#435b9b] transition-all duration-300 hover:-translate-y-2 relative z-10"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="relative">
@@ -507,14 +488,15 @@ export default function SeriBantuAnakku() {
                             ].map((item, idx) => (
                                 <div
                                     key={idx}
-                                    className="group bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                    className="group bg-white p-6 rounded-2xl border-l-4 border-[#fe6007] hover:bg-white/90 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
                                 >
-                                    <div className="w-10 h-10 mb-4 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <div className="w-10 h-10 mb-4 rounded-full bg-[#435b9b] flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        {/* Use checkmark icon for "What You Will Learn" */}
                                         <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <p className="text-white font-medium">{item}</p>
+                                    <p className="text-slate-800 font-bold">{item}</p>
                                 </div>
                             ))}
                         </div>
@@ -552,55 +534,82 @@ export default function SeriBantuAnakku() {
                             ].map((item, idx) => (
                                 <div
                                     key={idx}
-                                    className="group text-center p-8 rounded-2xl bg-[#435b9b]/5 border border-[#435b9b]/10 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                                    className="group text-center p-8 rounded-2xl bg-white border-2 border-slate-100 hover:border-[#435b9b] hover:shadow-[0_20px_40px_-15px_rgba(67,91,155,0.2)] transition-all duration-300 hover:-translate-y-2"
                                 >
                                     <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-[#435b9b] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                                         <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={item.iconPath} />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.iconPath} />
                                         </svg>
                                     </div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                                    <p className="text-slate-600">{item.desc}</p>
+                                    <p className="text-slate-600 font-medium">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* EXPERT SECTION */}
-                <section className="bg-gradient-to-br from-slate-800 to-slate-900 py-20 px-6 md:px-12 relative overflow-hidden">
-                    {/* Decorative circles */}
-                    <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[#435b9b]/20 blur-2xl" />
-                    <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-[#fe6007]/10 blur-2xl" />
+                {/* EXPERT SECTION - Strategic Theme: Split Layout */}
+                <section id="expert" className="bg-slate-900 py-24 px-6 md:px-12 relative overflow-hidden">
+                    <div className="max-w-6xl mx-auto relative z-10">
+                        <div className="bg-slate-800/50 rounded-[3rem] p-8 md:p-12 border border-slate-700 relative overflow-hidden">
+                            {/* Grid Pattern Overlay */}
+                            <div className="absolute inset-0 bg-grid-pattern opacity-[0.05] pointer-events-none" />
 
-                    <div className="max-w-4xl mx-auto text-center relative z-10">
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-                            Disusun oleh <span className="text-[#fe6007]">Praktisi Berpengalaman</span>
-                        </h2>
-                        <p className="text-slate-300 mb-12">Materi dikembangkan oleh ahli di bidang psikologi anak dan parenting</p>
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                                {/* Expert Image - Left Side - Large Portrait */}
+                                <div className="lg:col-span-4 relative order-1">
+                                    <div className="relative rounded-3xl overflow-hidden border-4 border-[#fe6007]/20 shadow-2xl">
+                                        <div className="aspect-[3/4] relative">
+                                            <Image
+                                                src="/images/seri-bantu-anakku/expert_new.jpg"
+                                                alt="Dra. Yeti Widiati Suryani, Psikolog"
+                                                fill
+                                                className="object-cover hover:scale-105 transition-transform duration-700"
+                                            />
+                                        </div>
+                                    </div>
+                                    {/* Name Badge Floating */}
+                                    <div className="absolute -bottom-6 -right-6 bg-[#fe6007] text-white p-6 rounded-tl-3xl rounded-br-3xl shadow-xl hidden md:block">
+                                        <p className="text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Expert</p>
+                                        <h3 className="text-xl font-bold leading-none">Dra. Yeti Widiati</h3>
+                                    </div>
+                                </div>
 
-                        <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-500">
-                            <div className="w-64 h-64 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#435b9b] to-[#fe6007] p-1 animate-float overflow-hidden">
-                                <Image
-                                    src="/images/seri-bantu-anakku/expert_new.jpg"
-                                    alt="Dra. Yeti Widiati Suryani, Psikolog"
-                                    width={256}
-                                    height={256}
-                                    className="w-full h-full object-cover rounded-full"
-                                />
-                            </div>
-                            <h3 className="text-2xl font-bold text-white mb-2 leading-tight">Dra. Yeti Widiati Suryani, Psikolog</h3>
-                            <p className="text-[#fe6007] font-medium mb-4">Praktisi Psikologi Anak & Parenting Coach</p>
-                            <div className="text-slate-300 max-w-2xl mx-auto space-y-4 text-sm leading-relaxed text-justify">
-                                <p className="italic text-[#fe6007]/80">
-                                    "Mengawal tumbuh kembang anak adalah investasi seumur hidup. Mengutamakan pendekatan holistik dan kolaborasi erat antara profesional dan keluarga demi mencetak generasi yang tangguh dan utuh."
-                                </p>
-                                <p>
-                                    Telah berkarya lebih dari 30 tahun memberikan pelayanan psikoterapi, penanganan trauma, dan pendampingan Anak Berkebutuhan Khusus (ABK) serta keluarga.
-                                </p>
-                                <p>
-                                    Dra. Yeti akan berbagi tentang peran vital psikolog dalam memahami dan menavigasi masalah tumbuh kembang anak, dengan mengintegrasikan aspek psikologis, sensori, dan gerak tubuh untuk optimalisasi fungsi sehari-hari.
-                                </p>
+                                {/* Expert Content - Right Side */}
+                                <div className="lg:col-span-8 order-2 text-left space-y-8">
+                                    <div>
+                                        <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-2">
+                                            Disusun oleh <span className="text-[#fe6007]">Praktisi Senior</span>
+                                        </h2>
+                                        <h3 className="text-2xl text-slate-300 font-medium">Dra. Yeti Widiati Suryani, Psikolog</h3>
+                                        <div className="h-1 w-20 bg-[#fe6007] mt-6"></div>
+                                    </div>
+
+                                    <div className="text-slate-300 space-y-6 text-lg leading-relaxed">
+                                        <p className="font-serif italic text-2xl text-white/90 border-l-4 border-[#fe6007] pl-6 py-2">
+                                            "Mengawal tumbuh kembang anak adalah investasi seumur hidup. Kita butuh kolaborasi erat antara profesional dan keluarga."
+                                        </p>
+                                        <p>
+                                            Telah berkarya lebih dari 30 tahun memberikan pelayanan psikoterapi, penanganan trauma, dan pendampingan Anak Berkebutuhan Khusus (ABK) serta keluarga.
+                                        </p>
+                                        <p>
+                                            Dra. Yeti membagikan strategi praktis yang mengintegrasikan aspek psikologis, sensori, dan gerak tubuh. Materi ini bukan sekadar teori, tapi "alat tempur" harian bagi orang tua.
+                                        </p>
+                                    </div>
+
+                                    {/* Stats or Credentials */}
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-slate-700">
+                                        <div>
+                                            <div className="text-3xl font-bold text-white">30+</div>
+                                            <div className="text-sm text-slate-400">Tahun Pengalaman</div>
+                                        </div>
+                                        <div>
+                                            <div className="text-3xl font-bold text-white">Psikolog</div>
+                                            <div className="text-sm text-slate-400">Lisensi Resmi</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -610,9 +619,9 @@ export default function SeriBantuAnakku() {
                 <TestimonialCarousel testimonials={testimonials} />
 
                 {/* PRICING SECTION */}
-                <section id="investasi" className="bg-[#435b9b]/5 py-20 px-6 md:px-12 border-t border-[#435b9b]/10 relative overflow-hidden">
-                    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-[#435b9b]/10 blur-2xl animate-float" />
-                    <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-[#fe6007]/10 blur-2xl animate-float-reverse" />
+                <section id="investasi" className="bg-slate-50 py-20 px-6 md:px-12 border-t border-slate-200 relative overflow-hidden">
+                    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-[#435b9b] opacity-5 blur-3xl animate-float" />
+                    <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-[#fe6007] opacity-5 blur-3xl animate-float-reverse" />
 
                     <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
                         <h2 className="text-3xl font-bold text-slate-900 mb-4">
@@ -622,7 +631,7 @@ export default function SeriBantuAnakku() {
                     </div>
 
                     {/* Bundle Plan */}
-                    <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
+                    <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-[0_25px_50px_-12px_rgba(67,91,155,0.25)] transition-all duration-500 hover:-translate-y-2 group ring-4 ring-[#435b9b]/10">
                         <div className="absolute top-0 right-0 bg-[#fe6007] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider flex items-center gap-1">
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                             Best Value
@@ -699,7 +708,7 @@ export default function SeriBantuAnakku() {
 
                         <div className="space-y-4">
                             {faqData.map((faq, idx) => (
-                                <details key={idx} className="group bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition-all border border-slate-200">
+                                <details key={idx} className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all border-2 border-slate-100 hover:border-[#435b9b]/30">
                                     <summary className="flex cursor-pointer items-center justify-between p-6 font-medium text-slate-900 list-none">
                                         <span className="flex items-center gap-2">
                                             <span className="w-6 h-6 rounded-full bg-[#435b9b]/10 flex items-center justify-center text-[#435b9b] text-sm font-bold">{idx + 1}</span>
