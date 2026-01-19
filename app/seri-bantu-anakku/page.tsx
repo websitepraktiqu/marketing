@@ -147,12 +147,12 @@ function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
 
     return (
         <section className="bg-white py-20 px-6 md:px-12 overflow-hidden relative">
-            <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-cyan-100/30 blur-2xl animate-float" />
-            <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full bg-sky-100/30 blur-2xl animate-float-reverse" />
+            <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-[#435b9b]/10 blur-2xl animate-float" />
+            <div className="absolute bottom-10 left-10 w-20 h-20 rounded-full bg-[#fe6007]/10 blur-2xl animate-float-reverse" />
 
             <div className="max-w-4xl mx-auto relative z-10">
                 <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
-                    Apa Kata <span className="text-[#0ea5e9]">Peserta?</span>
+                    Apa Kata <span className="text-[#fe6007]">Peserta?</span>
                 </h2>
 
                 {/* Carousel Container */}
@@ -165,12 +165,12 @@ function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
                         >
                             {testimonials.map((testimonial, idx) => (
                                 <div key={idx} className="w-full flex-shrink-0 px-4">
-                                    <div className="bg-gradient-to-br from-sky-50 to-cyan-50 p-8 md:p-12 rounded-3xl border border-sky-100 shadow-lg relative min-h-[200px] flex flex-col justify-center">
+                                    <div className="bg-gradient-to-br from-[#435b9b]/5 to-white p-8 md:p-12 rounded-3xl border border-[#435b9b]/20 shadow-lg relative min-h-[200px] flex flex-col justify-center">
                                         {/* Quote Mark */}
-                                        <div className="text-8xl text-cyan-200 absolute top-4 left-8 font-serif leading-none">"</div>
+                                        <div className="text-8xl text-[#435b9b]/20 absolute top-4 left-8 font-serif leading-none">"</div>
 
                                         {/* Quote icon top right */}
-                                        <div className="absolute top-6 right-8 w-12 h-12 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shadow-md">
+                                        <div className="absolute top-6 right-8 w-12 h-12 rounded-full bg-[#435b9b] flex items-center justify-center shadow-md">
                                             <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                             </svg>
@@ -191,7 +191,7 @@ function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
                     {/* Navigation Arrows */}
                     <button
                         onClick={goToPrev}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg border border-sky-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-50 hover:scale-110 transition-all z-20"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg border border-[#435b9b]/20 flex items-center justify-center text-[#435b9b] hover:bg-[#435b9b]/5 hover:scale-110 transition-all z-20"
                         aria-label="Previous testimonial"
                     >
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -201,7 +201,7 @@ function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
 
                     <button
                         onClick={goToNext}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg border border-sky-100 flex items-center justify-center text-cyan-600 hover:bg-cyan-50 hover:scale-110 transition-all z-20"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-12 h-12 rounded-full bg-white shadow-lg border border-[#435b9b]/20 flex items-center justify-center text-[#435b9b] hover:bg-[#435b9b]/5 hover:scale-110 transition-all z-20"
                         aria-label="Next testimonial"
                     >
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -217,8 +217,8 @@ function TestimonialCarousel({ testimonials }: { testimonials: string[] }) {
                             key={idx}
                             onClick={() => goToSlide(idx)}
                             className={`transition-all duration-300 rounded-full ${idx === currentIndex
-                                ? 'w-8 h-3 bg-gradient-to-r from-[#0ea5e9] to-[#06b6d4]'
-                                : 'w-3 h-3 bg-cyan-200 hover:bg-cyan-300'
+                                ? 'w-8 h-3 bg-[#fe6007]'
+                                : 'w-3 h-3 bg-[#435b9b]/30 hover:bg-[#435b9b]/50'
                                 }`}
                             aria-label={`Go to testimonial ${idx + 1}`}
                         />
@@ -287,20 +287,20 @@ export default function SeriBantuAnakku() {
                 {/* HERO SECTION */}
                 <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-10 pb-24 px-6 md:px-12">
                     {/* Abstract Background Shapes */}
-                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-cyan-400/10 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-3xl" />
+                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-[#435b9b]/5 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-[#fe6007]/5 rounded-full blur-3xl" />
 
                     {/* Decorative floating shapes instead of emojis */}
-                    <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-cyan-200/30 animate-float hidden lg:block" />
-                    <div className="absolute top-40 right-20 w-12 h-12 rounded-full bg-blue-200/30 animate-float-reverse hidden lg:block" style={{ animationDelay: "1s" }} />
-                    <div className="absolute bottom-40 left-20 w-10 h-10 rounded-full bg-cyan-300/20 animate-float hidden lg:block" style={{ animationDelay: "2s" }} />
-                    <div className="absolute bottom-20 right-10 w-14 h-14 rounded-full bg-sky-200/30 animate-float-reverse hidden lg:block" style={{ animationDelay: "0.5s" }} />
+                    <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-[#435b9b]/10 animate-float hidden lg:block" />
+                    <div className="absolute top-40 right-20 w-12 h-12 rounded-full bg-[#fe6007]/10 animate-float-reverse hidden lg:block" style={{ animationDelay: "1s" }} />
+                    <div className="absolute bottom-40 left-20 w-10 h-10 rounded-full bg-[#435b9b]/10 animate-float hidden lg:block" style={{ animationDelay: "2s" }} />
+                    <div className="absolute bottom-20 right-10 w-14 h-14 rounded-full bg-[#fe6007]/10 animate-float-reverse hidden lg:block" style={{ animationDelay: "0.5s" }} />
 
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
                         {/* Left Content */}
                         <div className={`space-y-8 text-center lg:text-left order-2 lg:order-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100/50 border border-cyan-200 text-cyan-700 text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
-                                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#435b9b]/10 border border-[#435b9b]/20 text-[#435b9b] text-xs font-bold uppercase tracking-wider mx-auto lg:mx-0">
+                                <span className="w-2 h-2 rounded-full bg-[#435b9b] animate-pulse"></span>
                                 Mini Series eCourse untuk Orang Tua
                             </div>
 
@@ -327,10 +327,10 @@ export default function SeriBantuAnakku() {
                                 ].map((item, idx) => (
                                     <div
                                         key={idx}
-                                        className={`flex items-center gap-3 p-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-cyan-200 transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+                                        className={`flex items-center gap-3 p-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:shadow-md hover:border-[#435b9b]/30 transition-all duration-300 hover:-translate-y-1 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                                         style={{ animationDelay: `${0.1 * idx}s` }}
                                     >
-                                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shrink-0">
+                                        <div className="w-6 h-6 rounded-full bg-[#435b9b] flex items-center justify-center shrink-0">
                                             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                                             </svg>
@@ -353,7 +353,7 @@ export default function SeriBantuAnakku() {
 
                         {/* Right Card - Pricing Preview */}
                         <div className={`relative mx-auto w-full max-w-md order-1 lg:order-2 mb-8 lg:mb-0 ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.3s" }}>
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-2xl transform rotate-3 scale-105 opacity-20 blur-lg"></div>
 
                             <div className="bg-white rounded-2xl shadow-xl overflow-hidden relative z-10 border border-slate-100 hover:shadow-2xl transition-shadow duration-500">
                                 <div className="bg-slate-900 p-4 text-center relative overflow-hidden">
@@ -368,10 +368,10 @@ export default function SeriBantuAnakku() {
                                 </div>
 
                                 <div className="p-6 space-y-4">
-                                    <div className="bg-cyan-50 p-4 rounded-xl border border-cyan-100 hover:bg-cyan-100/50 transition-colors group cursor-pointer">
+                                    <div className="bg-[#435b9b]/5 p-4 rounded-xl border border-[#435b9b]/10 hover:bg-[#435b9b]/10 transition-colors group cursor-pointer">
                                         <div className="flex justify-between items-center">
                                             <div className="flex items-center gap-2">
-                                                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center group-hover:scale-110 transition-transform">
+                                                <div className="w-8 h-8 rounded-lg bg-[#435b9b] flex items-center justify-center group-hover:scale-110 transition-transform">
                                                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                                                     </svg>
@@ -414,13 +414,13 @@ export default function SeriBantuAnakku() {
                                     <div className="flex items-center justify-center gap-3 pt-2">
                                         <div className="flex -space-x-2">
                                             {["A", "B", "C", "D"].map((initial, idx) => (
-                                                <div key={idx} className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 border-2 border-white flex items-center justify-center text-xs font-bold text-white">
+                                                <div key={idx} className="w-8 h-8 rounded-full bg-[#435b9b] border-2 border-white flex items-center justify-center text-xs font-bold text-white">
                                                     {initial}
                                                 </div>
                                             ))}
                                         </div>
                                         <p className="text-xs text-slate-500 font-medium">
-                                            <span className="text-cyan-600 font-bold">100+</span> orang tua sudah bergabung
+                                            <span className="text-[#fe6007] font-bold">100+</span> orang tua sudah bergabung
                                         </p>
                                     </div>
                                 </div>
@@ -430,17 +430,17 @@ export default function SeriBantuAnakku() {
                 </section>
 
                 {/* ROADMAP SECTION */}
-                <section className="bg-sky-50 py-20 px-6 md:px-12 relative overflow-hidden">
+                <section className="bg-slate-50 py-20 px-6 md:px-12 relative overflow-hidden">
                     {/* Background decorations */}
-                    <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-cyan-300/20 blur-xl animate-float" />
-                    <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-sky-300/20 blur-xl animate-float-reverse" />
+                    <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-[#435b9b]/10 blur-xl animate-float" />
+                    <div className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-[#fe6007]/10 blur-xl animate-float-reverse" />
 
                     <div className="max-w-5xl mx-auto relative z-10">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-extrabold text-sky-900 mb-4">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-[#435b9b] mb-4">
                                 Roadmap Pendampingan Orang Tua
                             </h2>
-                            <p className="text-sky-600 max-w-2xl mx-auto">
+                            <p className="text-slate-600 max-w-2xl mx-auto">
                                 Perjalanan memahami anak, dari mengenali tanda sampai mengubah cara berkomunikasi
                             </p>
                         </div>
@@ -450,7 +450,7 @@ export default function SeriBantuAnakku() {
                             {roadmapData.map((step, idx) => (
                                 <div
                                     key={step.step}
-                                    className="group bg-white p-6 rounded-2xl border border-sky-100 shadow-sm hover:shadow-xl hover:border-cyan-300 transition-all duration-300 hover:-translate-y-2"
+                                    className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-[#fe6007]/30 transition-all duration-300 hover:-translate-y-2"
                                 >
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="relative">
@@ -464,7 +464,7 @@ export default function SeriBantuAnakku() {
                                                 />
                                             </div>
                                             {/* Step badge */}
-                                            <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] text-white font-bold text-sm flex items-center justify-center shadow-md border-2 border-white">
+                                            <div className="absolute -top-2 -left-2 w-7 h-7 rounded-full bg-[#fe6007] text-white font-bold text-sm flex items-center justify-center shadow-md border-2 border-white">
                                                 {step.step}
                                             </div>
                                         </div>
@@ -473,7 +473,7 @@ export default function SeriBantuAnakku() {
                                     <ul className="space-y-2 pl-4">
                                         {step.topics.map((topic) => (
                                             <li key={topic.id} className="flex items-start gap-2 text-slate-600 text-sm">
-                                                <span className="text-cyan-500 font-bold shrink-0">[Topik {topic.id}]</span>
+                                                <span className="text-[#fe6007] font-bold shrink-0">[Topik {topic.id}]</span>
                                                 <span className="group-hover:text-slate-800 transition-colors">{topic.name}</span>
                                             </li>
                                         ))}
@@ -523,12 +523,12 @@ export default function SeriBantuAnakku() {
 
                 {/* WHY THIS SERIES SECTION */}
                 <section className="bg-white py-20 px-6 md:px-12 relative overflow-hidden">
-                    <div className="absolute top-20 right-20 w-40 h-40 rounded-full bg-cyan-100/30 blur-2xl animate-float" />
+                    <div className="absolute top-20 right-20 w-40 h-40 rounded-full bg-[#435b9b]/10 blur-2xl animate-float" />
 
                     <div className="max-w-5xl mx-auto relative z-10">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                                Kenapa Mini Series Ini <span className="text-[#0ea5e9]">Dibutuhkan</span> Orang Tua?
+                                Kenapa Mini Series Ini <span className="text-[#fe6007]">Dibutuhkan</span> Orang Tua?
                             </h2>
                         </div>
 
@@ -552,9 +552,9 @@ export default function SeriBantuAnakku() {
                             ].map((item, idx) => (
                                 <div
                                     key={idx}
-                                    className="group text-center p-8 rounded-2xl bg-gradient-to-br from-sky-50 to-cyan-50 border border-sky-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                                    className="group text-center p-8 rounded-2xl bg-[#435b9b]/5 border border-[#435b9b]/10 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                                 >
-                                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-[#435b9b] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                                         <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={item.iconPath} />
                                         </svg>
@@ -570,8 +570,8 @@ export default function SeriBantuAnakku() {
                 {/* EXPERT SECTION */}
                 <section className="bg-gradient-to-br from-slate-800 to-slate-900 py-20 px-6 md:px-12 relative overflow-hidden">
                     {/* Decorative circles */}
-                    <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-cyan-500/10 blur-2xl" />
-                    <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-blue-500/10 blur-2xl" />
+                    <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-[#435b9b]/20 blur-2xl" />
+                    <div className="absolute bottom-10 right-10 w-40 h-40 rounded-full bg-[#fe6007]/10 blur-2xl" />
 
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
@@ -610,9 +610,9 @@ export default function SeriBantuAnakku() {
                 <TestimonialCarousel testimonials={testimonials} />
 
                 {/* PRICING SECTION */}
-                <section id="investasi" className="bg-gradient-to-br from-sky-50 to-cyan-50 py-20 px-6 md:px-12 border-t border-sky-100 relative overflow-hidden">
-                    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-cyan-200/20 blur-2xl animate-float" />
-                    <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-sky-200/20 blur-2xl animate-float-reverse" />
+                <section id="investasi" className="bg-[#435b9b]/5 py-20 px-6 md:px-12 border-t border-[#435b9b]/10 relative overflow-hidden">
+                    <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-[#435b9b]/10 blur-2xl animate-float" />
+                    <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-[#fe6007]/10 blur-2xl animate-float-reverse" />
 
                     <div className="max-w-4xl mx-auto text-center mb-16 relative z-10">
                         <h2 className="text-3xl font-bold text-slate-900 mb-4">
@@ -659,16 +659,16 @@ export default function SeriBantuAnakku() {
                             {roadmapData.flatMap(step => step.topics).map((topic, idx) => (
                                 <div
                                     key={topic.id}
-                                    className="group bg-white p-6 rounded-xl shadow-sm border border-sky-100 flex justify-between items-center hover:shadow-lg hover:border-cyan-300 transition-all duration-300 hover:-translate-y-1"
+                                    className="group bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center hover:shadow-lg hover:border-[#fe6007]/30 transition-all duration-300 hover:-translate-y-1"
                                 >
                                     <div className="flex items-start gap-3">
-                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                        <div className="w-8 h-8 rounded-lg bg-[#435b9b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                                             <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <span className="text-cyan-600 font-bold text-sm">Topik {topic.id}</span>
+                                            <span className="text-[#435b9b] font-bold text-sm">Topik {topic.id}</span>
                                             <p className="text-slate-700 font-medium text-sm mt-1 line-clamp-2">{topic.name}</p>
                                         </div>
                                     </div>
@@ -677,7 +677,7 @@ export default function SeriBantuAnakku() {
                                         <div className="text-lg font-bold text-slate-900">Rp75.000</div>
                                         <Link
                                             href={`/checkout?plan=topik-${topic.id}`}
-                                            className="inline-block mt-2 text-xs bg-cyan-100 text-cyan-700 font-bold py-1 px-3 rounded-lg hover:bg-cyan-200 transition-colors"
+                                            className="inline-block mt-2 text-xs bg-[#435b9b]/10 text-[#435b9b] font-bold py-1 px-3 rounded-lg hover:bg-[#435b9b]/20 transition-colors"
                                         >
                                             Pilih →
                                         </Link>
@@ -690,26 +690,26 @@ export default function SeriBantuAnakku() {
 
                 {/* FAQ SECTION */}
                 <section className="bg-white py-20 px-6 md:px-12 relative overflow-hidden">
-                    <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-cyan-100/30 blur-2xl animate-float" />
+                    <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-[#435b9b]/10 blur-2xl animate-float" />
 
                     <div className="max-w-3xl mx-auto relative z-10">
                         <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">
-                            Pertanyaan yang <span className="text-[#0ea5e9]">Sering Ditanyakan</span>
+                            Pertanyaan yang <span className="text-[#fe6007]">Sering Ditanyakan</span>
                         </h2>
 
                         <div className="space-y-4">
                             {faqData.map((faq, idx) => (
-                                <details key={idx} className="group bg-gradient-to-br from-sky-50 to-cyan-50 rounded-xl shadow-sm hover:shadow-md transition-all border border-sky-100">
+                                <details key={idx} className="group bg-slate-50 rounded-xl shadow-sm hover:shadow-md transition-all border border-slate-200">
                                     <summary className="flex cursor-pointer items-center justify-between p-6 font-medium text-slate-900 list-none">
                                         <span className="flex items-center gap-2">
-                                            <span className="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 text-sm font-bold">{idx + 1}</span>
+                                            <span className="w-6 h-6 rounded-full bg-[#435b9b]/10 flex items-center justify-center text-[#435b9b] text-sm font-bold">{idx + 1}</span>
                                             {faq.question}
                                         </span>
-                                        <span className="transition group-open:rotate-180 text-cyan-500">
+                                        <span className="transition group-open:rotate-180 text-[#fe6007]">
                                             <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                                         </span>
                                     </summary>
-                                    <div className="bg-white p-6 text-slate-600 text-sm border-t border-sky-100 rounded-b-xl">
+                                    <div className="bg-white p-6 text-slate-600 text-sm border-t border-slate-100 rounded-b-xl">
                                         {faq.answer}
                                     </div>
                                 </details>
