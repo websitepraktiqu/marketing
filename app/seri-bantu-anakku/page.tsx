@@ -582,18 +582,26 @@ export default function SeriBantuAnakku() {
                         <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all duration-500">
                             <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 p-1 animate-float overflow-hidden">
                                 <Image
-                                    src="/images/seri-bantu-anakku/expert.png"
-                                    alt="Teh Yeti - Praktisi Psikologi Anak"
+                                    src="/images/seri-bantu-anakku/expert_new.jpg"
+                                    alt="Dra. Yeti Widiati Suryani, Psikolog"
                                     width={160}
                                     height={160}
                                     className="w-full h-full object-cover rounded-full"
                                 />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2">Teh Yeti</h3>
+                            <h3 className="text-2xl font-bold text-white mb-2 leading-tight">Dra. Yeti Widiati Suryani, Psikolog</h3>
                             <p className="text-cyan-400 font-medium mb-4">Praktisi Psikologi Anak & Parenting Coach</p>
-                            <p className="text-slate-300 max-w-xl mx-auto">
-                                Berpengalaman dalam mendampingi orang tua memahami dan merespons perilaku anak dengan pendekatan yang ramah dan berbasis ilmu psikologi.
-                            </p>
+                            <div className="text-slate-300 max-w-2xl mx-auto space-y-4 text-sm leading-relaxed text-justify">
+                                <p className="italic text-cyan-200">
+                                    "Mengawal tumbuh kembang anak adalah investasi seumur hidup. Mengutamakan pendekatan holistik dan kolaborasi erat antara profesional dan keluarga demi mencetak generasi yang tangguh dan utuh."
+                                </p>
+                                <p>
+                                    Telah berkarya lebih dari 30 tahun memberikan pelayanan psikoterapi, penanganan trauma, dan pendampingan Anak Berkebutuhan Khusus (ABK) serta keluarga.
+                                </p>
+                                <p>
+                                    Dra. Yeti akan berbagi tentang peran vital psikolog dalam memahami dan menavigasi masalah tumbuh kembang anak, dengan mengintegrasikan aspek psikologis, sensori, dan gerak tubuh untuk optimalisasi fungsi sehari-hari.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
