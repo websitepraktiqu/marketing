@@ -206,6 +206,84 @@ export default function MentoringUltimateMastery() {
                         </div>
                     </div>
                 </section>
+
+                {/* VALUE STACK SECTION */}
+                <section className="py-24 px-6 md:px-12 bg-black relative overflow-hidden">
+                    {/* Background effects */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#CDA434]/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+                    <div className="max-w-4xl mx-auto relative z-10">
+                        <div className="bg-[#111] rounded-3xl border border-[#CDA434]/20 p-8 md:p-12 shadow-[0_0_50px_-20px_rgba(205,164,52,0.15)] relative overflow-hidden">
+                            {/* Decorative top header */}
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#CDA434] to-transparent opacity-50"></div>
+
+                            <div className="text-center mb-12">
+                                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                                    Total Value PraktiQu Mastery Program
+                                </h2>
+                                <p className="text-[#CDA434] font-medium tracking-wide uppercase text-sm">
+                                    Investasi Terbaik untuk Karir Profesional Anda
+                                </p>
+                            </div>
+
+                            <div className="space-y-4 mb-12">
+                                {/* List Items */}
+                                {[
+                                    { name: "Self Development Mentoring", value: "Rp5.000.000" },
+                                    { name: "Pendampingan Bisnis Psikolog", value: "Rp10.000.000" },
+                                    { name: "Sistem Praktik Menyeluruh", value: "Rp5.000.000" },
+                                    { name: "Sistem Automasi Praktik", value: "Rp3.000.000" },
+                                    { name: "Mentoring & Pendampingan Personal", value: "Rp5.000.000" },
+                                ].map((item, idx) => (
+                                    <div key={idx} className="flex flex-col md:flex-row justify-between md:items-center border-b border-gray-800 pb-4 last:border-0 gap-2">
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-5 h-5 rounded-full bg-[#CDA434]/10 flex items-center justify-center text-[#CDA434] mt-0.5 md:mt-0 flex-shrink-0">
+                                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                            </div>
+                                            <span className="text-gray-200 font-medium">{item.name}</span>
+                                        </div>
+                                        <span className="font-bold text-white pl-8 md:pl-0">{item.value}</span>
+                                    </div>
+                                ))}
+
+                                {/* Bonus Item */}
+                                <div className="bg-gradient-to-br from-[#CDA434]/10 to-transparent rounded-xl p-6 mt-6 border border-[#CDA434]/20 relative overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-20 h-20 bg-[#CDA434]/10 blur-xl rounded-full"></div>
+                                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
+                                        <div className="flex items-start gap-3">
+                                            <div className="w-6 h-6 rounded-full bg-[#CDA434] flex items-center justify-center text-black mt-1 flex-shrink-0 shadow-lg">
+                                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M12 4v16m8-8H4" /></svg>
+                                            </div>
+                                            <div>
+                                                <span className="font-bold text-[#CDA434] block mb-1 tracking-wide text-sm">BONUS SPESIAL</span>
+                                                <span className="text-gray-300 text-sm block leading-relaxed max-w-md">Ebook, worksheet, form automasi, rekaman e-course, sesi materi, diskusi & mentoring</span>
+                                            </div>
+                                        </div>
+                                        <div className="text-right w-full md:w-auto pl-9 md:pl-0">
+                                            <span className="font-bold text-[#CDA434] text-xl">Rp5.000.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Total Value */}
+                            <div className="flex flex-col items-center justify-center pt-8 border-t border-gray-800">
+                                <p className="text-gray-400 mb-3 text-sm uppercase tracking-widest">Total Value yang Anda Dapatkan</p>
+                                <div className="text-4xl md:text-6xl font-extrabold text-white mb-10 tracking-tight">
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#CDA434] via-[#F3D578] to-[#CDA434] drop-shadow-sm">Rp33.000.000+</span>
+                                </div>
+
+                                <Link
+                                    href="#daftar"
+                                    className="w-full md:w-auto text-center inline-block bg-[#CDA434] text-black font-bold text-lg py-4 px-12 rounded-lg hover:bg-[#B88A20] hover:scale-[1.02] transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(205,164,52,0.4)]"
+                                >
+                                    Ambil Kesempatan Ini
+                                </Link>
+                                <p className="text-xs text-gray-500 mt-4 font-mono">Penawaran terbatas untuk batch ini</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             {/* Footer removed */}
