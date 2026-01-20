@@ -129,17 +129,17 @@ export default function MentoringUltimateMastery() {
                 <section className="py-24 px-6 md:px-12 bg-[#0a0a0a]">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-                            Yang didapat dengan bergabung ke ultimate mentoring
+                            Fasilitas Eksklusif yang Anda Dapatkan
                         </h2>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
                                 { title: "Program Mentoring 6 Bulan", desc: "Pendampingan intensif untuk memastikan Anda mencapai target bisnis psikologi Anda." },
-                                { title: "Landing Page", desc: "Website profesional yang siap pakai untuk membangun kredibilitas Anda di mata klien." },
-                                { title: "Sistem Management", desc: "Template SOP & administrasi yang rapi agar praktek berjalan autopilot." },
+                                { title: "Landing Page Profesional", desc: "Website profesional yang siap pakai untuk membangun kredibilitas Anda di mata klien." },
+                                { title: "Toolkit Psikolog Siap Pakai", desc: "Template SOP, administrasi, dan tools praktis yang siap langsung digunakan." },
                                 { title: "Ebook & Worksheet", desc: "Modul pembelajaran praktis yang bisa diakses kapan saja untuk panduan harian." },
                                 { title: "Zoom Recording", desc: "Rekaman sesi mentoring yang bisa dionton ulang kapanpun Anda butuh refresh materi." },
-                                { title: "Talent Maping Konsultasi", desc: "Pahami kekuatan diri Anda untuk membangun personal branding yang autentik." }
+                                { title: "Hasil Talents Mapping Assessment", desc: "Laporan lengkap potensi diri untuk strategi karir yang akurat." }
                             ].map((item, idx) => (
                                 <div key={idx} className="bg-[#141414] p-8 rounded-2xl border border-gray-800 hover:border-[#CDA434]/50 transition-all hover:-translate-y-2 group">
                                     <div className="w-10 h-10 rounded-full bg-[#CDA434]/20 text-[#CDA434] flex items-center justify-center mb-6 group-hover:bg-[#CDA434] group-hover:text-black transition-colors">
@@ -147,6 +147,36 @@ export default function MentoringUltimateMastery() {
                                     </div>
                                     <h3 className="text-xl font-bold mb-3 group-hover:text-[#CDA434] transition-colors">{item.title}</h3>
                                     <p className="text-gray-400 text-sm">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* OUTCOMES SECTION */}
+                <section className="py-24 px-6 md:px-12 bg-[#111] border-y border-gray-800">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                                Setelah Mengikuti Program Ini, <br />
+                                <span className="text-[#CDA434]">Anda Akan:</span>
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                            {[
+                                "Punya kejelasan arah karier & layanan praktik.",
+                                "Lebih percaya diri menetapkan harga layanan.",
+                                "Memiliki branding profesional di media sosial.",
+                                "Praktik yang stabil dengan pemasukan berkelanjutan.",
+                                "Didampingi mentor & komunitas sepanjang 1 tahun penuh.",
+                                "Memiliki sistem praktik lengkap dari awal hingga akhir."
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors">
+                                    <div className="w-6 h-6 rounded-full bg-[#CDA434] flex items-center justify-center text-black font-bold flex-shrink-0 mt-1">
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                    </div>
+                                    <p className="text-lg text-gray-200 font-medium leading-relaxed">{item}</p>
                                 </div>
                             ))}
                         </div>
@@ -187,24 +217,7 @@ export default function MentoringUltimateMastery() {
                         ))}
                     </div>
 
-                    <div className="text-center mt-20">
-                        <Image
-                            src="/logo.png"
-                            alt="PraktiQu Logo"
-                            width={150}
-                            height={50}
-                            className="mx-auto mb-4 brightness-0 invert opacity-70"
-                        />
-                        <p className="text-2xl font-bold tracking-widest text-white">PRAKTIQU MASTERY PROGRAM</p>
 
-                        <div className="flex justify-center gap-4 mt-8">
-                            {[1, 2, 3].map((i) => (
-                                <div key={i} className="w-10 h-10 bg-[#CDA434] rounded-sm flex items-center justify-center text-black hover:bg-white transition-colors cursor-pointer">
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" /></svg>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                 </section>
 
                 {/* VALUE STACK SECTION */}
@@ -284,10 +297,32 @@ export default function MentoringUltimateMastery() {
                         </div>
                     </div>
                 </section>
+
+                {/* FOOTER BRANDING SECTION */}
+                <section className="py-20 px-6 bg-black text-center relative z-20">
+                    <div className="max-w-4xl mx-auto">
+                        <Image
+                            src="/logo.png"
+                            alt="PraktiQu Logo"
+                            width={180}
+                            height={60}
+                            className="mx-auto mb-6 brightness-0 invert opacity-90"
+                        />
+                        <p className="text-2xl md:text-3xl font-bold tracking-widest text-white mb-8">PRAKTIQU MASTERY PROGRAM</p>
+
+                        <div className="flex justify-center gap-4">
+                            {[1, 2, 3].map((i) => (
+                                <div key={i} className="w-12 h-12 bg-[#CDA434] rounded-lg flex items-center justify-center text-black hover:bg-white transition-all transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-[#CDA434]/50">
+                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" /></svg>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
             </main>
 
             {/* Footer removed */}
             <FloatingWhatsApp />
-        </div>
+        </div >
     );
 }
