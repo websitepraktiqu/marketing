@@ -48,7 +48,7 @@ const TopicCarousel = ({ topics }: TopicCarouselProps) => {
                                             <span className="text-[#435b9b] font-bold text-sm bg-[#435b9b]/5 px-3 py-1 rounded-full">Topik {topic.id}</span>
                                         </div>
 
-                                        <h4 className="text-slate-800 font-bold text-lg mb-2 leading-tight h-[3.5rem] line-clamp-2">
+                                        <h4 className="text-slate-800 font-bold text-base mb-2 leading-snug min-h-[3rem] line-clamp-3">
                                             {topic.name}
                                         </h4>
                                     </div>

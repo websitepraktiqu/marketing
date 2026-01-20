@@ -365,12 +365,14 @@ export default function SeriBantuAnakku() {
                             ))}
                         </div>
 
-                        {/* Topic Carousel moved here */}
-                        <div className={`mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-                            <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
-                        </div>
+                    </div>
 
-                        {/* Centered Pricing Preview Card */}
+                    {/* Topic Carousel moved here with wider container */}
+                    <div className={`w-full max-w-7xl mx-auto mb-16 relative z-10 px-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+                        <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
+                    </div>
+
+                    <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className={`relative mx-auto w-full max-w-lg ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.4s" }}>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-3xl transform rotate-2 scale-105 opacity-20 blur-xl"></div>
 
