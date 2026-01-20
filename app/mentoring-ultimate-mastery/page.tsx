@@ -41,6 +41,7 @@ export default function MentoringUltimateMastery() {
                                 height={576}
                                 className="mx-auto drop-shadow-2xl rounded-lg"
                             />
+                            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F] to-transparent"></div>
                         </div>
                     </div>
                 </section>
@@ -181,7 +182,7 @@ export default function MentoringUltimateMastery() {
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-6 z-20 text-center">
                                     {/* Name removed */}
-                                    <p className="text-[#CDA434] text-sm font-medium uppercase tracking-wider">{mentor.role}</p>
+                                    {/* Role removed */}
                                 </div>
                             </div>
                         ))}
