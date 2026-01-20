@@ -365,6 +365,11 @@ export default function SeriBantuAnakku() {
                             ))}
                         </div>
 
+                        {/* Topic Carousel moved here */}
+                        <div className={`mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+                            <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
+                        </div>
+
                         {/* Centered Pricing Preview Card */}
                         <div className={`relative mx-auto w-full max-w-lg ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.4s" }}>
                             <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-3xl transform rotate-2 scale-105 opacity-20 blur-xl"></div>
@@ -634,7 +639,7 @@ export default function SeriBantuAnakku() {
 
                     <FeaturesBar />
 
-                    <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
+
 
                     {/* Bundle Plan */}
                     <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-[0_25px_50px_-12px_rgba(67,91,155,0.25)] transition-all duration-500 hover:-translate-y-2 group ring-4 ring-[#435b9b]/10">
