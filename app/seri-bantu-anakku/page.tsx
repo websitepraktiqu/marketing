@@ -562,7 +562,7 @@ export default function SeriBantuAnakku() {
                                     <div className="relative rounded-3xl overflow-hidden border-4 border-[#fe6007]/20 shadow-2xl">
                                         <div className="aspect-[3/4] relative">
                                             <Image
-                                                src="/images/seri-bantu-anakku/expert_new.jpg"
+                                                src="/images/seri-bantu-anakku/expert_wati_suryani.jpg"
                                                 alt="Dra. Yeti Widiati Suryani, Psikolog"
                                                 fill
                                                 className="object-cover hover:scale-105 transition-transform duration-700"
