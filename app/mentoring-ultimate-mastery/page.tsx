@@ -32,7 +32,7 @@ export default function MentoringUltimateMastery() {
                             Daftar Sekarang
                         </Link>
 
-                        <div className="mt-16 relative animate-fade-in-up">
+                        <div className="mt-16 relative animate-fade-in-up [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#CDA434]/20 blur-[100px] rounded-full -z-10"></div>
                             <Image
                                 src="/images/mentoring/hero.png"
@@ -41,7 +41,6 @@ export default function MentoringUltimateMastery() {
                                 height={576}
                                 className="mx-auto drop-shadow-2xl rounded-lg"
                             />
-                            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0F0F0F] via-[#0F0F0F] to-transparent"></div>
                         </div>
                     </div>
                 </section>
