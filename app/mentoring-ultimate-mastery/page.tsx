@@ -2,14 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from "../seri-bantu-anakku/components/Navbar";
-import Footer from "../seri-bantu-anakku/components/Footer";
+// Navbar and Footer removed
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function MentoringUltimateMastery() {
     return (
         <div className="min-h-screen font-sans bg-[#0F0F0F] text-white overflow-x-hidden">
-            <Navbar />
+            {/* Navbar removed */}
 
             <main>
                 {/* HERO SECTION */}
@@ -181,7 +180,7 @@ export default function MentoringUltimateMastery() {
                                     className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                                 />
                                 <div className="absolute bottom-0 left-0 w-full p-6 z-20 text-center">
-                                    <h3 className="text-xl font-bold text-white mb-1">{mentor.name}</h3>
+                                    {/* Name removed */}
                                     <p className="text-[#CDA434] text-sm font-medium uppercase tracking-wider">{mentor.role}</p>
                                 </div>
                             </div>
@@ -209,7 +208,7 @@ export default function MentoringUltimateMastery() {
                 </section>
             </main>
 
-            <Footer />
+            {/* Footer removed */}
             <FloatingWhatsApp />
         </div>
     );
