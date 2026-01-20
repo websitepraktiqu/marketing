@@ -35,7 +35,7 @@ export default function MentoringUltimateMastery() {
                         <div className="mt-16 relative animate-fade-in-up [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#CDA434]/20 blur-[100px] rounded-full -z-10"></div>
                             <Image
-                                src="/images/mentoring/hero.png"
+                                src="/images/mentoring/hero-team.png"
                                 alt="Praktiqu Mentorship Team"
                                 width={1024}
                                 height={576}
@@ -316,12 +316,25 @@ export default function MentoringUltimateMastery() {
                         />
                         <p className="text-2xl md:text-3xl font-bold tracking-widest text-white mb-8">PRAKTIQU MASTERY PROGRAM</p>
 
-                        <div className="flex justify-center gap-4">
-                            {[1, 2, 3].map((i) => (
-                                <div key={i} className="w-12 h-12 bg-[#CDA434] rounded-lg flex items-center justify-center text-black hover:bg-white transition-all transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-[#CDA434]/50">
-                                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" /></svg>
-                                </div>
-                            ))}
+                        <div className="flex justify-center gap-6">
+                            {/* Facebook */}
+                            <a href="#" className="w-12 h-12 bg-[#CDA434] rounded-lg flex items-center justify-center text-black hover:bg-white transition-all transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-[#CDA434]/50">
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+
+                            {/* Instagram */}
+                            <a href="#" className="w-12 h-12 bg-[#CDA434] rounded-lg flex items-center justify-center text-black hover:bg-white transition-all transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-[#CDA434]/50">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+
+                            {/* LinkedIn */}
+                            <a href="#" className="w-12 h-12 bg-[#CDA434] rounded-lg flex items-center justify-center text-black hover:bg-white transition-all transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-[#CDA434]/50">
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
                         </div>
                     </div>
                 </section>
