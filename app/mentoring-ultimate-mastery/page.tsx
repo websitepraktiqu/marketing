@@ -126,7 +126,8 @@ export default function MentoringUltimateMastery() {
                 </section>
 
                 {/* BENEFITS GRID */}
-                <section className="py-24 px-6 md:px-12 bg-[#0a0a0a]">
+                {/* BENEFITS GRID - Calibrated to Elevated Dark Gray */}
+                <section className="py-24 px-6 md:px-12 bg-[#161616] relative z-10">
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
                             Fasilitas Eksklusif yang Anda Dapatkan
@@ -141,7 +142,7 @@ export default function MentoringUltimateMastery() {
                                 { title: "Zoom Recording", desc: "Rekaman sesi mentoring yang bisa dionton ulang kapanpun Anda butuh refresh materi." },
                                 { title: "Hasil Talents Mapping Assessment", desc: "Laporan lengkap potensi diri untuk strategi karir yang akurat." }
                             ].map((item, idx) => (
-                                <div key={idx} className="bg-[#141414] p-8 rounded-2xl border border-gray-800 hover:border-[#CDA434]/50 transition-all hover:-translate-y-2 group">
+                                <div key={idx} className="bg-[#1F1F1F] p-8 rounded-2xl border border-white/5 hover:border-[#CDA434]/50 transition-all hover:-translate-y-2 group shadow-lg">
                                     <div className="w-10 h-10 rounded-full bg-[#CDA434]/20 text-[#CDA434] flex items-center justify-center mb-6 group-hover:bg-[#CDA434] group-hover:text-black transition-colors">
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                                     </div>
@@ -154,7 +155,11 @@ export default function MentoringUltimateMastery() {
                 </section>
 
                 {/* OUTCOMES SECTION */}
-                <section className="py-24 px-6 md:px-12 bg-[#111] border-y border-gray-800">
+                {/* OUTCOMES SECTION - Calibrated to Deep Black with Gold Border */}
+                <section className="py-32 px-6 md:px-12 bg-black border-t border-[#CDA434]/20 relative overflow-hidden">
+                    {/* Subtle gold glow from top */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-[#CDA434] to-transparent opacity-50"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-40 bg-[#CDA434]/5 blur-[80px] rounded-[100%] pointer-events-none"></div>
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -184,7 +189,8 @@ export default function MentoringUltimateMastery() {
                 </section>
 
                 {/* MENTORS SECTION */}
-                <section className="py-24 px-6 md:px-12 relative">
+                {/* MENTORS SECTION - Calibrated with Gradient Depth */}
+                <section className="py-32 px-6 md:px-12 relative bg-gradient-to-b from-[#0F0F0F] via-[#1C1C1C] to-[#0F0F0F]">
                     <div className="max-w-6xl mx-auto text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold mb-4">
                             Kenalan dengan Tim Pendampingmu
