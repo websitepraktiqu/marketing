@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 // Navbar and Footer removed
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import SalesNotification from "@/components/SalesNotification"; // Imported
 
 export default function MentoringUltimateMastery() {
     return (
@@ -95,7 +96,7 @@ export default function MentoringUltimateMastery() {
                                 ].map((point, idx) => (
                                     <li key={idx} className="flex items-center gap-3 text-lg text-gray-300">
                                         <span className="text-[#CDA434]">
-                                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+                                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
                                         </span>
                                         {point}
                                     </li>
@@ -214,8 +215,9 @@ export default function MentoringUltimateMastery() {
                                 { title: "Hasil Talents Mapping Assessment", desc: "Laporan lengkap potensi diri untuk strategi karir yang akurat." }
                             ].map((item, idx) => (
                                 <div key={idx} className="bg-[#1F1F1F] p-8 rounded-2xl border border-white/5 hover:border-[#CDA434]/50 transition-all hover:-translate-y-2 group shadow-lg">
+                                    {/* Updated Icons to Solid Gold Checkmarks based on user request */}
                                     <div className="w-10 h-10 rounded-full bg-[#CDA434]/20 text-[#CDA434] flex items-center justify-center mb-6 group-hover:bg-[#CDA434] group-hover:text-black transition-colors">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                                     </div>
                                     <h3 className="text-xl font-bold mb-3 group-hover:text-[#CDA434] transition-colors">{item.title}</h3>
                                     <p className="text-gray-400 text-sm">{item.desc}</p>
