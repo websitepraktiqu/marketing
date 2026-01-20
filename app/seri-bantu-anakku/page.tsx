@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import FeaturesBar from "./components/FeaturesBar";
+import TopicCarousel from "./components/TopicCarousel";
 
 // Data untuk Roadmap
 const roadmapData = [
@@ -630,6 +632,10 @@ export default function SeriBantuAnakku() {
                         <p className="text-slate-600">Pilih paket yang sesuai dengan kebutuhan Anda</p>
                     </div>
 
+                    <FeaturesBar />
+
+                    <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
+
                     {/* Bundle Plan */}
                     <div className="max-w-4xl mx-auto mb-12 bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-[0_25px_50px_-12px_rgba(67,91,155,0.25)] transition-all duration-500 hover:-translate-y-2 group ring-4 ring-[#435b9b]/10">
                         <div className="absolute top-0 right-0 bg-[#fe6007] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider flex items-center gap-1">
@@ -644,7 +650,7 @@ export default function SeriBantuAnakku() {
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 mb-4">Bundling 7 eCourse</h3>
                             <p className="text-slate-600 mb-6">Akses lengkap ke semua modul dengan harga hemat</p>
-                            <div className="flex items-center justify-center gap-4 mb-6">
+                            <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
                                 <span className="text-2xl text-slate-400 line-through font-bold">Rp700.000</span>
                                 <span className="text-5xl font-extrabold text-slate-900">
                                     Rp445.000
@@ -659,42 +665,7 @@ export default function SeriBantuAnakku() {
                         </div>
                     </div>
 
-                    {/* Per Topic */}
-                    <div className="max-w-4xl mx-auto relative z-10">
-                        <h3 className="text-xl font-bold text-center text-slate-900 mb-8">
-                            Atau Pilih Per Topik
-                        </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {roadmapData.flatMap(step => step.topics).map((topic, idx) => (
-                                <div
-                                    key={topic.id}
-                                    className="group bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center hover:shadow-lg hover:border-[#fe6007]/30 transition-all duration-300 hover:-translate-y-1"
-                                >
-                                    <div className="flex items-start gap-3">
-                                        <div className="w-8 h-8 rounded-lg bg-[#435b9b] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <span className="text-[#435b9b] font-bold text-sm">Topik {topic.id}</span>
-                                            <p className="text-slate-700 font-medium text-sm mt-1 line-clamp-2">{topic.name}</p>
-                                        </div>
-                                    </div>
-                                    <div className="text-right flex-shrink-0 ml-4">
-                                        <div className="text-xs text-slate-400 line-through">Rp100.000</div>
-                                        <div className="text-lg font-bold text-slate-900">Rp75.000</div>
-                                        <Link
-                                            href={`/checkout?plan=topik-${topic.id}`}
-                                            className="inline-block mt-2 text-xs bg-[#435b9b]/10 text-[#435b9b] font-bold py-1 px-3 rounded-lg hover:bg-[#435b9b]/20 transition-colors"
-                                        >
-                                            Pilih →
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+
                 </section>
 
                 {/* FAQ SECTION */}
