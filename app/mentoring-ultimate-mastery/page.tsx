@@ -125,6 +125,77 @@ export default function MentoringUltimateMastery() {
                     </div>
                 </section>
 
+                {/* ROADMAP SECTION */}
+                <section className="py-24 px-6 md:px-12 bg-[#111] relative overflow-hidden">
+                    <div className="absolute left-0 top-0 w-full h-px bg-gradient-to-r from-transparent via-[#CDA434]/20 to-transparent"></div>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                                Roadmap Program <span className="text-[#CDA434]">Mentoring</span>
+                            </h2>
+                            <p className="text-gray-400 max-w-2xl mx-auto">
+                                Kurikulum yang disusun secara sistematis untuk memastikan transformasi Anda berjalan terukur.
+                            </p>
+                        </div>
+
+                        <div className="relative">
+                            {/* Connecting Line (Desktop) */}
+                            <div className="hidden md:block absolute top-[2.5rem] left-0 w-full h-[2px] bg-[#222]"></div>
+                            <div className="hidden md:block absolute top-[2.5rem] left-0 w-full h-[2px] bg-[#CDA434] origin-left scale-x-75 opacity-50"></div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                                {[
+                                    {
+                                        phase: "Fase 1",
+                                        title: "Get Ready",
+                                        desc: "Mengkondisikan mental yang siap untuk belajar dan berubah."
+                                    },
+                                    {
+                                        phase: "Fase 2",
+                                        title: "Self Development",
+                                        desc: "Membangun fondasi psikologis dan profesional yang kokoh untuk pertumbuhan jangka panjang melalui diri yang pulih dan identitas yang kuat."
+                                    },
+                                    {
+                                        phase: "Fase 3",
+                                        title: "Business & Practice Growth",
+                                        desc: "Membangun bisnis praktik yang berkelanjutan melalui perencanaan finansial yang matang, pemahaman proses bisnis, serta branding yang efektif."
+                                    },
+                                    {
+                                        phase: "Fase 4",
+                                        title: "Creating Sustainability",
+                                        desc: "Evaluasi secara berkala untuk pengembangan diri dan bisnis praktik agar terus bertumbuh tanpa batas."
+                                    }
+                                ].map((item, idx) => (
+                                    <div key={idx} className="relative group">
+                                        {/* Dot Indicator */}
+                                        <div className="hidden md:flex absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 items-center justify-center -mt-10 z-10">
+                                            <div className="w-6 h-6 rounded-full bg-[#111] border-4 border-[#CDA434] group-hover:scale-125 transition-transform duration-300 shadow-[0_0_20px_rgba(205,164,52,0.5)]"></div>
+                                        </div>
+
+                                        {/* Mobile Line */}
+                                        <div className="md:hidden absolute left-[1.3rem] top-0 w-[2px] h-full bg-[#222]"></div>
+
+                                        <div className="pt-2 md:pt-16 pl-12 md:pl-0 text-left md:text-center relative">
+                                            {/* Mobile Dot */}
+                                            <div className="md:hidden absolute left-3 top-3 w-5 h-5 rounded-full bg-[#111] border-2 border-[#CDA434] z-10"></div>
+
+                                            <div className="inline-block px-3 py-1 rounded-full bg-[#CDA434]/10 text-[#CDA434] text-xs font-bold uppercase tracking-wider mb-3">
+                                                {item.phase}
+                                            </div>
+                                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#CDA434] transition-colors">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-gray-400 text-sm leading-relaxed border-l-2 border-[#CDA434]/20 pl-4 md:border-0 md:pl-0">
+                                                {item.desc}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* BENEFITS GRID */}
                 {/* BENEFITS GRID - Calibrated to Elevated Dark Gray */}
                 <section className="py-24 px-6 md:px-12 bg-[#161616] relative z-10">
