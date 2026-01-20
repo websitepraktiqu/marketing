@@ -311,7 +311,7 @@ export default function SeriBantuAnakku() {
                         <div className={`space-y-6 mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#435b9b]/10 border border-[#435b9b]/20 text-[#435b9b] text-sm font-bold uppercase tracking-wider">
                                 <span className="w-2 h-2 rounded-full bg-[#435b9b] animate-pulse"></span>
-                                Mini Series eCourse untuk Orang Tua
+                                Mini Series eCourse untuk Orang Tua, Guru, Konselor, Terapis, Psikolog
                             </div>
 
                             <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
@@ -322,7 +322,7 @@ export default function SeriBantuAnakku() {
                             </h1>
 
                             <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-                                7 eCourse tematik yang disusun sebagai strategi step-by-step mendampingi anak. Dari membaca tanda awal, menghadapi emosi, hingga membangun komunikasi yang menenangkan.
+                                7 eCourse tematik yang disusun sebagai strategi step-by-step mendampingi anak. Dari ecourse ini, orangtua, guru dan profesional terkait anak dapat memahami area masalah anak, melakukan penilaian melalui skrining, mendapatkan strategi dalam menghadapi anak, hingga masalah anak tuntas dan kualitas relasi menjadi jauh lebih baik.
                             </p>
 
                             <div className="flex flex-wrap justify-center gap-4 mt-8">
@@ -347,9 +347,9 @@ export default function SeriBantuAnakku() {
                         {/* Benefits Strip */}
                         <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-left border-y border-slate-100 py-8 mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
                             {[
-                                "Akses Selamanya",
+                                "Akses 6 Bulan",
                                 "Studi Kasus Nyata",
-                                "7 Worksheet",
+                                "7 Worksheet Latihan Praktis",
                                 "7 Tools Refleksi",
                                 "5 Tools Skrining",
                                 "E-Certificate"
@@ -519,7 +519,7 @@ export default function SeriBantuAnakku() {
                     <div className="max-w-5xl mx-auto relative z-10">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-                                Kenapa Mini Series Ini <span className="text-[#fe6007]">Dibutuhkan</span> Orang Tua?
+                                Kenapa Mini Series Ini Dibutuhkan <span className="text-[#fe6007]">Orangtua & Profesional Bidang Anak</span>
                             </h2>
                         </div>
 
@@ -539,6 +539,21 @@ export default function SeriBantuAnakku() {
                                     title: "Fleksibel & Tidak Menghakimi",
                                     desc: "Tidak memaksakan satu gaya pengasuhan, tapi membantu orang tua lebih sadar dalam memilih respon.",
                                     iconPath: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                },
+                                {
+                                    title: "Berbasis Prinsip Ilmiah",
+                                    desc: "Berdasarkan pada prinsip ilmiah dari tahapan tumbuh kembang anak",
+                                    iconPath: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                },
+                                {
+                                    title: "Kontekstual Indonesia",
+                                    desc: "Sesuai dengan nilai & budaya Indonesia, menyediakan berbagai sudut pandang (anak, orangtua, profesional)",
+                                    iconPath: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                },
+                                {
+                                    title: "Praktis & Lengkap",
+                                    desc: "Mudah dipelajari keluarga, dilengkapi alat bantu yang lengkap",
+                                    iconPath: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                                 }
                             ].map((item, idx) => (
                                 <div
