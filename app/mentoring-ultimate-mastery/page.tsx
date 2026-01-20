@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 // Navbar and Footer removed
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import SalesNotification from "@/components/SalesNotification"; // Imported
+import SalesNotification from "@/components/SalesNotification";
+import { Users, Monitor, Briefcase, BookOpen, Video, BrainCircuit } from "lucide-react"; // Imported
 
 export default function MentoringUltimateMastery() {
     return (
@@ -207,17 +208,16 @@ export default function MentoringUltimateMastery() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {[
-                                { title: "Program Mentoring 6 Bulan", desc: "Pendampingan intensif untuk memastikan Anda mencapai target bisnis psikologi Anda." },
-                                { title: "Landing Page Profesional", desc: "Website profesional yang siap pakai untuk membangun kredibilitas Anda di mata klien." },
-                                { title: "Toolkit Psikolog Siap Pakai", desc: "Template SOP, administrasi, dan tools praktis yang siap langsung digunakan." },
-                                { title: "Ebook & Worksheet", desc: "Modul pembelajaran praktis yang bisa diakses kapan saja untuk panduan harian." },
-                                { title: "Zoom Recording", desc: "Rekaman sesi mentoring yang bisa dionton ulang kapanpun Anda butuh refresh materi." },
-                                { title: "Hasil Talents Mapping Assessment", desc: "Laporan lengkap potensi diri untuk strategi karir yang akurat." }
+                                { title: "Program Mentoring 6 Bulan", desc: "Pendampingan intensif untuk memastikan Anda mencapai target bisnis psikologi Anda.", icon: Users },
+                                { title: "Landing Page Profesional", desc: "Website profesional yang siap pakai untuk membangun kredibilitas Anda di mata klien.", icon: Monitor },
+                                { title: "Toolkit Psikolog Siap Pakai", desc: "Template SOP, administrasi, dan tools praktis yang siap langsung digunakan.", icon: Briefcase },
+                                { title: "Ebook & Worksheet", desc: "Modul pembelajaran praktis yang bisa diakses kapan saja untuk panduan harian.", icon: BookOpen },
+                                { title: "Zoom Recording", desc: "Rekaman sesi mentoring yang bisa dionton ulang kapanpun Anda butuh refresh materi.", icon: Video },
+                                { title: "Hasil Talents Mapping Assessment", desc: "Laporan lengkap potensi diri untuk strategi karir yang akurat.", icon: BrainCircuit }
                             ].map((item, idx) => (
                                 <div key={idx} className="bg-[#1F1F1F] p-8 rounded-2xl border border-white/5 hover:border-[#CDA434]/50 transition-all hover:-translate-y-2 group shadow-lg">
-                                    {/* Updated Icons to Solid Gold Checkmarks based on user request */}
                                     <div className="w-10 h-10 rounded-full bg-[#CDA434]/20 text-[#CDA434] flex items-center justify-center mb-6 group-hover:bg-[#CDA434] group-hover:text-black transition-colors">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                                        <item.icon className="w-5 h-5" />
                                     </div>
                                     <h3 className="text-xl font-bold mb-3 group-hover:text-[#CDA434] transition-colors">{item.title}</h3>
                                     <p className="text-gray-400 text-sm">{item.desc}</p>
@@ -415,6 +415,7 @@ export default function MentoringUltimateMastery() {
 
             {/* Footer removed */}
             <FloatingWhatsApp />
+            <SalesNotification />
         </div >
     );
 }
