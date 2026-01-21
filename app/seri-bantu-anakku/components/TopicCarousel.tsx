@@ -34,7 +34,7 @@ const TopicCarousel = ({ topics }: TopicCarouselProps) => {
     }, [emblaApi]);
 
     return (
-        <div className="w-full py-16 px-4 md:px-8 bg-[#0f172a] rounded-3xl relative overflow-hidden my-16">
+        <section className="w-full py-20 px-4 md:px-8 bg-[#0f172a] relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#435b9b]/20 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#fe6007]/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20"></div>
@@ -145,7 +145,7 @@ const TopicCarousel = ({ topics }: TopicCarouselProps) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

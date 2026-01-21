@@ -409,15 +409,15 @@ export default function SeriBantuAnakku() {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Topic Carousel moved here with wider container */}
-                        <div className={`w-full max-w-7xl mx-auto mb-16 relative z-10 px-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-                            <TopicCarousel topics={roadmapData.flatMap(step => step.topics.map(topic => ({
-                                ...topic,
-                                image: topic.image || step.image
-                            })))} />
-                        </div>
                     </div>
+                </section>
+
+                {/* TOPIC CAROUSEL SECTION - Full Width */}
+                <section className={`w-full ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+                    <TopicCarousel topics={roadmapData.flatMap(step => step.topics.map(topic => ({
+                        ...topic,
+                        image: topic.image || step.image
+                    })))} />
                 </section>
 
                 {/* ROADMAP SECTION - Strategic Theme: Connecting Lines */}
