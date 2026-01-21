@@ -37,7 +37,7 @@ export default function MentoringUltimateMastery() {
                         <div className="mt-16 relative animate-fade-in-up [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#CDA434]/20 blur-[100px] rounded-full -z-10"></div>
                             <Image
-                                src="/images/mentoring/hero-team.png"
+                                src="/images/mentoring/hero-team-new.png"
                                 alt="Praktiqu Mentorship Team"
                                 width={1024}
                                 height={576}
