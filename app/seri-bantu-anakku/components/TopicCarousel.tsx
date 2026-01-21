@@ -126,7 +126,7 @@ const TopicCarousel = ({ topics }: TopicCarouselProps) => {
                                                     </div>
 
                                                     <Link
-                                                        href={`/checkout?plan=topik-${topic.id}`}
+                                                        href={`/checkout/seri-bantu?plan=topik-${topic.id}`}
                                                         className="block w-full text-center bg-[#435b9b] text-white font-bold py-3 rounded-xl shadow-[0_4px_0_#2c3e50] hover:shadow-[0_2px_0_#2c3e50] hover:translate-y-[2px] transition-all flex items-center justify-center gap-2"
                                                     >
                                                         Daftar Sekarang

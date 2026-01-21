@@ -78,18 +78,23 @@ function handle_custom_checkout_endpoint($request) {
     // START: Product Mapping Logic
     // PLEASE UPDATE THE IDS BELOW WITH YOUR ACTUAL WOOCOMMERCE PRODUCT IDS
     $product_map = array(
+        // --- EXISTING MENTORING PRODUCTS ---
         'personal'        => 6127,
         'group'           => 6129,
         'bundle-personal' => 6142,
         'bundle-group'    => 6140,
-        // TOPIC MAPPING (Please update these IDs with real product IDs in WooCommerce)
-        'topik-1'         => 0, // REPLACE WITH REAL ID
-        'topik-2'         => 0, // REPLACE WITH REAL ID
-        'topik-3'         => 0, // REPLACE WITH REAL ID
-        'topik-4'         => 0, // REPLACE WITH REAL ID
-        'topik-5'         => 0, // REPLACE WITH REAL ID
-        'topik-6'         => 0, // REPLACE WITH REAL ID
-        'topik-7'         => 0, // REPLACE WITH REAL ID
+
+        // --- SERI BANTU ANAKKU PRODUCTS (NEW) ---
+        // Masukkan ID Produk dari Link: https://event.praktiqu.com/course-bundle/bundling-seri-bantu-anak-ku-strategi-orang-tua-dalam-menangani-masalah/
+        'bundling-bantu-anakku' => 0, // GANTI DENGAN ID BUNDLING (Angka)
+
+        'topik-1'         => 0, // GANTI DENGAN ID TOPIK 1
+        'topik-2'         => 0, // GANTI DENGAN ID TOPIK 2
+        'topik-3'         => 0, // GANTI DENGAN ID TOPIK 3
+        'topik-4'         => 0, // GANTI DENGAN ID TOPIK 4
+        'topik-5'         => 0, // GANTI DENGAN ID TOPIK 5
+        'topik-6'         => 0, // GANTI DENGAN ID TOPIK 6
+        'topik-7'         => 0, // GANTI DENGAN ID TOPIK 7
     );
 
     if (isset($product_map[$product_id])) {

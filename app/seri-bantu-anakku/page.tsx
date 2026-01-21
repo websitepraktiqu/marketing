@@ -306,7 +306,7 @@ export default function SeriBantuAnakku() {
                                             </li>
                                         </ul>
                                         <Link
-                                            href="#investasi"
+                                            href="/checkout/seri-bantu?plan=bundling-bantu-anakku"
                                             className="block w-full text-center bg-[#435b9b] text-white font-bold py-4 rounded-xl hover:bg-[#36497c] transition-colors"
                                         >
                                             Ambil Promo Bundling
@@ -620,7 +620,7 @@ export default function SeriBantuAnakku() {
                                         </span>
                                     </div>
                                     <Link
-                                        href="/checkout?plan=bundling-bantu-anakku"
+                                        href="/checkout/seri-bantu?plan=bundling-bantu-anakku"
                                         className="group inline-block w-full bg-[#fe6007] text-white font-bold py-4 px-12 rounded-xl shadow-lg hover:bg-[#e55606] transition-all hover:scale-105"
                                     >
                                         Daftar Bundling Sekarang
