@@ -9,6 +9,8 @@ type Topic = {
     id: number;
     name: string;
     image?: string;
+    price?: number;
+    originalPrice?: number;
 };
 
 type TopicCarouselProps = {
@@ -113,8 +115,12 @@ const TopicCarousel = ({ topics }: TopicCarouselProps) => {
                                                         <div>
                                                             <p className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Investasi Belajar</p>
                                                             <div className="flex items-baseline gap-2">
-                                                                <span className="text-sm text-slate-400 line-through">Rp150k</span>
-                                                                <span className="text-xl font-extrabold text-[#fe6007]">Rp75.000</span>
+                                                                <span className="text-sm text-slate-400 line-through">
+                                                                    Rp{(topic.originalPrice || 150000).toLocaleString('id-ID')}
+                                                                </span>
+                                                                <span className="text-xl font-extrabold text-[#fe6007]">
+                                                                    Rp{(topic.price || 75000).toLocaleString('id-ID')}
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>

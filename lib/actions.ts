@@ -13,6 +13,7 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
+    const password = formData.get("password") as string; // New Password Field
     const productId = formData.get("product_id") as string;
 
     // Extra participants
@@ -45,6 +46,7 @@ export async function submitOrder(prevState: any, formData: FormData): Promise<C
                 name,
                 email,
                 phone,
+                password, // Send password to WP
                 product_id: productId,
                 // Pass extras
                 name_2, email_2, phone_2,
