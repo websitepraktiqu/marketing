@@ -16,7 +16,7 @@ const roadmapData = [
         title: "Sadari & Pahami",
         image: "/images/seri-bantu-anakku/step1.png",
         topics: [
-            { id: 1, name: "Awal yang Cerdas: Memahami Tanda-Tanda Masalah Anak Sejak Dini" }
+            { id: 1, name: "Awal yang Cerdas: Memahami Tanda-Tanda Masalah Anak Sejak Dini", image: "/images/seri-bantu-anakku/topics/topic-1.png" }
         ]
     },
     {
@@ -24,8 +24,8 @@ const roadmapData = [
         title: "Bangun Pondasi Anak",
         image: "/images/seri-bantu-anakku/step2.png",
         topics: [
-            { id: 2, name: "Membangun Kemandirian Anak di Rumah dan Sekolah: Dari Manja Menuju Mandiri" },
-            { id: 3, name: "Membangun Kepercayaan Diri Anak: Tips Mengatasi Minder sejak Dini" }
+            { id: 2, name: "Membangun Kemandirian Anak di Rumah dan Sekolah: Dari Manja Menuju Mandiri", image: "/images/seri-bantu-anakku/topics/topic-2.png" },
+            { id: 3, name: "Membangun Kepercayaan Diri Anak: Tips Mengatasi Minder sejak Dini", image: "/images/seri-bantu-anakku/topics/topic-3.png" }
         ]
     },
     {
@@ -33,7 +33,7 @@ const roadmapData = [
         title: "Hadapi Emosi Sulit Anak",
         image: "/images/seri-bantu-anakku/step3.png",
         topics: [
-            { id: 4, name: "Membantu Anak Menghadapi Rasa Takutnya" },
+            { id: 4, name: "Membantu Anak Menghadapi Rasa Takutnya", image: "/images/seri-bantu-anakku/topics/topic-4.png" },
             { id: 5, name: "Cemas Beda Dengan Takut? Cara Membimbing Anak Saat Cemas" }
         ]
     },
@@ -410,9 +410,12 @@ export default function SeriBantuAnakku() {
                             </div>
                         </div>
 
-                        {/* Topic Carousel - Full Width Below */}
-                        <div className={`w-full max-w-7xl mx-auto relative z-10 px-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-                            <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
+                        {/* Topic Carousel moved here with wider container */}
+                        <div className={`w-full max-w-7xl mx-auto mb-16 relative z-10 px-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
+                            <TopicCarousel topics={roadmapData.flatMap(step => step.topics.map(topic => ({
+                                ...topic,
+                                image: topic.image || step.image
+                            })))} />
                         </div>
                     </div>
                 </section>
