@@ -471,7 +471,7 @@ export default function SeriBantuAnakku() {
                                             Telah berkarya lebih dari <span className="font-bold text-[#fe6007]">30 tahun</span> memberikan pelayanan psikoterapi, penanganan trauma, dan pendampingan Anak Berkebutuhan Khusus (ABK) serta keluarga.
                                         </p>
                                         <p>
-                                            Dra. Yeti membagikan strategi praktis yang mengintegrasikan aspek psikologis, sensori, dan gerak tubuh. Materi ini bukan sekadar teori, tapi "alat tempur" harian bagi orang tua.
+                                            Dra. Yeti akan berbagi mengenai fondasi pemahaman masalah anak dalam berbagai konteks. Menjelaskan cara melihat, menilai dan menangani beragam masalah anak bagi orangtua, guru, konselor, terapis dan Psikolog.
                                         </p>
                                     </div>
 
