@@ -280,9 +280,9 @@ export default function CheckoutSeriBantu() {
                             className="h-8 w-auto"
                         />
                     </Link>
-                    <div className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:flex">
+                    <div className="flex items-center gap-2 text-xs font-bold text-green-700 bg-green-50 px-4 py-2 rounded-full uppercase tracking-widest hidden md:flex border border-green-100">
+                        <Lock className="w-3.5 h-3.5" />
                         <span>Secure Checkout</span>
-                        <Lock className="w-4 h-4" />
                     </div>
                 </div>
             </div>
