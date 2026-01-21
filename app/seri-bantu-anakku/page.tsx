@@ -300,119 +300,120 @@ export default function SeriBantuAnakku() {
                     <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-[#435b9b]/5 rounded-full blur-3xl" />
                     <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-[#fe6007]/5 rounded-full blur-3xl" />
 
-                    {/* Decorative floating shapes instead of emojis */}
+                    {/* Decorative floating shapes */}
                     <div className="absolute top-20 left-10 w-16 h-16 rounded-full bg-[#435b9b]/10 animate-float hidden lg:block" />
                     <div className="absolute top-40 right-20 w-12 h-12 rounded-full bg-[#fe6007]/10 animate-float-reverse hidden lg:block" style={{ animationDelay: "1s" }} />
                     <div className="absolute bottom-40 left-20 w-10 h-10 rounded-full bg-[#435b9b]/10 animate-float hidden lg:block" style={{ animationDelay: "2s" }} />
-                    <div className="absolute bottom-20 right-10 w-14 h-14 rounded-full bg-[#fe6007]/10 animate-float-reverse hidden lg:block" style={{ animationDelay: "0.5s" }} />
 
-                    <div className="max-w-4xl mx-auto text-center relative z-10">
-                        {/* Centered Content */}
-                        <div className={`space-y-6 mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#435b9b]/10 border border-[#435b9b]/20 text-[#435b9b] text-sm font-bold uppercase tracking-wider">
-                                <span className="w-2 h-2 rounded-full bg-[#435b9b] animate-pulse"></span>
-                                Mini Series eCourse untuk Orang Tua, Guru, Konselor, Terapis, Psikolog
-                            </div>
-
-                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.1] tracking-tight">
-                                Seri Bantu Anak-ku! <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#435b9b] to-[#fe6007]">
-                                    Strategi Penanganan Masalah Anak
-                                </span>
-                            </h1>
-
-                            <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-                                7 eCourse tematik yang disusun sebagai strategi step-by-step mendampingi anak. Dari ecourse ini, orangtua, guru dan profesional terkait anak dapat memahami area masalah anak, melakukan penilaian melalui skrining, mendapatkan strategi dalam menghadapi anak, hingga masalah anak tuntas dan kualitas relasi menjadi jauh lebih baik.
-                            </p>
-
-                            <div className="flex flex-wrap justify-center gap-4 mt-8">
-                                <Link
-                                    href="#investasi"
-                                    className="group inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-10 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 hover:shadow-[0_15px_30px_rgba(254,96,7,0.4)]"
-                                >
-                                    Lihat Strategi Lengkap
-                                    <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </Link>
-                                <Link
-                                    href="#expert"
-                                    className="group inline-flex items-center gap-2 bg-white text-slate-700 font-bold py-4 px-10 rounded-full border border-slate-200 hover:border-[#435b9b] hover:text-[#435b9b] transition-all"
-                                >
-                                    Kenalan dengan Ahli
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Benefits Strip */}
-                        <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-left border-y border-slate-100 py-8 mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-                            {[
-                                "Akses 6 Bulan",
-                                "Studi Kasus Nyata",
-                                "7 Worksheet Latihan Praktis",
-                                "7 Tools Refleksi",
-                                "5 Tools Skrining",
-                                "E-Certificate"
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex flex-col items-center text-center gap-2">
-                                    <div className="w-8 h-8 rounded-full bg-[#435b9b]/10 flex items-center justify-center text-[#435b9b]">
-                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">{item}</span>
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-16">
+                            {/* LEFT COLUMN: Content */}
+                            <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#435b9b]/10 border border-[#435b9b]/20 text-[#435b9b] text-sm font-bold uppercase tracking-wider">
+                                    <span className="w-2 h-2 rounded-full bg-[#435b9b] animate-pulse"></span>
+                                    Mini Series eCourse
                                 </div>
-                            ))}
-                        </div>
 
-                    </div>
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] tracking-tight text-left">
+                                    Seri Bantu Anak-ku! <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#435b9b] to-[#fe6007]">
+                                        Strategi Penanganan Masalah Anak
+                                    </span>
+                                </h1>
 
-                    {/* Topic Carousel moved here with wider container */}
-                    <div className={`w-full max-w-7xl mx-auto mb-16 relative z-10 px-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-                        <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
-                    </div>
+                                <p className="text-lg text-slate-600 leading-relaxed font-medium text-left max-w-2xl">
+                                    7 eCourse tematik yang disusun sebagai strategi step-by-step mendampingi anak. Pahami area masalah anak, lakukan skrining, dan dapatkan strategi penanganan yang tepat.
+                                </p>
 
-                    <div className="max-w-4xl mx-auto text-center relative z-10">
-                        <div className={`relative mx-auto w-full max-w-lg ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.4s" }}>
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-3xl transform rotate-2 scale-105 opacity-20 blur-xl"></div>
-
-                            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden relative z-10 border-2 border-[#435b9b] ring-4 ring-[#435b9b]/5">
-                                <div className="bg-[#435b9b] p-3 text-center">
-                                    <span className="text-white font-bold tracking-widest text-sm">PILIHAN FAVORIT ORANG TUA</span>
-                                </div>
-                                <div className="p-8">
-                                    <div className="flex justify-between items-end mb-6">
-                                        <div>
-                                            <p className="text-slate-500 font-medium mb-1">Bundling 7 Topik</p>
-                                            <h3 className="text-3xl font-extrabold text-slate-900">Full Access</h3>
-                                        </div>
-                                        <div className="text-right">
-                                            <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
-                                            <span className="text-3xl font-extrabold text-[#fe6007]">Rp445.000</span>
-                                        </div>
-                                    </div>
-                                    <hr className="border-slate-100 mb-6" />
-                                    <ul className="space-y-3 mb-8">
-                                        <li className="flex items-center gap-3 text-slate-700">
-                                            <svg className="w-5 h-5 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                            Akses ke seluruh 7 modul strategi
-                                        </li>
-                                        <li className="flex items-center gap-3 text-slate-700">
-                                            <svg className="w-5 h-5 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                            Bonus Worksheet & Tools Skrining
-                                        </li>
-                                    </ul>
+                                <div className="flex flex-wrap gap-4">
                                     <Link
                                         href="#investasi"
-                                        className="block w-full text-center bg-[#435b9b] text-white font-bold py-4 rounded-xl hover:bg-[#36497c] transition-colors"
+                                        className="group inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 hover:shadow-[0_15px_30px_rgba(254,96,7,0.4)]"
                                     >
-                                        Ambil Promo Bundling
+                                        Lihat Strategi Lengkap
+                                        <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
                                     </Link>
-                                    <p className="text-center text-xs text-slate-400 mt-4">Atau beli satuan di bawah</p>
+                                    <Link
+                                        href="#expert"
+                                        className="group inline-flex items-center gap-2 bg-white text-slate-700 font-bold py-4 px-8 rounded-full border border-slate-200 hover:border-[#435b9b] hover:text-[#435b9b] transition-all"
+                                    >
+                                        Kenalan dengan Ahli
+                                    </Link>
+                                </div>
+
+                                {/* Benefits Strip - Moved here */}
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
+                                    {[
+                                        "Akses 6 Bulan",
+                                        "Studi Kasus Nyata",
+                                        "7 Worksheet",
+                                        "7 Tools Refleksi",
+                                        "5 Tools Skrining",
+                                        "E-Certificate"
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-2">
+                                            <div className="w-6 h-6 rounded-full bg-[#435b9b]/10 flex flex-shrink-0 items-center justify-center text-[#435b9b]">
+                                                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </div>
+                                            <span className="text-xs font-bold text-slate-600 uppercase tracking-wide">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* RIGHT COLUMN: Pricing Card */}
+                            <div className={`relative w-full max-w-md mx-auto lg:ml-auto ${isVisible ? 'animate-scale-in' : 'opacity-0'}`} style={{ animationDelay: "0.2s" }}>
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#435b9b] to-[#fe6007] rounded-3xl transform rotate-2 scale-105 opacity-20 blur-xl"></div>
+
+                                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden relative z-10 border-2 border-[#435b9b] ring-4 ring-[#435b9b]/5">
+                                    <div className="bg-[#435b9b] p-3 text-center">
+                                        <span className="text-white font-bold tracking-widest text-sm">PILIHAN FAVORIT ORANG TUA</span>
+                                    </div>
+                                    <div className="p-6 md:p-8">
+                                        <div className="flex justify-between items-end mb-6">
+                                            <div>
+                                                <p className="text-slate-500 font-medium mb-1">Bundling 7 Topik</p>
+                                                <h3 className="text-3xl font-extrabold text-slate-900">Full Access</h3>
+                                            </div>
+                                            <div className="text-right">
+                                                <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
+                                                <span className="text-3xl font-extrabold text-[#fe6007]">Rp445.000</span>
+                                            </div>
+                                        </div>
+                                        <hr className="border-slate-100 mb-6" />
+                                        <ul className="space-y-3 mb-8">
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <svg className="w-5 h-5 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                                Akses ke seluruh 7 modul strategi
+                                            </li>
+                                            <li className="flex items-center gap-3 text-slate-700">
+                                                <svg className="w-5 h-5 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                                Bonus Worksheet & Tools Skrining
+                                            </li>
+                                        </ul>
+                                        <Link
+                                            href="#investasi"
+                                            className="block w-full text-center bg-[#435b9b] text-white font-bold py-4 rounded-xl hover:bg-[#36497c] transition-colors"
+                                        >
+                                            Ambil Promo Bundling
+                                        </Link>
+                                        <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400">
+                                            <span>Atau beli satuan di bawah</span>
+                                            <svg className="w-3 h-3 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
+                        {/* Topic Carousel - Full Width Below */}
+                        <div className={`w-full max-w-7xl mx-auto relative z-10 px-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+                            <TopicCarousel topics={roadmapData.flatMap(step => step.topics)} />
+                        </div>
                     </div>
                 </section>
 
