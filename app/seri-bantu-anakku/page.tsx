@@ -658,7 +658,7 @@ export default function SeriBantuAnakku() {
                         <p className="text-slate-600">Pilih paket yang sesuai dengan kebutuhan Anda</p>
                     </div>
 
-                    <FeaturesBar />
+
 
 
 
@@ -667,7 +667,7 @@ export default function SeriBantuAnakku() {
                     <div className="max-w-6xl mx-auto mb-12">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                             {/* Column 1: Pricing Card */}
-                            <div className="order-2 lg:order-1 bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-[0_25px_50px_-12px_rgba(67,91,155,0.25)] transition-all duration-500 hover:-translate-y-2 group ring-4 ring-[#435b9b]/10 p-8 md:p-12 lg:h-full flex flex-col justify-center">
+                            <div className="order-2 lg:order-2 bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-[#435b9b] relative hover:shadow-[0_25px_50px_-12px_rgba(67,91,155,0.25)] transition-all duration-500 hover:-translate-y-2 group ring-4 ring-[#435b9b]/10 p-8 md:p-12 lg:h-full flex flex-col justify-center">
                                 <div className="absolute top-0 right-0 bg-[#fe6007] text-white text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-wider flex items-center gap-1 z-20">
                                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                                     Best Value
@@ -676,6 +676,25 @@ export default function SeriBantuAnakku() {
                                 <div className="text-center relative z-10">
                                     <h3 className="text-2xl font-bold text-slate-900 mb-2">Bundling 7 eCourse</h3>
                                     <p className="text-slate-600 mb-6 font-medium">Dapatkan akses lengkap ke semua modul dengan harga hemat</p>
+
+                                    {/* Benefits List */}
+                                    <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-8 text-left">
+                                        {[
+                                            "Akses Selamanya",
+                                            "Studi Kasus Nyata",
+                                            "7 Worksheet",
+                                            "7 Tools Refleksi",
+                                            "5 Tools Skrining",
+                                            "E-Certificate"
+                                        ].map((benefit, idx) => (
+                                            <div key={idx} className="flex items-center gap-2">
+                                                <svg className="w-4 h-4 text-[#fe6007] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <span className="text-slate-700 text-sm font-bold">{benefit}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                     <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
                                         <span className="text-2xl text-slate-400 line-through font-bold">Rp700.000</span>
                                         <span className="text-5xl font-extrabold text-slate-900">
@@ -692,7 +711,7 @@ export default function SeriBantuAnakku() {
                             </div>
 
                             {/* Column 2: Banner Image */}
-                            <div className="order-1 lg:order-2 relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-[#435b9b]/20 hover:scale-[1.02] transition-transform duration-500">
+                            <div className="order-1 lg:order-1 relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-[#435b9b]/20 hover:scale-[1.02] transition-transform duration-500">
                                 <Image
                                     src="/images/seri-bantu-anakku/bundling-banner.png"
                                     alt="Banner Bundling Seri Bantu Anakku"
