@@ -465,7 +465,7 @@ export default function SeriBantuAnakku() {
 
                                     <div className="text-slate-600 space-y-6 text-lg leading-relaxed">
                                         <p className="font-serif italic text-2xl text-[#435b9b] border-l-4 border-[#fe6007] pl-6 py-2 bg-[#fe6007]/5 rounded-r-xl">
-                                            "Mengawal tumbuh kembang anak adalah investasi seumur hidup. Kita butuh kolaborasi erat antara profesional dan keluarga."
+                                            "Orangtua, Guru, Konselor dan Psikolog perlu memahami masalah anak secara mendasar dikaitkan dengan setiap tahap perkembangan anak.  Maka, penanganan menjadi lebih komprehensif, anak lebih bahagia dan efek positif bertahan lebih lama."
                                         </p>
                                         <p>
                                             Telah berkarya lebih dari <span className="font-bold text-[#fe6007]">30 tahun</span> memberikan pelayanan psikoterapi, penanganan trauma, dan pendampingan Anak Berkebutuhan Khusus (ABK) serta keluarga.
