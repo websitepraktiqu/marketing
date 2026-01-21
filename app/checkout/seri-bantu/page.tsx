@@ -4,6 +4,7 @@ import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { Lock } from "lucide-react";
 import { submitOrder } from "../../../lib/actions";
 import { roadmapData } from "../../../lib/data";
 
@@ -173,12 +174,14 @@ function CheckoutContent() {
 
                                 <div className="pt-6 border-t border-slate-100">
                                     <h3 className="text-sm font-bold text-slate-700 mb-4">Metode Pembayaran Tersedia</h3>
-                                    <div className="flex flex-wrap gap-2 opacity-70 grayscale hover:grayscale-0 transition-all">
-                                        <div className="h-8 px-2 border rounded flex items-center justify-center bg-white"><span className="text-xs font-bold text-blue-800">BCA</span></div>
-                                        <div className="h-8 px-2 border rounded flex items-center justify-center bg-white"><span className="text-xs font-bold text-orange-600">BNI</span></div>
-                                        <div className="h-8 px-2 border rounded flex items-center justify-center bg-white"><span className="text-xs font-bold text-blue-600">Mandiri</span></div>
-                                        <div className="h-8 px-2 border rounded flex items-center justify-center bg-white"><span className="text-xs font-bold text-green-600">GoPay</span></div>
-                                        <div className="h-8 px-2 border rounded flex items-center justify-center bg-white"><span className="text-xs font-bold text-purple-600">OVO</span></div>
+                                    <div className="relative w-full h-auto aspect-[3/1]">
+                                        <Image
+                                            src="/images/payment-methods.png"
+                                            alt="Metode Pembayaran: BCA, Mandiri, BRI, BNI, GoPay, OVO, ShopeePay, dll"
+                                            width={600}
+                                            height={200}
+                                            className="w-full h-auto object-contain"
+                                        />
                                     </div>
                                     <p className="text-xs text-slate-400 mt-2">Pembayaran diproses aman oleh Payment Gateway otomatis.</p>
                                 </div>
@@ -268,10 +271,19 @@ export default function CheckoutSeriBantu() {
             {/* Simple Header for Checkout */}
             <div className="bg-white border-b border-slate-200 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2">
-                        <span className="font-bold text-xl text-[#435b9b]">PraktiQu</span>
+                    <Link href="/seri-bantu-anakku" className="flex items-center gap-2">
+                        <Image
+                            src="/logo.png"
+                            alt="PraktiQu Logo"
+                            width={120}
+                            height={40}
+                            className="h-8 w-auto"
+                        />
                     </Link>
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:block">Secure Checkout</div>
+                    <div className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:flex">
+                        <span>Secure Checkout</span>
+                        <Lock className="w-4 h-4" />
+                    </div>
                 </div>
             </div>
 
