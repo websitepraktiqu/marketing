@@ -57,9 +57,9 @@ export default function EcourseCarkhuff() {
             <main>
                 {/* HERO SECTION */}
                 <section className="bg-white pt-16 pb-20 px-6 md:px-12">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
-                            Kuasai Teknik Konseling Dasar yang Terbukti Efektif Selama Puluhan Tahun
+                    <div className="max-w-5xl mx-auto text-center">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight mb-6">
+                            Kuasai Teknik Konseling Dasar yang Terbukti Efektif Selama Puluhan&nbsp;Tahun
                         </h1>
 
                         <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
