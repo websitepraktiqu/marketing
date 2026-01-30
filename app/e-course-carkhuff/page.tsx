@@ -502,41 +502,32 @@ export default function EcourseCarkhuff() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
-                    <div className="absolute inset-0 pointer-events-none">
-                        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_#435b9b15_0%,_transparent_40%)]" />
-                        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,_#fe600710_0%,_transparent_40%)]" />
-                    </div>
-
-                    <div className="max-w-5xl mx-auto">
-                        <div className="bg-[#435b9b] rounded-3xl p-8 md:p-14 text-center relative overflow-hidden shadow-2xl">
-                            {/* Background decoration */}
-                            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                                <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white blur-3xl" />
-                                <div className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#fe6007] blur-3xl" />
-                                <div className="absolute top-1/2 left-1/4 w-4 h-4 rounded-full bg-white/50" />
-                                <div className="absolute bottom-1/3 right-1/4 w-6 h-6 rounded-full bg-[#fe6007]/50" />
-                            </div>
+                <section className="py-24 px-6 md:px-12 bg-white">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="bg-[#f8faff] rounded-3xl p-8 md:p-14 text-center border-2 border-[#435b9b]/10 shadow-xl overflow-hidden relative">
+                            {/* Pattern decoration - Geometric/Clean instead of blurry blobs */}
+                            <div className="absolute top-0 left-0 w-full h-2 bg-[#fe6007]"></div>
+                            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#435b9b 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
 
                             <div className="relative z-10">
-                                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                                    Siap Menjadi Konselor yang <br /><span className="text-[#fe6007] bg-white/10 px-4 py-1 rounded-xl inline-block mt-2">Lebih Berdampak?</span>
+                                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                                    Siap Menjadi Konselor yang <br /><span className="text-[#435b9b]">Lebih Berdampak?</span>
                                 </h2>
-                                <p className="text-white/90 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                                    Kuasai keterampilan dasar Carkhuff yang akan mengubah cara Anda mendengarkan, merespons, dan membantu klien selamanya.
+                                <p className="text-slate-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                                    Jangan biarkan sesi konseling Anda berjalan tanpa arah. Kuasai fondasi Carkhuff untuk hasil yang nyata.
                                 </p>
 
-                                <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                     <Link
                                         href="#investasi"
-                                        className="bg-[#fe6007] text-white font-bold text-lg px-10 py-4 rounded-xl shadow-lg shadow-[#fe6007]/30 hover:shadow-[#fe6007]/50 hover:bg-[#e55606] transition-all transform hover:-translate-y-1 w-full sm:w-auto"
+                                        className="bg-[#fe6007] text-white font-bold text-lg px-10 py-4 rounded-xl shadow-lg shadow-[#fe6007]/20 hover:bg-[#e55606] transition-all transform hover:-translate-y-1 w-full sm:w-auto"
                                     >
                                         Daftar Sekarang
                                     </Link>
                                     <Link
                                         href="https://wa.me/6281219486430"
                                         target="_blank"
-                                        className="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium hover:bg-white/20 px-8 py-4 rounded-xl transition-all w-full sm:w-auto flex items-center justify-center gap-2"
+                                        className="bg-white border-2 border-[#435b9b]/20 text-[#435b9b] font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#435b9b]/5 transition-all w-full sm:w-auto flex items-center justify-center gap-2"
                                     >
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -545,20 +536,12 @@ export default function EcourseCarkhuff() {
                                     </Link>
                                 </div>
 
-                                <div className="mt-10 flex flex-wrap justify-center gap-6 text-white/60 text-sm font-medium">
-                                    <span className="flex items-center gap-2">
-                                        <svg className="w-5 h-5 text-[#fe6007]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                        Akses Selamanya
+                                <p className="mt-8 text-slate-500 text-sm font-medium">
+                                    <span className="inline-flex items-center gap-1.5 bg-white px-3 py-1 rounded-full border border-slate-200">
+                                        <svg className="w-4 h-4 text-[#fe6007]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+                                        1 Tahun Akses
                                     </span>
-                                    <span className="flex items-center gap-2">
-                                        <svg className="w-5 h-5 text-[#fe6007]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        Garansi 30 Hari
-                                    </span>
-                                    <span className="flex items-center gap-2">
-                                        <svg className="w-5 h-5 text-[#fe6007]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                        Self-Paced Learning
-                                    </span>
-                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
