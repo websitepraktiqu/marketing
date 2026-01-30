@@ -300,37 +300,66 @@ export default function EcourseCarkhuff() {
 
 
                 {/* Expert */}
-                <section id="expert" className="py-20 px-6 md:px-12 bg-slate-50">
+                <section id="expert" className="py-20 px-6 md:px-12 bg-white">
                     <div className="max-w-5xl mx-auto">
-                        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-slate-100">
-                            <div className="grid md:grid-cols-3 gap-10 items-center">
-                                <div className="md:col-span-1">
-                                    <div className="aspect-[3/4] rounded-xl bg-gradient-to-br from-[#435b9b] to-[#435b9b]/80 flex items-center justify-center">
-                                        <div className="text-center text-white">
-                                            <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
-                                                <span className="text-3xl font-bold">IK</span>
-                                            </div>
-                                            <p className="text-white/60 text-xs">Foto Expert</p>
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                                Belajar Langsung dari <span className="text-[#fe6007]">Ahlinya</span>
+                            </h2>
+                        </div>
+
+                        <div className="bg-gradient-to-br from-slate-50 to-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 overflow-hidden relative">
+                            {/* Decorative bg */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#435b9b]/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+
+                            <div className="grid md:grid-cols-2 gap-10 items-center relative z-10">
+                                <div className="order-2 md:order-1">
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-semibold mb-4 border border-[#435b9b]/20">
+                                        Instruktur Utama
+                                    </span>
+                                    <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                                        Drs. Irfanul Kamal, MHRM
+                                    </h3>
+                                    <p className="text-lg text-[#fe6007] font-medium mb-6">
+                                        Psikolog, Dosen, & Penulis
+                                    </p>
+
+                                    <p className="text-slate-600 mb-6 leading-relaxed">
+                                        Beliau adalah praktisi berpengalaman yang juga aktif sebagai Dosen dan Penulis buku <em>"Psikologi Tulis Tangan"</em> dan bidang <em>Human Capital</em>.
+                                    </p>
+                                    <p className="text-slate-600 mb-8 leading-relaxed">
+                                        Dengan pengalaman puluhan tahun, beliau akan membimbing Anda memahami esensi konseling Carkhuff secara mendalam namun mudah dipraktikkan.
+                                    </p>
+
+                                    <div>
+                                        <p className="text-slate-900 font-semibold mb-3">Keahlian Utama:</p>
+                                        <div className="flex flex-wrap gap-2">
+                                            {carkhuffExpertTraits.map((trait, idx) => (
+                                                <span key={idx} className="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 text-sm shadow-sm">
+                                                    {trait}
+                                                </span>
+                                            ))}
+                                            <span className="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 text-sm shadow-sm">
+                                                Human Capital
+                                            </span>
+                                            <span className="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 text-sm shadow-sm">
+                                                Graphology
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="md:col-span-2">
-                                    <span className="text-xs font-semibold text-[#fe6007] uppercase tracking-wide">Instruktur</span>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-4">
-                                        Drs. Irfanul Kamal, Psikolog, MHRM
-                                    </h3>
-                                    <p className="text-slate-600 mb-6">
-                                        Psikolog senior dengan pengalaman puluhan tahun di bidang konseling, psikoterapi interpersonal, dan pengembangan SDM.
-                                    </p>
-
-                                    <p className="text-slate-700 font-medium mb-3">Gaya mengajar:</p>
-                                    <div className="flex flex-wrap gap-2">
-                                        {carkhuffExpertTraits.map((trait, idx) => (
-                                            <span key={idx} className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm">
-                                                {trait}
-                                            </span>
-                                        ))}
+                                <div className="order-1 md:order-2 flex justify-center">
+                                    <div className="relative">
+                                        <div className="absolute inset-0 bg-[#fe6007] rounded-2xl rotate-3 opacity-20 transform scale-95 blur-sm"></div>
+                                        <Image
+                                            src="/images/carkhuff/instructor-irfanul.jpg"
+                                            alt="Drs. Irfanul Kamal, MHRM"
+                                            width={400}
+                                            height={500}
+                                            className="rounded-2xl shadow-lg relative z-10 bg-slate-200"
+                                            objectFit="cover"
+                                        />
                                     </div>
                                 </div>
                             </div>
