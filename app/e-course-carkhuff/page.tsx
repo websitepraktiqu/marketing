@@ -437,7 +437,7 @@ export default function EcourseCarkhuff() {
 
                 {/* FAQ */}
                 <section id="faq" className="py-20 px-6 md:px-12 bg-white">
-                    <div className="max-w-3xl mx-auto">
+                    <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl font-bold text-slate-900 mb-3">
                                 Pertanyaan yang <span className="text-[#fe6007]">Sering Ditanyakan</span>
