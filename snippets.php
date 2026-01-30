@@ -86,15 +86,15 @@ function handle_custom_checkout_endpoint($request) {
 
         // --- SERI BANTU ANAKKU PRODUCTS (NEW) ---
         // Masukkan ID Produk dari Link: https://event.praktiqu.com/course-bundle/bundling-seri-bantu-anak-ku-strategi-orang-tua-dalam-menangani-masalah/
-        'bundling-bantu-anakku' => 0, // GANTI DENGAN ID BUNDLING (Angka)
+        'bundling-bantu-anakku' => 5389, // GANTI DENGAN ID BUNDLING (Angka)
 
-        'topik-1'         => 0, // GANTI DENGAN ID TOPIK 1
-        'topik-2'         => 0, // GANTI DENGAN ID TOPIK 2
-        'topik-3'         => 0, // GANTI DENGAN ID TOPIK 3
-        'topik-4'         => 0, // GANTI DENGAN ID TOPIK 4
-        'topik-5'         => 0, // GANTI DENGAN ID TOPIK 5
-        'topik-6'         => 0, // GANTI DENGAN ID TOPIK 6
-        'topik-7'         => 0, // GANTI DENGAN ID TOPIK 7
+        'topik-1'         => 5225, 
+        'topik-2'         => 5265, 
+        'topik-3'         => 5268, 
+        'topik-4'         => 5272, 
+        'topik-5'         => 5276, 
+        'topik-6'         => 5280, 
+        'topik-7'         => 5283,
     );
 
     if (isset($product_map[$product_id])) {
@@ -131,6 +131,9 @@ function handle_custom_checkout_endpoint($request) {
     if (isset($params['profesi_2'])) $order->update_meta_data('_participant_2_profesi', sanitize_text_field($params['profesi_2']));
     if (isset($params['profesi_3'])) $order->update_meta_data('_participant_3_profesi', sanitize_text_field($params['profesi_3']));
     
+    // Save Source Slug for Notification Logic
+    $order->update_meta_data('_source_slug', $product_id);
+
     $order->calculate_totals();
 
     // 3. Set Payment Method (Xendit)
@@ -236,7 +239,25 @@ function send_whatsapp_notification_on_processing($order_id) {
         if (substr($phone, 0, 1) == '0') {
             $phone = '62' . substr($phone, 1);
         }
-        $message = "Halo {$name}, pembayaran order #{$order_id} berhasil! Silakan join grup via link: {$group_link}";
+
+        // CUSTOM MESSAGE LOGIC
+        $source_slug = $order->get_meta('_source_slug');
+        $is_seri_bantu = ($source_slug === 'bundling-bantu-anakku' || strpos($source_slug, 'topik-') === 0);
+
+        if ($is_seri_bantu) {
+            // PESAN KHUSUS SERI BANTU (DASHBOARD)
+            $message = "Halo {$name}, pembayaran order #{$order_id} BERHASIL!
+        
+🎓 *Akses Belajar:*
+Silakan login di sini: https://event.praktiqu.com/dashboard/
+Gunakan Email & Password yang Anda buat saat pendaftaran.
+
+Terima kasih!";
+        } else {
+            // PESAN DEFAULT (MENTORING / MARKETING LAIN)
+             $message = "Halo {$name}, pembayaran order #{$order_id} berhasil! Silakan join grup via link: {$group_link}";
+        }
+
         $response = wp_remote_post('https://api.fonnte.com/send', array(
             'body' => array(
                 'target' => $phone,
