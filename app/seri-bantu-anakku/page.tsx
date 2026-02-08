@@ -291,7 +291,7 @@ export default function SeriBantuAnakku() {
                                             </div>
                                             <div className="text-right">
                                                 <span className="text-sm text-slate-400 line-through block">Rp700.000</span>
-                                                <span className="text-3xl font-extrabold text-[#fe6007]">Rp445.000</span>
+                                                <span className="text-3xl font-extrabold text-[#fe6007]">Rp560.000</span>
                                             </div>
                                         </div>
                                         <hr className="border-slate-100 mb-6" />
@@ -616,7 +616,7 @@ export default function SeriBantuAnakku() {
                                     <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-6">
                                         <span className="text-2xl text-slate-400 line-through font-bold">Rp700.000</span>
                                         <span className="text-5xl font-extrabold text-slate-900">
-                                            Rp445.000
+                                            Rp560.000
                                         </span>
                                     </div>
                                     <Link

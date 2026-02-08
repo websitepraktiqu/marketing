@@ -4,7 +4,7 @@ export const roadmapData = [
         title: "Sadari & Pahami",
         image: "/images/seri-bantu-anakku/step1.png",
         topics: [
-            { id: 1, name: "Awal yang Cerdas: Memahami Tanda-Tanda Masalah Anak Sejak Dini", image: "/images/seri-bantu-anakku/topics/topic-1.png", price: 75000, originalPrice: 150000 },
+            { id: 1, name: "Awal yang Cerdas: Memahami Tanda-Tanda Masalah Anak Sejak Dini", image: "/images/seri-bantu-anakku/topics/topic-1.png", price: 100000, originalPrice: 150000 },
         ]
     },
     {
@@ -12,8 +12,8 @@ export const roadmapData = [
         title: "Bangun Pondasi Anak",
         image: "/images/seri-bantu-anakku/step2.png",
         topics: [
-            { id: 2, name: "Membangun Kemandirian Anak di Rumah dan Sekolah: Dari Manja Menuju Mandiri", image: "/images/seri-bantu-anakku/topics/topic-2.png", price: 75000, originalPrice: 150000 },
-            { id: 3, name: "Membangun Kepercayaan Diri Anak: Tips Mengatasi Minder sejak Dini", image: "/images/seri-bantu-anakku/topics/topic-3.png", price: 75000, originalPrice: 150000 }
+            { id: 2, name: "Membangun Kemandirian Anak di Rumah dan Sekolah: Dari Manja Menuju Mandiri", image: "/images/seri-bantu-anakku/topics/topic-2.png", price: 100000, originalPrice: 150000 },
+            { id: 3, name: "Membangun Kepercayaan Diri Anak: Tips Mengatasi Minder sejak Dini", image: "/images/seri-bantu-anakku/topics/topic-3.png", price: 100000, originalPrice: 150000 }
         ]
     },
     {
@@ -21,8 +21,8 @@ export const roadmapData = [
         title: "Hadapi Emosi Sulit Anak",
         image: "/images/seri-bantu-anakku/step3.png",
         topics: [
-            { id: 4, name: "Membantu Anak Menghadapi Rasa Takutnya", image: "/images/seri-bantu-anakku/topics/topic-4.png", price: 75000, originalPrice: 150000 },
-            { id: 5, name: "Cemas Beda Dengan Takut? Cara Membimbing Anak Saat Cemas", image: "/images/seri-bantu-anakku/topics/topic-5.png", price: 75000, originalPrice: 150000 }
+            { id: 4, name: "Membantu Anak Menghadapi Rasa Takutnya", image: "/images/seri-bantu-anakku/topics/topic-4.png", price: 100000, originalPrice: 150000 },
+            { id: 5, name: "Cemas Beda Dengan Takut? Cara Membimbing Anak Saat Cemas", image: "/images/seri-bantu-anakku/topics/topic-5.png", price: 100000, originalPrice: 150000 }
         ]
     },
     {
@@ -30,8 +30,8 @@ export const roadmapData = [
         title: "Perbaiki Relasi & Komunikasi",
         image: "/images/seri-bantu-anakku/step4.png",
         topics: [
-            { id: 6, name: "Mengapa Anak Berbohong? Mengajarkan Kejujuran Sejak Kecil", image: "/images/seri-bantu-anakku/topics/topic-6.png", price: 75000, originalPrice: 150000 },
-            { id: 7, name: "Komunikasi Hipnotik dalam Pengasuhan: Memilih Kata yang Memiliki Kekuatan Mempengaruhi", image: "/images/seri-bantu-anakku/topics/topic-7.png", price: 75000, originalPrice: 150000 }
+            { id: 6, name: "Mengapa Anak Berbohong? Mengajarkan Kejujuran Sejak Kecil", image: "/images/seri-bantu-anakku/topics/topic-6.png", price: 100000, originalPrice: 150000 },
+            { id: 7, name: "Komunikasi Hipnotik dalam Pengasuhan: Memilih Kata yang Memiliki Kekuatan Mempengaruhi", image: "/images/seri-bantu-anakku/topics/topic-7.png", price: 100000, originalPrice: 150000 }
         ]
     }
 ];

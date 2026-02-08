@@ -119,7 +119,7 @@ const TopicCarousel = ({ topics }: TopicCarouselProps) => {
                                                                     Rp{(topic.originalPrice || 150000).toLocaleString('id-ID')}
                                                                 </span>
                                                                 <span className="text-xl font-extrabold text-[#fe6007]">
-                                                                    Rp{(topic.price || 75000).toLocaleString('id-ID')}
+                                                                    Rp{(topic.price || 100000).toLocaleString('id-ID')}
                                                                 </span>
                                                             </div>
                                                         </div>

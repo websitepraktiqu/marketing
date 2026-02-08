@@ -31,7 +31,7 @@ function CheckoutContent() {
         if (foundTopic) {
             productId = plan; // "topik-1" etc.
             productName = foundTopic.name;
-            productPrice = foundTopic.price || 75000;
+            productPrice = foundTopic.price || 100000;
             productOriginalPrice = foundTopic.originalPrice || 150000;
             productImage = foundTopic.image || "/images/placeholder-topic.png";
             isTopicProduct = true;
@@ -40,7 +40,7 @@ function CheckoutContent() {
         // New bundling specific name from landing page link
         productId = "bundling-bantu-anakku"; // UNIQUE ID for this bundle
         productName = "Bundling 7 Topik - Seri Bantu Anakku";
-        productPrice = 445000;
+        productPrice = 560000;
         productOriginalPrice = 700000;
         productImage = "/images/seri-bantu-anakku/bundling-banner.png";
     } else {
