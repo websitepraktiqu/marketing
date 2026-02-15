@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import ClosedRegistrationModal from './ClosedRegistrationModal';
+import { useState } from 'react';
 
 export default function PricingSection() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <section id="investasi" className="bg-slate-50 py-20 px-6 md:px-12 border-t border-slate-200">
@@ -27,16 +30,16 @@ export default function PricingSection() {
                         <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center">
                             <div className="text-sm font-bold text-slate-500 uppercase mb-1">Paket Personal</div>
                             <div className="text-3xl font-extrabold text-slate-900">Rp1.699<span className="text-lg text-slate-500 font-normal">rb</span></div>
-                            <Link href="/checkout?plan=bundle-personal" className="mt-4 block w-full py-2 bg-white border border-slate-300 rounded-lg text-slate-700 font-bold hover:bg-slate-50 transition-colors">
-                                Pilih Personal
-                            </Link>
+                            <button onClick={() => setIsModalOpen(true)} className="mt-4 block w-full py-2 bg-slate-100 border border-slate-300 rounded-lg text-slate-500 font-bold hover:bg-slate-200 transition-colors cursor-not-allowed">
+                                Full Booked
+                            </button>
                         </div>
                         <div className="bg-gradient-to-br from-[#0ea5e9] to-[#06b6d4] p-4 rounded-xl text-center text-white shadow-lg transform scale-105">
                             <div className="text-sm font-bold text-blue-100 uppercase mb-1">Paket Group</div>
                             <div className="text-3xl font-extrabold text-white">Rp1.599<span className="text-lg text-blue-100 font-normal">rb</span></div>
-                            <Link href="/checkout?plan=bundle-group" className="mt-4 block w-full py-2 bg-white text-[#0ea5e9] rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-sm">
-                                Pilih Group
-                            </Link>
+                            <button onClick={() => setIsModalOpen(true)} className="mt-4 block w-full py-2 bg-white/90 text-[#0ea5e9] rounded-lg font-bold hover:bg-white transition-colors shadow-sm cursor-not-allowed">
+                                Full Booked
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -66,12 +69,12 @@ export default function PricingSection() {
                                 Materi PDF
                             </li>
                         </ul>
-                        <Link
-                            href="/checkout?plan=personal"
-                            className="w-full block bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold py-3 rounded-lg transition-colors text-center"
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="w-full block bg-slate-100 hover:bg-slate-200 text-slate-500 font-bold py-3 rounded-lg transition-colors text-center cursor-not-allowed"
                         >
-                            Daftar Personal
-                        </Link>
+                            Full Booked
+                        </button>
                     </div>
 
                     {/* Group Plan */}
@@ -97,12 +100,12 @@ export default function PricingSection() {
                                 Networking group
                             </li>
                         </ul>
-                        <Link
-                            href="/checkout?plan=group"
-                            className="w-full block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg transition-colors shadow-md text-center"
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="w-full block bg-slate-300 text-white font-bold py-3 rounded-lg transition-colors shadow-md text-center cursor-not-allowed"
                         >
-                            Daftar Group
-                        </Link>
+                            Full Booked
+                        </button>
                     </div>
 
                     {/* Mobile view of Group Plan */}
@@ -113,17 +116,16 @@ export default function PricingSection() {
                         <h3 className="text-xl font-bold text-slate-900 mb-2">GROUP</h3>
                         <div className="text-3xl font-bold text-slate-900 mb-1">Rp400.000<span className="text-sm font-normal text-slate-500">,-</span></div>
                         <p className="text-xs text-slate-500 mb-6">Per orang (Min. 3 orang)</p>
-                        <Link
-                            href="/checkout?plan=group"
-                            className="w-full block bg-[#0ea5e9] hover:bg-[#0284c7] text-white font-bold py-3 rounded-lg transition-colors shadow-md text-center"
+                        <button
+                            onClick={() => setIsModalOpen(true)}
+                            className="w-full block bg-slate-300 text-white font-bold py-3 rounded-lg transition-colors shadow-md text-center cursor-not-allowed"
                         >
-                            Daftar Group
-                        </Link>
+                            Full Booked
+                        </button>
                     </div>
                 </div>
             </div>
-
-
+            <ClosedRegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 }

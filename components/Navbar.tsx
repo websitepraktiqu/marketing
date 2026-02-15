@@ -1,8 +1,14 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import ClosedRegistrationModal from './ClosedRegistrationModal';
+import { useState } from 'react';
 
 
 export default function Navbar() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <nav className="w-full bg-[#06b6d4] py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 shadow-sm text-white">
       <div className="flex items-center gap-2">
@@ -23,13 +29,14 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-4">
-        <Link
-          href="#investasi"
-          className="bg-white hover:bg-slate-100 text-[#06b6d4] font-bold py-2 px-6 rounded transition-colors text-sm shadow-md"
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="bg-white/90 cursor-not-allowed text-[#06b6d4] font-bold py-2 px-6 rounded transition-colors text-sm shadow-md"
         >
-          Daftar Sekarang
-        </Link>
+          Full Booked
+        </button>
       </div>
+      <ClosedRegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </nav>
   );
 }

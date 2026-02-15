@@ -1,6 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import ClosedRegistrationModal from './ClosedRegistrationModal';
+import { useState } from 'react';
 
 export default function CTASection() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section className="py-20 px-6 md:px-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-[#06b6d4] to-[#0ea5e9]"></div>
@@ -17,12 +23,12 @@ export default function CTASection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link
-                        href="#investasi"
-                        className="bg-white text-[#0ea5e9] font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:bg-slate-100 transition-all transform hover:-translate-y-1 text-lg"
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="bg-white/90 cursor-not-allowed text-[#0ea5e9] font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg"
                     >
-                        Daftar Sekarang
-                    </Link>
+                        Full Booked
+                    </button>
                     <Link
                         href="https://wa.me/6287870519230"
                         target="_blank"
@@ -33,9 +39,10 @@ export default function CTASection() {
                 </div>
 
                 <p className="mt-8 text-sm text-blue-100 opacity-80">
-                    Diskon khusus 10% untuk pendaftaran sebelum 10 Desember!
+                    Mohon maaf, pendaftaran telah ditutup. Kuota penuh.
                 </p>
             </div>
+            <ClosedRegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 }

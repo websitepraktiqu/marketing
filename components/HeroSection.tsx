@@ -2,11 +2,13 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import ClosedRegistrationModal from './ClosedRegistrationModal';
 
 export default function HeroSection() {
 
     const [pricingMode, setPricingMode] = useState<'personal' | 'group'>('personal');
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const targetDate = new Date('2026-01-17T00:00:00').getTime();
@@ -170,23 +172,24 @@ export default function HeroSection() {
                                     </div>
 
                                     {/* Discount Banner (Replaces Green Text) */}
-                                    <div className="mt-4 bg-[#4ba0ea] rounded-lg p-2 text-center shadow-inner relative overflow-hidden">
+                                    <div className="mt-4 bg-[#ef4444] rounded-lg p-2 text-center shadow-inner relative overflow-hidden">
                                         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '8px 8px' }}></div>
                                         <p className="text-white text-xs font-medium relative z-10">
-                                            Diskon khusus 10% untuk pendaftaran sebelum 10 Januari!
+                                            Mohon maaf, pendaftaran telah ditutup. Kuota penuh.
                                         </p>
                                     </div>
                                 </div>
 
-                                <Link
-                                    href={`/checkout?plan=${pricingMode}`}
-                                    className="group relative block w-full overflow-hidden rounded-xl bg-[#0ea5e9] p-4 text-center font-bold text-white shadow-lg transition-all hover:bg-[#0284c7] hover:shadow-cyan-200 mb-6"
+                                <button
+                                    onClick={() => setIsModalOpen(true)}
+                                    className="group relative block w-full overflow-hidden rounded-xl bg-slate-400 p-4 text-center font-bold text-white shadow-lg transition-all cursor-not-allowed mb-6"
                                 >
                                     <span className="relative z-10 flex items-center justify-center gap-2">
-                                        Daftar {pricingMode === 'personal' ? 'Sekarang' : 'Grup'}
-                                        <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        Full Booked
+                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
                                     </span>
-                                </Link>
+                                </button>
+                                <ClosedRegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
                                 {/* Social Proof */}
                                 <div className="flex items-center justify-center gap-3">

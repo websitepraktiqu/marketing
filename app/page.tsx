@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TopicSection from "@/components/TopicSection";
@@ -11,8 +13,17 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import ClosedRegistrationModal from "@/components/ClosedRegistrationModal";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [isRegistrationClosed, setIsRegistrationClosed] = useState(false);
+
+  useEffect(() => {
+    // Open modal on load
+    setIsRegistrationClosed(true);
+  }, []);
+
   return (
     <div className="min-h-screen font-sans bg-white text-slate-900 relative">
       <Navbar />
@@ -30,6 +41,7 @@ export default function Home() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <ClosedRegistrationModal isOpen={isRegistrationClosed} onClose={() => setIsRegistrationClosed(false)} />
     </div>
   );
 }
