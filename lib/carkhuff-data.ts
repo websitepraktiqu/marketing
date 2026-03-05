@@ -34,12 +34,12 @@ export const carkhuffModules = [
 ];
 
 export const carkhuffPainPoints = [
-    "Klien hadir, tapi belum benar-benar terbuka",
-    "Sesi aman, namun terasa datar",
-    "Cerita panjang, inti belum ketemu",
-    "Ingin mendorong perubahan, tapi bingung arahnya",
-    "Relasi baik, dampak belum nyata",
-    "Butuh percakapan coaching yang lebih bermakna"
+    "Orang yang Anda dampingi hadir, tetapi sulit benar-benar membuka diri",
+    "Proses pendampingan berjalan \"aman\" dan sopan, namun terasa datar",
+    "Cerita mengalir panjang, tetapi inti persoalan masih terasa kabur",
+    "Anda ingin membantu mendorong perubahan, namun ragu bagaimana mengarahkannya secara tepat",
+    "Hubungan pendampingan terasa baik, tetapi belum cukup kuat untuk memicu perubahan nyata",
+    "Ingin membangun percakapan yang bermakna untuk sesi coaching yang Anda lakukan"
 ];
 
 export const carkhuffCoreProblems = [
