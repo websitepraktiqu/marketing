@@ -10,6 +10,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import {
     carkhuffModules,
     carkhuffPainPoints,
+    carkhuffCoreProblems,
     carkhuffBenefits,
     carkhuffTargetAudience,
     carkhuffWhatYouGet,
@@ -100,45 +101,71 @@ export default function EcourseCarkhuff() {
                 {/* Pain Points - Two Column */}
                 <section className="py-16 px-6 md:px-12 bg-white">
                     <div className="max-w-6xl mx-auto">
-                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <div className="grid md:grid-cols-2 gap-12 items-start">
                             {/* Left - Image */}
-                            <div>
+                            <div className="md:sticky md:top-24">
                                 <Image
                                     src="/images/carkhuff/counseling-session.png"
                                     alt="Counseling session"
                                     width={600}
                                     height={450}
-                                    className="rounded-lg"
+                                    className="rounded-lg w-full"
                                 />
                             </div>
 
                             {/* Right - Content */}
                             <div>
                                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-                                    Apakah Anda pernah mengalami hal ini?
+                                    Apakah Ini Pernah <span className="text-[#fe6007]">Anda Alami?</span>
                                 </h2>
 
-                                <ul className="space-y-4 text-slate-700">
+                                {/* List 1 - Pain Points */}
+                                <ul className="space-y-3 text-slate-700 mb-6">
                                     {carkhuffPainPoints.map((point, idx) => (
                                         <li key={idx} className="flex gap-3 items-start">
-                                            <div className="w-8 h-8 rounded-full bg-[#fe6007]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                <svg className="w-4 h-4 text-[#fe6007]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                            <div className="w-6 h-6 rounded-full bg-[#fe6007]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                <svg className="w-3.5 h-3.5 text-[#fe6007]" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                 </svg>
                                             </div>
-                                            <span className="pt-1">{point}</span>
+                                            <span className="pt-0.5 text-sm">{point}</span>
                                         </li>
                                     ))}
                                 </ul>
 
-                                <p className="mt-8 text-slate-600 border-l-2 border-[#435b9b] pl-4">
-                                    Jika iya, Anda tidak sendirian. Masalahnya mungkin bukan pada teknik lanjutan, melainkan pada fondasi keterampilan konseling dasar.
+                                <p className="text-slate-600 border-l-2 border-[#435b9b] pl-4">
+                                    Jika iya, Anda tidak sendirian. Dan kemungkinan besar, masalahnya bukan pada teknik lanjutan, melainkan pada <strong>fondasi keterampilan interpersonal konseling</strong>.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                {/* Core Problems - Full Width Row */}
+                <section className="py-14 px-6 md:px-12 bg-slate-50">
+                    <div className="max-w-5xl mx-auto">
+                        <p className="text-center text-slate-700 text-lg mb-8">
+                            Banyak konselor memahami teori, namun kesulitan dalam:
+                        </p>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                            {carkhuffCoreProblems.map((problem, idx) => (
+                                <div key={idx} className="flex flex-col items-center text-center gap-3 bg-white rounded-xl border border-slate-100 p-5 shadow-sm hover:shadow-md hover:border-[#435b9b]/30 transition-all">
+                                    <div className="w-10 h-10 rounded-full bg-[#435b9b]/10 flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-4 h-4 text-[#435b9b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </div>
+                                    <span className="text-sm text-slate-700 font-medium">{problem}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="text-center">
+                            <div className="inline-block bg-[#435b9b] text-white rounded-xl px-6 py-3">
+                                <p className="font-semibold text-sm">Di sinilah <span className="text-[#fe6007] font-bold">Metode Carkhuff</span> berperan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Metode Carkhuff - Two Column with Image */}
                 <section className="py-16 px-6 md:px-12 bg-slate-50">
@@ -182,31 +209,85 @@ export default function EcourseCarkhuff() {
 
 
 
-                {/* Materi */}
-                <section id="materi" className="py-20 px-6 md:px-12 bg-slate-50">
+                {/* Materi - Zigzag Roadmap */}
+                <section id="materi" className="py-20 px-6 md:px-12 bg-slate-50 overflow-x-hidden">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-12">
+                        <div className="text-center mb-16">
                             <h2 className="text-3xl font-bold text-slate-900 mb-3">
                                 Apa yang Akan <span className="text-[#fe6007]">Anda Pelajari</span>
                             </h2>
                             <p className="text-slate-600">Bundling 5 Video E-Course</p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {carkhuffModules.map((module) => (
-                                <div
-                                    key={module.id}
-                                    className="bg-white p-6 rounded-xl border border-slate-100 hover:shadow-lg hover:border-[#435b9b]/30 transition-all"
-                                >
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="w-9 h-9 rounded-lg bg-[#435b9b] text-white font-bold flex items-center justify-center">
-                                            {module.id}
-                                        </span>
-                                        <span className="text-xs font-semibold text-[#fe6007] uppercase">Video {module.id}</span>
+                        {/* Desktop Zigzag Roadmap */}
+                        <div className="hidden md:block relative">
+                            {/* Horizontal line */}
+                            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#435b9b]/20 via-[#435b9b] to-[#435b9b]/20 -translate-y-1/2 z-0"></div>
+
+                            <div className="grid grid-cols-5 gap-0 relative z-10">
+                                {carkhuffModules.map((module, idx) => {
+                                    const isTop = idx % 2 === 0;
+                                    return (
+                                        <div key={module.id} className="flex flex-col items-center">
+                                            {/* Top card slot */}
+                                            <div className={`w-full px-2 ${isTop ? 'mb-4' : 'mb-4 invisible'}`}>
+                                                {isTop && (
+                                                    <div className="bg-white rounded-xl border border-slate-100 p-4 shadow-md hover:shadow-xl hover:border-[#435b9b]/40 transition-all group">
+                                                        <span className="text-xs font-semibold text-[#fe6007] uppercase block mb-2">Video {module.id}</span>
+                                                        <h3 className="font-bold text-slate-900 text-sm mb-1 group-hover:text-[#435b9b] transition-colors">{module.title}</h3>
+                                                        <p className="text-xs text-[#435b9b] mb-1">{module.subtitle}</p>
+                                                        <p className="text-xs text-slate-500">{module.description}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Center node */}
+                                            <div className="flex flex-col items-center">
+                                                {/* Connector line top */}
+                                                <div className={`w-0.5 h-4 ${isTop ? 'bg-[#435b9b]' : 'bg-transparent'}`}></div>
+                                                {/* Node circle */}
+                                                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm shadow-lg z-10 ${idx % 2 === 0 ? 'bg-[#435b9b]' : idx % 2 === 1 ? 'bg-[#fe6007]' : 'bg-[#435b9b]'} ring-4 ring-white`}>
+                                                    {module.id}
+                                                </div>
+                                                {/* Connector line bottom */}
+                                                <div className={`w-0.5 h-4 ${!isTop ? 'bg-[#435b9b]' : 'bg-transparent'}`}></div>
+                                            </div>
+
+                                            {/* Bottom card slot */}
+                                            <div className={`w-full px-2 ${!isTop ? 'mt-4' : 'mt-4 invisible'}`}>
+                                                {!isTop && (
+                                                    <div className="bg-white rounded-xl border border-slate-100 p-4 shadow-md hover:shadow-xl hover:border-[#fe6007]/40 transition-all group">
+                                                        <span className="text-xs font-semibold text-[#fe6007] uppercase block mb-2">Video {module.id}</span>
+                                                        <h3 className="font-bold text-slate-900 text-sm mb-1 group-hover:text-[#435b9b] transition-colors">{module.title}</h3>
+                                                        <p className="text-xs text-[#435b9b] mb-1">{module.subtitle}</p>
+                                                        <p className="text-xs text-slate-500">{module.description}</p>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Mobile: Vertical Roadmap */}
+                        <div className="md:hidden flex flex-col gap-0 relative">
+                            {/* Vertical line */}
+                            <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#435b9b]/20 via-[#435b9b] to-[#435b9b]/20 z-0"></div>
+
+                            {carkhuffModules.map((module, idx) => (
+                                <div key={module.id} className="flex gap-4 items-start relative z-10 mb-6">
+                                    {/* Node */}
+                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm shadow-lg flex-shrink-0 ring-4 ring-slate-50 ${idx % 2 === 0 ? 'bg-[#435b9b]' : 'bg-[#fe6007]'}`}>
+                                        {module.id}
                                     </div>
-                                    <h3 className="font-bold text-slate-900 mb-2">{module.title}</h3>
-                                    <p className="text-sm text-[#435b9b] mb-2">{module.subtitle}</p>
-                                    <p className="text-sm text-slate-600">{module.description}</p>
+                                    {/* Card */}
+                                    <div className="flex-1 bg-white rounded-xl border border-slate-100 p-4 shadow-md hover:shadow-lg transition-all">
+                                        <span className="text-xs font-semibold text-[#fe6007] uppercase block mb-1">Video {module.id}</span>
+                                        <h3 className="font-bold text-slate-900 text-sm mb-1">{module.title}</h3>
+                                        <p className="text-xs text-[#435b9b] mb-1">{module.subtitle}</p>
+                                        <p className="text-xs text-slate-500">{module.description}</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
