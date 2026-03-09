@@ -225,15 +225,15 @@ export default function CarkhuffEcourse() {
                                 </div>
 
                                 {/* Expert image placeholder */}
-                                <div className="order-1 md:order-2 flex justify-center">
-                                    <div className="relative">
+                                <div className="order-1 md:order-2 flex justify-center w-full">
+                                    <div className="relative w-full max-w-[400px]">
                                         <div className="absolute inset-0 bg-[#fe6007] rounded-2xl rotate-3 opacity-20 transform scale-95 blur-sm"></div>
-                                        <div className="w-[400px] h-[500px] bg-slate-200 rounded-2xl relative z-10 flex items-center justify-center">
+                                        <div className="w-full aspect-[4/5] bg-slate-200 rounded-2xl relative z-10 overflow-hidden">
                                             <Image
                                                 src="/images/carkhuff/instructor-irfanul.jpg"
                                                 alt="Expert Image"
-                                                width={400}
-                                                height={500}
+                                                fill
+                                                className="object-cover"
                                             />
                                         </div>
                                     </div>
