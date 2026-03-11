@@ -5,7 +5,6 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Lock } from "lucide-react";
-import { submitOrder } from "../../../lib/actions";
 import { roadmapData } from "../../../lib/data";
 
 function CheckoutContent() {
@@ -58,19 +57,35 @@ function CheckoutContent() {
         setIsPending(true);
 
         const formData = new FormData(event.currentTarget);
-        // FORCE ADD TAG: We can add a hidden field or handle it in backend by Product ID check
-        // Ideally backend logic separates them based on Product ID.
 
         try {
-            const result = await submitOrder(null, formData);
-            if (result.error) {
-                setError(result.error);
-            } else if (result.payment_url) {
-                window.location.href = result.payment_url;
+            const res = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    product_id: formData.get('product_id') as string,
+                    billing: {
+                        name: formData.get('name') as string,
+                        email: formData.get('email') as string,
+                        phone: formData.get('phone') as string,
+                        password: formData.get('password') as string,
+                    },
+                    profesi: formData.get('profesi') as string,
+                }),
+            });
+
+            const result = await res.json();
+
+            if (!res.ok || result.error) {
+                setError(result.error || 'Terjadi kesalahan. Silakan coba lagi.');
+            } else if (result.paymentUrl) {
+                window.location.href = result.paymentUrl;
+            } else {
+                setError('Tidak ada URL pembayaran yang diterima. Hubungi admin.');
             }
         } catch (err) {
             console.error(err);
-            setError("Terjadi kesalahan yang tidak diketahui.");
+            setError("Terjadi kesalahan koneksi. Periksa internet Anda dan coba lagi.");
         } finally {
             setIsPending(false);
         }
