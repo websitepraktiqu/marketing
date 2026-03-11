@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 // Mapping from string product slug → numeric WooCommerce product ID
 // Source: snippets.php product_map
 const PRODUCT_ID_MAP: Record<string, number> = {
+    // Seri Bantu Anakku
     'bundling-bantu-anakku': 5389,
     'topik-1': 5225,
     'topik-2': 5265,
@@ -11,6 +12,8 @@ const PRODUCT_ID_MAP: Record<string, number> = {
     'topik-5': 5276,
     'topik-6': 5280,
     'topik-7': 5283,
+    // Carkhuff E-Course
+    'carkhuff-ecourse': 6045,
 };
 
 export async function POST(req: NextRequest) {

@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 import {
     carkhuffModules,
@@ -630,7 +629,6 @@ export default function EcourseCarkhuff() {
             </main>
 
             <Footer />
-            <FloatingWhatsApp />
         </div>
     );
 }

@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import TopicCarousel from "./components/TopicCarousel";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 import {
     roadmapData,
@@ -823,7 +822,6 @@ export default function SeriesBantuAnaku() {
 
             </main>
             <Footer />
-            <FloatingWhatsApp />
         </div>
     );
 }

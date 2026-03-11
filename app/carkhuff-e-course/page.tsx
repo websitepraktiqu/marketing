@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 import {
     simplePainPoints,
@@ -444,8 +443,7 @@ export default function CarkhuffEcourse() {
                             </div>
 
                             <Link
-                                href="https://wa.me/6281219486430?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20E-Course%20Metode%20Carkhuff"
-                                target="_blank"
+                                href="/checkout/carkhuff"
                                 className="block w-full text-center bg-[#fe6007] text-white font-bold py-4 rounded-xl hover:bg-[#e55606] transition-all text-lg shadow-lg shadow-[#fe6007]/20"
                             >
                                 GABUNG ECOURSE!
@@ -576,7 +574,6 @@ export default function CarkhuffEcourse() {
             </main>
 
             <Footer />
-            <FloatingWhatsApp />
         </div>
     );
 }
