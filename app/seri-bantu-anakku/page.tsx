@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import FeaturesBar from "./components/FeaturesBar";
 import TopicCarousel from "./components/TopicCarousel";
 
@@ -703,7 +702,6 @@ export default function SeriBantuAnakku() {
                 </section>
             </main>
             <Footer />
-            <FloatingWhatsApp />
         </div >
     );
 }

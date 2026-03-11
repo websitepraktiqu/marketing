@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 // Navbar and Footer removed
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SalesNotification from "@/components/SalesNotification";
 import { Users, Monitor, Briefcase, BookOpen, Video, BrainCircuit } from "lucide-react"; // Imported
 
@@ -414,7 +413,6 @@ export default function MentoringUltimateMastery() {
             </main>
 
             {/* Footer removed */}
-            <FloatingWhatsApp />
             <SalesNotification />
         </div >
     );

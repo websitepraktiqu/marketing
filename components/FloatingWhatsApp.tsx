@@ -3,7 +3,7 @@ import Link from "next/link";
 const FloatingWhatsApp = () => {
     return (
         <Link
-            href="https://wa.me/6287870519230"
+            href="https://wa.me/6281219486430?text=Halo%20Admin%2C%20saya%20tertarik%20dengan%20E-Course%20Metode%20Carkhuff"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 group"
