@@ -40,21 +40,21 @@ export default function CarkhuffEcourse() {
                 {/* ========== 1. HERO ========== */}
                 <section className="bg-gradient-to-b from-[#f0f4ff] to-white pt-20 pb-16 px-6 md:px-12">
                     <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-semibold mb-6 border border-[#435b9b]/20">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-black mb-6 border border-[#435b9b]/20">
                             E-Course
                         </span>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-6">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-6">
                             Metode Konseling <span className="text-[#435b9b]">Carkhuff</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-slate-600 mb-4 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-lg md:text-xl text-slate-600 font-extrabold mb-4 max-w-2xl mx-auto leading-relaxed">
                             Sebuah E-Course Dasar <strong>Untuk Membangun Relasi Konseling yang Berdampak Nyata</strong>
                         </p>
-                        <p className="text-slate-500 mb-8 max-w-xl mx-auto">
+                        <p className="text-slate-600 font-bold mb-8 max-w-xl mx-auto">
                             Pelajari fondasi keterampilan konseling yang telah digunakan dan terbukti efektif selama puluhan tahun.
                         </p>
                         <Link
                             href="#investasi"
-                            className="inline-block bg-[#fe6007] text-white font-bold py-4 px-10 rounded-xl hover:bg-[#e55606] transition-all shadow-lg shadow-[#fe6007]/20 hover:scale-105 text-lg"
+                                className="block w-full bg-[#fe6007] text-white font-extrabold py-4 px-10 rounded-xl hover:bg-[#e55606] transition-all shadow-lg shadow-[#fe6007]/20 hover:scale-105 text-lg text-center"
                         >
                             GABUNG ECOURSE
                         </Link>
@@ -63,34 +63,48 @@ export default function CarkhuffEcourse() {
 
                 {/* ========== 2. PAIN POINTS ========== */}
                 <section id="pain-points" className="py-16 px-6 md:px-12 bg-white">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-10">
-                            Apakah Anda Pernah Mengalami <span className="text-[#fe6007]">Hal Ini?</span>
-                        </h2>
-
-                        <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                            {simplePainPoints.map((point, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex gap-3 items-start bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-[#fe6007]/30 transition-all"
-                                >
-                                    <div className="w-7 h-7 rounded-full bg-[#fe6007]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                        <svg className="w-4 h-4 text-[#fe6007]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-slate-700 font-medium">{point}</span>
+                        <div className="max-w-6xl mx-auto">
+                            <div className="grid md:grid-cols-2 gap-12 items-start">
+                                <div className="md:sticky md:top-24">
+                                    <Image
+                                        src="/images/carkhuff/counseling-session.png"
+                                        alt="Counseling session"
+                                        width={600}
+                                        height={450}
+                                        className="rounded-lg w-full"
+                                    />
                                 </div>
-                            ))}
-                        </div>
 
-                        <div className="text-center">
-                            <Link
-                                href="#investasi"
-                                className="inline-block bg-[#fe6007] text-white font-bold py-3 px-8 rounded-xl hover:bg-[#e55606] transition-all shadow-lg shadow-[#fe6007]/20"
-                            >
-                                GABUNG ECOURSE
-                            </Link>
+                                <div>
+                                    <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-10 text-center md:text-left">
+                                        Apakah Anda Pernah Mengalami <span className="text-[#fe6007]">Hal Ini?</span>
+                                    </h2>
+
+                                    <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                                        {simplePainPoints.map((point, idx) => (
+                                            <div
+                                                key={idx}
+                                                className="flex gap-3 items-start bg-slate-50 rounded-xl p-4 border border-slate-100 hover:border-[#fe6007]/30 transition-all"
+                                            >
+                                                <div className="w-7 h-7 rounded-full bg-[#fe6007]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                    <svg className="w-4 h-4 text-[#fe6007]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <span className="text-slate-700 font-extrabold">{point}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="text-center md:text-left">
+                                        <Link
+                                            href="#investasi"
+                                            className="block w-full bg-[#fe6007] text-white font-extrabold py-3 px-8 rounded-xl hover:bg-[#e55606] transition-all shadow-lg shadow-[#fe6007]/20 text-center"
+                                        >
+                                            GABUNG ECOURSE
+                                        </Link>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </section>
@@ -111,18 +125,18 @@ export default function CarkhuffEcourse() {
 
                             {/* Content */}
                             <div>
-                                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                                <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">
                                     Selamat, Anda Bertemu dengan <span className="text-[#435b9b]">E-Course yang Tepat!</span>
                                 </h2>
-                                <p className="text-slate-600 mb-4 leading-relaxed">
+                                <p className="text-slate-600 font-bold mb-4 leading-relaxed">
                                     E-Course Metode Carkhuff adalah e-course dasar konseling yang membantu Anda membangun fondasi keterampilan konseling yang kuat, bukan sekadar teknik lanjutan.
                                 </p>
-                                <p className="text-slate-600 mb-6 leading-relaxed">
+                                <p className="text-slate-600 font-bold mb-6 leading-relaxed">
                                     Disusun dengan bahasa sederhana, sistematis, dan langsung bisa dipraktikkan dalam sesi nyata.
                                 </p>
                                 <Link
                                     href="#investasi"
-                                    className="inline-block bg-[#435b9b] text-white font-semibold py-3 px-8 rounded-xl hover:bg-[#374a84] transition-all"
+                                    className="block w-full bg-[#435b9b] text-white font-bold py-3 px-8 rounded-xl hover:bg-[#374a84] transition-all text-center"
                                 >
                                     GABUNG ECOURSE
                                 </Link>
@@ -137,14 +151,14 @@ export default function CarkhuffEcourse() {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
                             {/* Participants */}
                             <div>
-                                <p className="text-3xl md:text-4xl font-bold">{simpleSocialProof.participants}+</p>
+                                <p className="text-3xl md:text-4xl font-extrabold">{simpleSocialProof.participants}+</p>
                                 <p className="text-sm text-white/80 mt-1">Peserta dari Berbagai Profesi</p>
                             </div>
 
                             {/* Rating */}
                             <div>
                                 <div className="flex items-center justify-center gap-1 mb-1">
-                                    <p className="text-3xl md:text-4xl font-bold">{simpleSocialProof.rating}</p>
+                                    <p className="text-3xl md:text-4xl font-extrabold">{simpleSocialProof.rating}</p>
                                     <svg className="w-6 h-6 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg>
@@ -166,7 +180,7 @@ export default function CarkhuffEcourse() {
                                             </svg>
                                         )}
                                     </div>
-                                    <p className="text-sm font-medium">{badge}</p>
+                                    <p className="text-sm font-semibold">{badge}</p>
                                 </div>
                             ))}
                         </div>
@@ -177,7 +191,7 @@ export default function CarkhuffEcourse() {
                 <section id="expert" className="py-20 px-6 md:px-12 bg-white">
                     <div className="max-w-5xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
                                 Dibawakan Langsung oleh:
                             </h2>
                         </div>
@@ -188,10 +202,10 @@ export default function CarkhuffEcourse() {
 
                             <div className="grid md:grid-cols-2 gap-10 items-center relative z-10">
                                 <div className="order-2 md:order-1">
-                                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-semibold mb-4 border border-[#435b9b]/20">
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-bold mb-4 border border-[#435b9b]/20">
                                         Instruktur Utama
                                     </span>
-                                    <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">
                                         {simpleExpert.name}
                                     </h3>
 
@@ -203,21 +217,21 @@ export default function CarkhuffEcourse() {
                                                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                     </svg>
                                                 </div>
-                                                <span className="text-slate-700">{cred}</span>
+                                                <span className="text-slate-700 font-extrabold">{cred}</span>
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <p className="text-slate-600 mb-4 leading-relaxed">
+                                    <p className="text-slate-700 font-semibold mb-4 leading-relaxed">
                                         {simpleExpert.description}
                                     </p>
-                                    <p className="text-slate-600 mb-6 leading-relaxed">
+                                    <p className="text-slate-700 font-semibold mb-6 leading-relaxed">
                                         {simpleExpert.subdescription}
                                     </p>
 
                                     <Link
                                         href="#investasi"
-                                        className="inline-block bg-[#fe6007] text-white font-bold py-3 px-8 rounded-xl hover:bg-[#e55606] transition-all shadow-lg shadow-[#fe6007]/20"
+                                        className="block w-full bg-[#fe6007] text-white font-extrabold py-3 px-8 rounded-xl hover:bg-[#e55606] transition-all shadow-lg shadow-[#fe6007]/20 text-center"
                                     >
                                         GABUNG ECOURSE!
                                     </Link>
@@ -246,7 +260,7 @@ export default function CarkhuffEcourse() {
                 <section id="materi" className="py-20 px-6 md:px-12 bg-slate-50">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">
                                 Apa Saja yang Akan Anda Pelajari di <span className="text-[#435b9b]">E-Course Metode Carkhuff</span>
                             </h2>
                         </div>
@@ -257,11 +271,11 @@ export default function CarkhuffEcourse() {
                                     key={idx}
                                     className="flex gap-5 items-start bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-[#435b9b]/30 transition-all"
                                 >
-                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-white text-lg ${idx % 2 === 0 ? "bg-[#435b9b]" : "bg-[#fe6007]"}`}>
+                                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 font-extrabold text-white text-lg ${idx % 2 === 0 ? "bg-[#435b9b]" : "bg-[#fe6007]"}`}>
                                         {idx + 1}
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-slate-900 text-lg mb-1">{item.title}</h3>
+                                        <h3 className="font-extrabold text-slate-900 text-lg mb-1">{item.title}</h3>
                                         <p className="text-slate-600">{item.description}</p>
                                     </div>
                                 </div>
@@ -273,7 +287,7 @@ export default function CarkhuffEcourse() {
                 {/* ========== 7. TARGET AUDIENCE ========== */}
                 <section className="py-16 px-6 md:px-12 bg-white">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-10">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-10">
                             E-Course Ini Cocok Untuk <span className="text-[#fe6007]">Siapa?</span>
                         </h2>
 
@@ -288,12 +302,12 @@ export default function CarkhuffEcourse() {
                                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                         </svg>
                                     </div>
-                                    <span className="text-slate-700 font-medium text-sm">{audience}</span>
+                                    <span className="text-slate-700 font-semibold text-sm">{audience}</span>
                                 </div>
                             ))}
                         </div>
 
-                        <p className="text-slate-500 font-medium">
+                        <p className="text-slate-500 font-semibold">
                             Tidak ada prasyarat khusus. <span className="text-[#435b9b]">Semua boleh belajar.</span>
                         </p>
                     </div>
@@ -302,7 +316,7 @@ export default function CarkhuffEcourse() {
                 {/* ========== 8. TESTIMONIALS ========== */}
                 <section className="py-16 px-6 md:px-12 bg-slate-50">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
                             Apa Kata <span className="text-[#fe6007]">Mereka?</span>
                         </h2>
                         <p className="text-slate-500 mb-10">Peserta yang sudah merasakan manfaatnya</p>
@@ -345,10 +359,10 @@ export default function CarkhuffEcourse() {
                                     <p className="text-slate-600 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
                                     <div className="mt-5 pt-4 border-t border-slate-100 flex items-center gap-3">
                                         <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center flex-shrink-0`}>
-                                            <span className="text-white text-xs font-bold">{t.initials}</span>
+                                            <span className="text-white text-xs font-extrabold">{t.initials}</span>
                                         </div>
                                         <div>
-                                            <p className="text-slate-800 text-sm font-semibold">{t.name}</p>
+                                            <p className="text-slate-800 text-sm font-bold">{t.name}</p>
                                             <p className="text-slate-400 text-xs">{t.role}</p>
                                         </div>
                                     </div>
@@ -362,7 +376,7 @@ export default function CarkhuffEcourse() {
                 <section className="py-20 px-6 md:px-12 bg-white">
                     <div className="max-w-5xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
+                            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
                                 Kenapa Anda Harus Ikut <span className="text-[#435b9b]">E-Course Ini</span>
                             </h2>
                         </div>
@@ -390,7 +404,7 @@ export default function CarkhuffEcourse() {
                                         <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${idx % 2 === 0 ? "bg-[#435b9b]" : "bg-[#fe6007]"} group-hover:scale-110 transition-transform`}>
                                             {icons[idx] || icons[0]}
                                         </div>
-                                        <h3 className="font-bold text-slate-900 text-lg mb-2">{usp.title}</h3>
+                                        <h3 className="font-extrabold text-slate-900 text-lg mb-2">{usp.title}</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">{usp.description}</p>
                                     </div>
                                 );
@@ -403,7 +417,7 @@ export default function CarkhuffEcourse() {
                 <section id="investasi" className="py-20 px-6 md:px-12 bg-slate-50">
                     <div className="max-w-lg mx-auto">
                         <div className="text-center mb-8">
-                            <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">
                                 Akses Penuh ke Semua Materi
                             </h2>
                         </div>
@@ -423,10 +437,10 @@ export default function CarkhuffEcourse() {
                             </div>
 
                             <div className="text-center mb-6">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-[#fe6007]/10 text-[#fe6007] text-sm font-semibold mb-4">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-[#fe6007]/10 text-[#fe6007] text-sm font-bold mb-4">
                                     Harga Spesial
                                 </span>
-                                <div className="text-5xl font-bold text-slate-900">
+                                <div className="text-5xl font-extrabold text-slate-900">
                                     Rp299.000
                                 </div>
                             </div>
@@ -444,7 +458,7 @@ export default function CarkhuffEcourse() {
 
                             <Link
                                 href="/checkout/carkhuff"
-                                className="block w-full text-center bg-[#fe6007] text-white font-bold py-4 rounded-xl hover:bg-[#e55606] transition-all text-lg shadow-lg shadow-[#fe6007]/20"
+                                className="block w-full text-center bg-[#fe6007] text-white font-extrabold py-4 rounded-xl hover:bg-[#e55606] transition-all text-lg shadow-lg shadow-[#fe6007]/20"
                             >
                                 GABUNG ECOURSE!
                             </Link>
@@ -465,7 +479,7 @@ export default function CarkhuffEcourse() {
                             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(#435b9b 1px, transparent 1px)", backgroundSize: "24px 24px" }}></div>
 
                             <div className="relative z-10">
-                                <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                                <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
                                     Siap Menjadi Konselor yang <br />
                                     <span className="text-[#435b9b]">Lebih Berdampak?</span>
                                 </h2>
@@ -476,14 +490,14 @@ export default function CarkhuffEcourse() {
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                     <Link
                                         href="#investasi"
-                                        className="bg-[#fe6007] text-white font-bold text-lg px-10 py-4 rounded-xl shadow-lg shadow-[#fe6007]/20 hover:bg-[#e55606] transition-all transform hover:-translate-y-1 w-full sm:w-auto"
+                                        className="bg-[#fe6007] text-white font-extrabold text-lg px-10 py-4 rounded-xl shadow-lg shadow-[#fe6007]/20 hover:bg-[#e55606] transition-all transform hover:-translate-y-1 w-full text-center"
                                     >
                                         GABUNG ECOURSE!
                                     </Link>
                                     <Link
                                         href="https://wa.me/6281219486430"
                                         target="_blank"
-                                        className="bg-white border-2 border-[#435b9b]/20 text-[#435b9b] font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#435b9b]/5 transition-all w-full sm:w-auto flex items-center justify-center gap-2"
+                                        className="bg-white border-2 border-[#435b9b]/20 text-[#435b9b] font-extrabold text-lg px-10 py-4 rounded-xl hover:bg-[#435b9b]/5 transition-all w-full sm:w-auto flex items-center justify-center gap-2"
                                     >
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -500,7 +514,7 @@ export default function CarkhuffEcourse() {
                 <section id="faq" className="py-20 px-6 md:px-12 bg-slate-50">
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-slate-900 mb-3">
+                            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">
                                 Frequently Asked <span className="text-[#fe6007]">Questions</span>
                             </h2>
                         </div>
@@ -515,7 +529,7 @@ export default function CarkhuffEcourse() {
                                         onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                                         className="w-full flex items-center justify-between p-5 text-left hover:bg-slate-50 transition-colors"
                                     >
-                                        <span className="font-medium text-slate-800 pr-4">{faq.question}</span>
+                                        <span className="font-semibold text-slate-800 pr-4">{faq.question}</span>
                                         <span className={`text-[#435b9b] transition-transform flex-shrink-0 ${openFaq === idx ? "rotate-180" : ""}`}>
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -541,7 +555,7 @@ export default function CarkhuffEcourse() {
                             <Link
                                 href="https://event.praktiqu.com"
                                 target="_blank"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] font-medium hover:bg-[#435b9b]/20 transition-colors"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] font-semibold hover:bg-[#435b9b]/20 transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -551,7 +565,7 @@ export default function CarkhuffEcourse() {
                             <Link
                                 href="https://wa.me/6281219486430"
                                 target="_blank"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-50 text-green-700 font-medium hover:bg-green-100 transition-colors"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-50 text-green-700 font-semibold hover:bg-green-100 transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
@@ -561,7 +575,7 @@ export default function CarkhuffEcourse() {
                             <Link
                                 href="https://wa.me/6287870519230"
                                 target="_blank"
-                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-50 text-green-700 font-medium hover:bg-green-100 transition-colors"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-50 text-green-700 font-semibold hover:bg-green-100 transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />

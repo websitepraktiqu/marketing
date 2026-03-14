@@ -230,7 +230,7 @@ export default function SeriesBantuAnaku() {
                                 <div className="flex flex-wrap gap-4">
                                     <Link
                                         href="#investasi"
-                                        className="group inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 hover:shadow-[0_15px_30px_rgba(254,96,7,0.4)]"
+                                            className="group flex w-full items-center justify-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 hover:shadow-[0_15px_30px_rgba(254,96,7,0.4)]"
                                     >
                                         Gabung Mini Series
                                         <svg className="w-5 h-5 transition-transform group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -337,7 +337,7 @@ export default function SeriesBantuAnaku() {
                             </p>
                             <Link
                                 href="#investasi"
-                                className="inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 mt-4"
+                                    className="flex w-full items-center justify-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105 mt-4"
                             >
                                 Gabung Mini Series
                             </Link>
@@ -410,7 +410,7 @@ export default function SeriesBantuAnaku() {
                                     </p>
                                     <Link
                                         href="#investasi"
-                                        className="inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105"
+                                            className="flex w-full items-center justify-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105"
                                     >
                                         Gabung Mini Series
                                     </Link>
@@ -481,7 +481,7 @@ export default function SeriesBantuAnaku() {
                         <div className="text-center mt-10">
                             <Link
                                 href="#investasi"
-                                className="inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105"
+                                    className="flex w-full items-center justify-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105"
                             >
                                 Gabung Mini Series
                             </Link>
@@ -557,7 +557,7 @@ export default function SeriesBantuAnaku() {
                         <div className="text-center mt-10">
                             <Link
                                 href="#investasi"
-                                className="inline-flex items-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105"
+                                    className="flex w-full items-center justify-center gap-2 bg-[#fe6007] text-white font-bold py-4 px-8 rounded-full shadow-[0_10px_20px_rgba(254,96,7,0.3)] hover:bg-[#e55606] transition-all hover:scale-105"
                             >
                                 Gabung Mini Series
                             </Link>
@@ -778,7 +778,7 @@ export default function SeriesBantuAnaku() {
                         <p className="text-white/70 mb-8 text-sm">Mulai langkah kecil hari ini.</p>
                         <Link
                             href="#investasi"
-                            className="group inline-flex items-center gap-2 bg-white text-[#fe6007] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                                className="group flex w-full items-center justify-center gap-2 bg-white text-[#fe6007] font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
                         >
                             Gabung Mini Series
                             <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
