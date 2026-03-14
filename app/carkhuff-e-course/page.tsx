@@ -40,16 +40,16 @@ export default function CarkhuffEcourse() {
                 {/* ========== 1. HERO ========== */}
                 <section className="bg-gradient-to-b from-[#f0f4ff] to-white pt-20 pb-16 px-6 md:px-12">
                     <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-black mb-6 border border-[#435b9b]/20">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-black mb-2 border border-[#435b9b]/20">
                             E-Course
                         </span>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-6">
+                        <h1 className="text-6xl md:text-4xl lg:text-5xl font-black text-slate-900 leading-tight mb-2">
                             Metode Konseling <span className="text-[#435b9b]">Carkhuff</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-slate-600 font-extrabold mb-4 max-w-2xl mx-auto leading-relaxed">
+                        <p className="text-2xl md:text-2xl text-slate-600 font-extrabold mb-2 max-w-2xl mx-auto leading-relaxed">
                             Sebuah E-Course Dasar <strong>Untuk Membangun Relasi Konseling yang Berdampak Nyata</strong>
                         </p>
-                        <p className="text-slate-600 font-bold mb-8 max-w-xl mx-auto">
+                        <p className="text-xl text-slate-600 font-bold mb-6 max-w-xl mx-auto">
                             Pelajari fondasi keterampilan konseling yang telah digunakan dan terbukti efektif selama puluhan tahun.
                         </p>
                         <Link
@@ -125,13 +125,13 @@ export default function CarkhuffEcourse() {
 
                             {/* Content */}
                             <div>
-                                <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-6">
+                                <h2 className="text-3xl md:text-3xl font-extrabold text-slate-900 mb-6">
                                     Selamat, Anda Bertemu dengan <span className="text-[#435b9b]">E-Course yang Tepat!</span>
                                 </h2>
-                                <p className="text-slate-600 font-bold mb-4 leading-relaxed">
+                                <p className="text-slate-600 text-lg font-bold mb-4 leading-relaxed">
                                     E-Course Metode Carkhuff adalah e-course dasar konseling yang membantu Anda membangun fondasi keterampilan konseling yang kuat, bukan sekadar teknik lanjutan.
                                 </p>
-                                <p className="text-slate-600 font-bold mb-6 leading-relaxed">
+                                <p className="text-slate-600 text-lg font-bold mb-6 leading-relaxed">
                                     Disusun dengan bahasa sederhana, sistematis, dan langsung bisa dipraktikkan dalam sesi nyata.
                                 </p>
                                 <Link
@@ -483,7 +483,7 @@ export default function CarkhuffEcourse() {
                                     Siap Menjadi Konselor yang <br />
                                     <span className="text-[#435b9b]">Lebih Berdampak?</span>
                                 </h2>
-                                <p className="text-slate-600 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                                <p className="text-slate-600 text-xl font-bold md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
                                     Jangan biarkan sesi konseling berjalan tanpa arah. Kuasai fondasi Carkhuff untuk perubahan yang nyata.
                                 </p>
 
