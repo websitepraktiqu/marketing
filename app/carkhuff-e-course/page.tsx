@@ -32,13 +32,19 @@ export default function CarkhuffEcourse() {
                     to { opacity: 1; transform: translateY(0); }
                 }
                 .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+                .soft-text-contrast :is(h1, h2, h3, p, span, li, strong) {
+                    text-shadow: 0 2px 60px rgba(15, 23, 42, 0.15);
+                }
+                .soft-text-contrast :is(a, button) {
+                    text-shadow: none;
+                }
             `}</style>
 
             <Navbar />
 
             <main>
                 {/* ========== 1. HERO ========== */}
-                <section className="bg-gradient-to-b from-[#f0f4ff] to-white pt-20 pb-16 px-6 md:px-12">
+                <section className="bg-gradient-to-b from-[#f0f4ff] to-white pt-20 pb-16 px-6 md:px-12 soft-text-contrast">
                     <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
                         <span className="inline-block px-4 py-1.5 rounded-full bg-[#435b9b]/10 text-[#435b9b] text-sm font-black mb-2 border border-[#435b9b]/20">
                             E-Course
@@ -62,10 +68,10 @@ export default function CarkhuffEcourse() {
                 </section>
 
                 {/* ========== 2. PAIN POINTS ========== */}
-                <section id="pain-points" className="py-16 px-6 md:px-12 bg-white">
+                <section id="pain-points" className="py-16 px-6 md:px-12 bg-white soft-text-contrast">
                         <div className="max-w-6xl mx-auto">
                             <div className="grid md:grid-cols-2 gap-12 items-start">
-                                <div className="md:sticky md:top-24">
+                                <div className="md:sticky md:top-24 flex justify-center md:justify-start mt-auto mb-auto">
                                     <Image
                                         src="/images/carkhuff/counseling-session.png"
                                         alt="Counseling session"
@@ -188,7 +194,7 @@ export default function CarkhuffEcourse() {
                 </section>
 
                 {/* ========== 5. EXPERT / INSTRUCTOR ========== */}
-                <section id="expert" className="py-20 px-6 md:px-12 bg-white">
+                <section id="expert" className="py-20 px-6 md:px-12 bg-white soft-text-contrast">
                     <div className="max-w-5xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
@@ -285,7 +291,7 @@ export default function CarkhuffEcourse() {
                 </section>
 
                 {/* ========== 7. TARGET AUDIENCE ========== */}
-                <section className="py-16 px-6 md:px-12 bg-white">
+                <section className="py-16 px-6 md:px-12 bg-white soft-text-contrast">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-3xl md:text-3xl font-extrabold text-slate-900 mb-10">
                             E-Course Ini Cocok Untuk <span className="text-[#fe6007]">Siapa?</span>
@@ -373,7 +379,7 @@ export default function CarkhuffEcourse() {
                 </section>
 
                 {/* ========== 9. WHY JOIN (USPs) ========== */}
-                <section className="py-20 px-6 md:px-12 bg-white">
+                <section className="py-20 px-6 md:px-12 bg-white soft-text-contrast">
                     <div className="max-w-5xl mx-auto">
                         <div className="text-center mb-12">
                             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900">
@@ -471,7 +477,7 @@ export default function CarkhuffEcourse() {
                 </section>
 
                 {/* ========== 11. FINAL CTA ========== */}
-                <section className="py-24 px-6 md:px-12 bg-white">
+                <section className="py-24 px-6 md:px-12 bg-white soft-text-contrast">
                     <div className="max-w-4xl mx-auto">
                         <div className="bg-[#f8faff] rounded-3xl p-8 md:p-14 text-center border-2 border-[#435b9b]/10 shadow-xl overflow-hidden relative">
                             {/* Top accent bar */}
@@ -548,7 +554,7 @@ export default function CarkhuffEcourse() {
                 </section>
 
                 {/* ========== 13. CONTACT / REGISTRATION INFO ========== */}
-                <section className="py-12 px-6 md:px-12 bg-white">
+                <section className="py-12 px-6 md:px-12 bg-white soft-text-contrast">
                     <div className="max-w-2xl mx-auto text-center">
                         <p className="text-slate-600 mb-4">Pendaftaran juga dapat dilakukan melalui:</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
