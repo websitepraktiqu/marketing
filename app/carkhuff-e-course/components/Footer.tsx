@@ -48,7 +48,7 @@ export default function Footer() {
                         <h4 className="font-bold text-lg mb-4">Produk Lainnya</h4>
                         <ul className="space-y-2 text-slate-400 text-sm">
                             <li>
-                                <Link href="/seri-bantu-anakku" className="hover:text-[#fe6007] transition-colors">
+                                <Link href="/series-bantu-anaku" className="hover:text-[#fe6007] transition-colors">
                                     Seri Bantu Anakku
                                 </Link>
                             </li>
